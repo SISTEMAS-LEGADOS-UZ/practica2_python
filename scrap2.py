@@ -1,12 +1,36 @@
 from py3270 import Emulator
 import sys, os, time
 
+from pantalla import pantalla_principal
+
+# Funciones
+    # Guardar lo que se lee por pantalla en el fichero salida.txt
+def pantalla():
+    screen_content = ''
+    for row in range(1, 43 + 1):
+        line = e.string_get(row, 1, 79)
+        screen_content += line + '\n'
+    archivo = open("salida.txt", "w")
+    archivo.write(screen_content)
+    archivo.close()
+
+    # Buscar un string concreto en un fichero
+    # Devuelve la linea en la que se encuentra la cadena. 0 si no la encuentra.
+def find_string(file, string):
+    with open(file, 'r') as file:
+        lines = file.readlines()
+        for i, line in enumerate(lines, start=1):
+            if string in line:
+                return i
+        return 0
+
+# Main
 host = "155.210.152.51"
 port = "3270"
 mylogin = 'GRUPO_03'
 mypass = 'secreto6'
-delay=10
-delayScreen=2
+delay=20
+delayScreen=0.5
 e = Emulator(visible=True)
 e.connect(host + ':' + port)
 
@@ -31,14 +55,35 @@ time.sleep(delayScreen)
 e.send_enter()
 time.sleep(delayScreen)
 e.wait_for_field()
-cmd = 'PA1'
-e.send_string(cmd)
+e.send_string('PA1')
 e.send_enter()
 
 # Pantalla comandos
-# time.sleep(delayScreen)
-# e.wait_for_field()
-# e.send_string('tareas.c')
+time.sleep(delayScreen)
+e.wait_for_field()
+e.send_string('tareas.c')
+e.send_enter()
+
+# Pantalla principal (tareas)
+time.sleep(delayScreen)
+pantalla()
+line = find_string("salida.txt","1.ASSIGN TASKS  2.VIEW TASKS  3.EXIT")
+
+if line==0:
+    print("No en la pantalla principal")
+    e.terminate()
+
+boton = pantalla_principal()
+
+if boton==0:
+    print(3)
+    e.send_string('3')
+elif boton==1:
+    print(1)
+    e.send_string('1')
+elif boton ==2:
+    print(2)
+    e.send_string('2')
 
 time.sleep(delay)
 e.terminate()
