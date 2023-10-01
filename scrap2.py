@@ -16,8 +16,9 @@ def pantalla():
 
     # Buscar un string concreto en un fichero
     # Devuelve la linea en la que se encuentra la cadena. 0 si no la encuentra.
-def find_string(file, string):
-    with open(file, 'r') as file:
+def find_string(string, filename="pantall.txt"):
+    print(filename)
+    with open(filename, 'r') as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             if string in line:
@@ -67,7 +68,7 @@ e.send_enter()
 # Pantalla principal (tareas)
 time.sleep(delayScreen)
 pantalla()
-line = find_string("salida.txt","1.ASSIGN TASKS  2.VIEW TASKS  3.EXIT")
+line = find_string("1.ASSIGN TASKS  2.VIEW TASKS  3.EXIT")
 
 if line==0:
     print("No en la pantalla principal")
