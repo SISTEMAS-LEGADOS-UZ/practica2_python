@@ -40,18 +40,18 @@ e.send_enter()
 
 # Pantalla Login
 time.sleep(delayScreen)
-# Usuario
+ ## Usuario
 e.wait_for_field()
 e.send_string(mylogin)
 e.send_enter()
-
-# Contraseña
+ ## Contraseña
 e.wait_for_field()
 e.send_string(mypass)
 e.send_enter()
 
 # Pantalla previa a comandos
 time.sleep(delayScreen)
+e.wait_for_field()
 e.send_enter()
 time.sleep(delayScreen)
 e.wait_for_field()
@@ -76,12 +76,15 @@ if line==0:
 boton = pantalla_principal()
 
 if boton==0:
+    e.wait_for_field()
     print(3)
     e.send_string('3')
 elif boton==1:
+    e.wait_for_field()
     print(1)
     e.send_string('1')
 elif boton ==2:
+    e.wait_for_field()
     print(2)
     e.send_string('2')
 
