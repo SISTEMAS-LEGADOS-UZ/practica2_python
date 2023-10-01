@@ -1,16 +1,24 @@
 import tkinter as tk
 
 def pantalla_principal():
+    # Variable global para almacenar el valor del botón
+    resultado = None
+
     # Funciones para los botones
     def asign_tasks():
-        return 1
+        nonlocal resultado
+        resultado = 1
+        ventana.destroy()
 
     def view_tasks():
-        return 2
+        nonlocal resultado
+        resultado = 2
+        ventana.destroy()
 
     def exit_tasks():
+        nonlocal resultado
+        resultado = 0
         ventana.destroy()
-        return 0
 
     # Crear una ventana
     ventana = tk.Tk()
@@ -28,3 +36,6 @@ def pantalla_principal():
 
     # Iniciar el bucle principal de la interfaz gráfica
     ventana.mainloop()
+
+    # Devolver el valor del botón después de que la ventana se haya cerrado
+    return resultado
