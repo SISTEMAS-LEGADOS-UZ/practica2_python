@@ -6,6 +6,7 @@ from pantalla import pantalla_principal
 # Funciones
     # Guardar lo que se lee por pantalla en un fichero 
 def pantalla(filename="pantalla.txt"):
+    time.sleep(delayScreen)
     screen_content = ''
     for row in range(1, 43 + 1):
         line = e.string_get(row, 1, 79)
@@ -73,20 +74,25 @@ if line==0:
     print("No en la pantalla principal")
     e.terminate()
 
-boton = pantalla_principal()
+e.send_string('2')
+e.send_enter()
+pantalla()
 
-if boton==1: # 1.ASSIGN TASKS
-    e.wait_for_field()
-    e.send_string('1')
-    e.send_enter()
-elif boton ==2: # 2.VIEW TASKS
-    e.wait_for_field()
-    e.send_string('2')
-    e.send_enter()
-elif boton==0: # 3.EXIT
-    e.wait_for_field()
-    e.send_string('3')
-    e.send_enter()
+e.exec_command(b"Clear")
+# boton = pantalla_principal()
+
+# if boton==1: # 1.ASSIGN TASKS
+#     e.wait_for_field()
+#     e.send_string('1')
+#     e.send_enter()
+# elif boton ==2: # 2.VIEW TASKS
+#     e.wait_for_field()
+#     e.send_string('2')
+#     e.send_enter()
+# elif boton==0: # 3.EXIT
+#     e.wait_for_field()
+#     e.send_string('3')
+#     e.send_enter()
 
 time.sleep(delay)
 e.terminate()
