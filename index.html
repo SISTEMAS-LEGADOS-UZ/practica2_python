@@ -3,406 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tareas</title>
+    <title>Pantalla de Inicio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
             background-color: #f5f5f5;
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
         .container {
+            text-align: center;
             max-width: 800px;
-            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .btn-container {
-            text-align: right;
+        h1 {
+            font-size: 100px;
+            color: #333;
             margin-bottom: 20px;
         }
 
-        .btn-container button {
-            margin-left: 10px;
+        button {
             padding: 10px 20px;
             background-color: #333;
             color: #fff;
             border: none;
             cursor: pointer;
+            font-size: 18px;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        table th {
-            background-color: #333;
-            color: #fff;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        table tr:hover {
-            background-color: #ddd;
-        }
-
-        table th, table td {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        table tbody {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.4);
-            z-index: 1;
-            overflow: auto;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .context-menu {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            top: 100%; /* Posición debajo del botón */
-            left: 0; /* Alineado con el borde izquierdo del botón */
-        }
-
-        .context-menu ul {
-            list-style-type: none;
-            font-size: 12px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .context-menu ul li {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .context-menu ul li:hover {
-            background-color: #f2f2f2;
-        }
-
     </style>
 </head>
 <body>
-    <header>
-        <h1>TAREAS</h1>
-    </header>
     <div class="container">
-        <div class="btn-container">
-            <button id="nuevaTareaBtn">Nueva tarea</button>
-            <div id="menuContextual" class="context-menu">
-                <ul>
-                    <li id="tareaGeneralOption">Tarea General</li>
-                    <li id="tareaEspecificaOption">Tarea Específica</li>
-                </ul>
-            </div>
-            <button id="salirBtn">Nueva tarea</button>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                  <th>Descripción</th>
-                  <th>Fecha de Creación</th>
-                  <th>Prioridad</th>
-                  <th>Estado</th>
-                </tr>
-              </thead>
-              <tbody id="tabla-contenido">
-                <!-- Las filas se agregarán dinámicamente aquí -->
-              </tbody>
-        </table>
-    </div>
-
-    <!-- Cuadro de diálogo para seleccionar el tipo de tarea -->
-    <div id="seleccionarTipoTareaModal" class="modal">
-        <div class="modal-content">
-            <h2>Seleccionar tipo de tarea</h2>
-            <div class="btn-container">
-                <button id="tareaGeneralBtn">Tarea General</button>
-                <button id="tareaEspecificaBtn">Tarea Específica</button>
-            </div>
-            <span class="close">&times;</span>
-        </div>
-    </div>
-
-    <!-- Ventana emergente para Tarea General -->
-    <div id="tareaGeneralModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Creando tarea general</h2>
-            <div>
-                <label for="fechaGeneral">Fecha:</label>
-                <input type="date" id="fechaGeneral">
-            </div>
-            <div>
-                <label for="descripcionGeneral">Descripción:</label>
-                <input type="text" id="descripcionGeneral">
-            </div>
-            <div class="btn-container">
-                <button id="cancelarGeneral">Cancelar</button>
-                <button id="guardarGeneral">Guardar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Ventana emergente para Tarea Específica -->
-    <div id="tareaEspecificaModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Creando tarea específica</h2>
-            <div>
-                <label for="fechaEspecifica">Fecha:</label>
-                <input type="date" id="fechaEspecifica">
-            </div>
-            <div>
-                <label for="nombreEspecifica">Nombre:</label>
-                <input type="text" id="nombreEspecifica">
-            </div>
-            <div>
-                <label for="descripcionEspecifica">Descripción:</label>
-                <input type="text" id="descripcionEspecifica">
-            </div>
-            <div class="btn-container">
-                <button id="cancelarEspecifica">Cancelar</button>
-                <button id="guardarEspecifica">Guardar</button>
-            </div>
-        </div>
+        <h1>GESTOR DE TAREAS</h1>
+        <button id="accederBtn">Acceder</button>
     </div>
 
     <script>
-        // Reemplaza esta URL con la URL de tu API de Python
         const apiUrl = "http://localhost:5000"; // La dirección de tu API local
-        const nuevaTareaBtn = document.getElementById("nuevaTareaBtn");
-        const salirBtn = document.getElementById("salirBtn");
-        const menuContextual = document.getElementById("menuContextual");
-        const tareaGeneralOption = document.getElementById("tareaGeneralOption");
-        const tareaEspecificaOption = document.getElementById("tareaEspecificaOption");
+        const accederBtn = document.getElementById("accederBtn");
 
-        salirBtn.addEventListener("click", (event) => {
-            exitTasks()
-        });
-
-        nuevaTareaBtn.addEventListener("click", (event) => {
-            // Obtener la posición del botón "Nueva tarea"
-            const botonRect = nuevaTareaBtn.getBoundingClientRect();
-            const botonWidth = botonRect.width-1;
-            
-            // Establecer la posición del menú contextual
-            menuContextual.style.display = "block";
-            menuContextual.style.top = botonRect.bottom + "px";
-            menuContextual.style.left = botonRect.left + "px";
-            menuContextual.style.width = botonWidth + "px";
-        });
-
-        // Agrega un evento de clic al documento para cerrar el menú contextual cuando se hace clic en otro lugar
-        document.addEventListener("click", (event) => {
-            // Verifica si el clic no se encuentra dentro del menú contextual o el botón "Nueva tarea"
-            if (
-                event.target !== nuevaTareaBtn &&
-                event.target !== tareaGeneralOption &&
-                event.target !== tareaEspecificaOption
-            ) {
-                menuContextual.style.display = "none"; // Oculta el menú contextual
-            }
-        });
-
-        tareaGeneralOption.addEventListener("click", () => {
-            menuContextual.style.display = "none";
-            document.getElementById("tareaGeneralModal").style.display = "block";
-        });
-
-        tareaEspecificaOption.addEventListener("click", () => {
-            menuContextual.style.display = "none";
-            document.getElementById("tareaEspecificaModal").style.display = "block";
-        });
-
-        // Agregar eventos para cancelar tareas generales y específicas
-        const cancelarGeneralBtn = document.getElementById("cancelarGeneral");
-        cancelarGeneralBtn.addEventListener("click", () => {
-            document.getElementById("tareaGeneralModal").style.display = "none";
-            // Restablecer los valores de los campos
-            document.getElementById("fechaGeneral").value = "";
-            document.getElementById("descripcionGeneral").value = "";
-        });
-
-        const cancelarEspecificaBtn = document.getElementById("cancelarEspecifica");
-        cancelarEspecificaBtn.addEventListener("click", () => {
-            document.getElementById("tareaEspecificaModal").style.display = "none";
-            // Restablecer los valores de los campos
-            document.getElementById("fechaEspecifica").value = "";
-            document.getElementById("nombreEspecifica").value = "";
-            document.getElementById("descripcionEspecifica").value = "";
-        });
-
-        // Agregar eventos para guardar tareas generales y específicas
-        const guardarGeneralBtn = document.getElementById("guardarGeneral");
-        guardarGeneralBtn.addEventListener("click", () => {
-            const tipo = "General";
-            const fecha = document.getElementById("fechaGeneral").value;
-            const descripcion = document.getElementById("descripcionGeneral").value;
-            // Aquí puedes llamar a la función de la API para guardar la tarea general
-            // y luego actualizar la tabla
-            // Ejemplo: guardarTareaGeneral(fecha, descripcion);
-            assignTask(tipo, fecha, descripcion, "");
-            // Luego, llama a actualizarTabla() para actualizar la tabla.
-            actualizarTabla();
-            document.getElementById("tareaGeneralModal").style.display = "none";
-            // Restablecer los valores de los campos
-            document.getElementById("fechaGeneral").value = "";
-            document.getElementById("descripcionGeneral").value = "";
-        });
-
-        const guardarEspecificaBtn = document.getElementById("guardarEspecifica");
-        guardarEspecificaBtn.addEventListener("click", () => {
-            const tipo = "Especifico";
-            const fecha = document.getElementById("fechaEspecifica").value;
-            const nombre = document.getElementById("nombreEspecifica").value;
-            const descripcion = document.getElementById("descripcionEspecifica").value;
-            // Aquí puedes llamar a la función de la API para guardar la tarea específica
-            // y luego actualizar la tabla
-            // Ejemplo: guardarTareaEspecifica(fecha, nombre, descripcion);
-            assignTask(tipo, fecha, descripcion, nombre);
-            // Luego, llama a actualizarTabla() para actualizar la tabla.
-            actualizarTabla();
-            document.getElementById("tareaEspecificaModal").style.display = "none";
-            // Restablecer los valores de los campos
-            document.getElementById("fechaEspecifica").value = "";
-            document.getElementById("nombreEspecifica").value = "";
-            document.getElementById("descripcionEspecifica").value = "";
-        });
-
-
-        // Función para obtener datos de la API y actualizar la tabla
-        async function actualizarTabla(data) {
-            const tablaContenido = document.getElementById("tabla-contenido");
-            tablaContenido.innerHTML = "";
-
-            data.forEach((item) => {
-                const fila = document.createElement("tr");
-
-                const descripcion = document.createElement("td");
-                descripcion.textContent = item.descripcion;
-                fila.appendChild(descripcion);
-
-                const fechaCreacion = document.createElement("td");
-                fechaCreacion.textContent = item.fecha_creacion;
-                fila.appendChild(fechaCreacion);
-
-                const prioridad = document.createElement("td");
-                prioridad.textContent = item.prioridad;
-                fila.appendChild(prioridad);
-
-                const estado = document.createElement("td");
-                estado.textContent = item.estado;
-                fila.appendChild(estado);
-
-                tablaContenido.appendChild(fila);
-            });
-        }
-
-        // Función para enviar una solicitud POST a la API para asignar una tarea
-        async function assignTask(tipo, fecha, desc, nombre) {
-            const requestData = {
-                opcion: "ASSIGN",
-                tipo: tipo,
-                fecha: fecha,
-                desc: desc,
-                nombre: nombre
-            };
-
-            const response = await fetch(apiUrl, {
+        accederBtn.addEventListener("click", async (event) => {
+            // Realiza una solicitud a la ruta "/" en tu API para ejecutar Emulador
+            fetch(`${apiUrl}/procesar_datos`, {
                 method: 'POST',
+                mode: 'cors',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json', // Ajusta el encabezado según sea necesario
+                    "Access-Control-Allow-Origin": `${apiUrl}`
                 },
-                body: JSON.stringify(requestData)
+                body: JSON.stringify({opcion: "EMULADOR"}), // Agrega los datos que deseas enviar en el cuerpo de la solicitud
+            }) 
+            .then(response => response.json()) // Supongamos que la API devuelve JSON
+            .then(data => {
+                // Maneja la respuesta de la API aquí (en "data")
+                console.log("Respuesta de la API:", data);
+                window.location.href = "./tareas.html";
+                // Puedes realizar acciones adicionales según la respuesta recibida
+            })
+            .catch(error => {
+                // Maneja cualquier error que ocurra durante la solicitud
+                console.error("Error al realizar la solicitud a la API:", error);
             });
 
-            if (response.ok) {
-                console.log("Tarea asignada con éxito");
-                // Llama a la función actualizarTabla con los nuevos datos de tareas
-                const responseActualizarTabla = await fetch(apiUrl); // Obtén los nuevos datos de tareas
-                const dataActualizarTabla = await responseActualizarTabla.json();
-                actualizarTabla(dataActualizarTabla); // Actualiza la tabla con los nuevos datos
-            } else {
-                console.error("Error al asignar la tarea");
-                // Maneja el error de acuerdo a tus necesidades
-            }
-        }
-
-        // Función para enviar una solicitud POST a la API para salir
-        async function exitTasks() {
-            const requestData = {
-                opcion: "EXIT"
-            };
-
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestData)
-            });
-
-            if (response.ok) {
-                console.log("Tareas finalizadas con éxito");
-                // Realiza cualquier acción adicional que necesites
-            } else {
-                console.error("Error al finalizar las tareas");
-                // Maneja el error de acuerdo a tus necesidades
-            }
-        }
-
-        // Llama a estas funciones cuando sea necesario desde tu página HTML, por ejemplo, en respuesta a eventos de clic en botones.
-
+            // // Verifica si la respuesta de Emulador indica éxito
+            // console.error(responseEmulador.status)
+            // if (responseEmulador.status === 200) {
+            //     // Redirige a "index.html" después de que Emulador haya terminado
+            //     window.location.href = "./index.html";
+            // } else {
+            //     console.error("La solicitud a la API no tuvo éxito.");
+            // }
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Botón y API</title>
+</head>
+<body>
+    <h1>Botón para Invocar la API</h1>
+    <button id="apiButton">Invocar API</button>
+
+    <script>
+        const apiButton = document.getElementById("apiButton");
+
+        // Agregamos un manejador de clic al botón
+        apiButton.addEventListener("click", () => {
+            // Hacemos una solicitud a la API cuando se hace clic en el botón
+            fetch("http://localhost:5000/mi_ruta_api") // Reemplaza con la URL de tu API
+                .then(response => response.json()) // Supongamos que la API devuelve JSON
+                .then(data => {
+                    // Maneja la respuesta de la API aquí (en "data")
+                    console.log("Respuesta de la API:", data);
+                    // Puedes realizar acciones adicionales según la respuesta recibida
+                })
+                .catch(error => {
+                    // Maneja cualquier error que ocurra durante la solicitud
+                    console.error("Error al realizar la solicitud a la API:", error);
+                });
+        });
+    </script>
+</body>
+</html>

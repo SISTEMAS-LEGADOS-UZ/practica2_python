@@ -11,7 +11,6 @@ def emulador():
     port = "3270"
     mylogin = 'GRUPO_03'
     mypass = 'secreto6'
-    delay=20
     delayScreen=0.5
     
     e = Emulator(visible=True)
