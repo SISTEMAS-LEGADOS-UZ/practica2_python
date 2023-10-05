@@ -1,8 +1,21 @@
-import multiprocessing
-from py3270 import Emulator
-import sys, os, time
+from lib.py3270 import Emulator
+import time
+import ctypes
 
-terminate = False
+
+def minimize_window():
+    ctypes.windll.user32.keybd_event(0x12, 0, 0, 0)  # Presiona la tecla Alt
+    ctypes.windll.user32.keybd_event(0x20, 0, 0, 0)  # Presiona la tecla Espacio
+    ctypes.windll.user32.keybd_event(0x20, 0, 2, 0)  # Suelta la tecla Espacio
+    ctypes.windll.user32.keybd_event(0x12, 0, 2, 0)  # Suelta la tecla Alt
+    ctypes.windll.user32.keybd_event(0x28, 0, 0, 0)  # Presiona la tecla flecha abajo
+    ctypes.windll.user32.keybd_event(0x28, 0, 2, 0)  # Suelta la tecla flecha abajo
+    ctypes.windll.user32.keybd_event(0x28, 0, 0, 0)  # Presiona la tecla flecha abajo
+    ctypes.windll.user32.keybd_event(0x28, 0, 2, 0)  # Suelta la tecla flecha abajo
+    ctypes.windll.user32.keybd_event(0x0D, 0, 0, 0)  # Presiona la tecla Enter
+    ctypes.windll.user32.keybd_event(0x0D, 0, 2, 0)  # Suelta la tecla Enter
+    
+
 
 def emulador():
     global e, terminate
@@ -15,6 +28,8 @@ def emulador():
     
     e = Emulator(visible=True)
     e.connect(host + ':' + port)
+    time.sleep(delayScreen)
+    minimize_window()
 
     # Patalla inicio
     time.sleep(delayScreen)
@@ -97,15 +112,16 @@ def read_line(line, file="pantalla.txt"):
 def get_tasks_general():
     resultado = []
     for num_line in range(1, 43 + 1):
-        line=read_line(num_line,"./sl-pr-2/pantalla.txt")
-        print(line)
+        line=read_line(num_line,"pantalla.txt")
         if line!=0:
             if line.find("TOTAL TASK")!=-1:
                 return resultado
             else:
                 partes = line.split(" ")
-                temp = {"fecha":partes[4],"descripcion":partes[6]}
+                print("PARTES: ",partes)
+                temp = {"fecha":partes[3],"descripcion":partes[5]}
                 resultado.append(temp)
+    return resultado
 
 def get_tasks_specific():
     resultado = []
@@ -125,26 +141,25 @@ def view_tasks():
     resultado=[]
     e.send_string("2")
     e.send_enter()
-    e.exec_command(b"Clear")
+    e.send_clear()
     e.send_string("1")
     e.send_enter()
     pantalla()
     resultado = resultado.append(get_tasks_general())
-    e.exec_command(b"Clear")
+    e.send_clear()
     e.send_string("2")
     e.send_enter()
     pantalla()
     resultado = resultado.append(get_tasks_specific())
+    resultado = " ".join(resultado)
     return resultado
 
 # Opción EXIT TASKS
 def exit_tasks():
-    global terminate
+    global e
     e.send_string("3")
     e.send_enter()
-    terminate=True
-
-if __name__ == '__main__':
-    while not terminate:
-        time.sleep(1)
+    e.send_string("off")
+    e.send_enter()
+    time.sleep(0.5)
     e.terminate()
