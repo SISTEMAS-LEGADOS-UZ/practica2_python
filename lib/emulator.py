@@ -155,6 +155,7 @@ def view_tasks():
     e.send_string("3")
     specific = get_tasks_specific()
     print("AQUÍ 3")
+    e.send_enter()
     resultado = general + specific
     print("RESULTADO: ",resultado)
     return resultado

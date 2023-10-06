@@ -14,19 +14,21 @@ def ini():
 def assign():
     datos = request.json
     assign_tasks(datos["tipo"], datos["fecha"], datos["desc"], datos["nombre"])
-    return view_tasks()
+    task = view_tasks()
+    # return (view_tasks())
+    return  task
 
 @app.route('/exit', methods=['POST'])
 def exit():
     exit_tasks()
     if os.path.exists("pantalla.txt"):
         os.remove("pantalla.txt")
-    return "ok"
+    return ("ok")
 
 @app.route('/ini', methods=['POST'])
 def ini_tasks():
     emulador()
-    return "ok"
+    return jsonify("ok")
 
 # @app.route('/procesar_datos', methods=['POST'])
 # # @app.route('/procesar_datos')

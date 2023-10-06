@@ -325,27 +325,47 @@
             const tablaContenido = document.getElementById("tabla-contenido");
             tablaContenido.innerHTML = "";
 
-            data.forEach((item) => {
+            for (var i=0; i<data.length; i++){
                 const fila = document.createElement("tr");
 
-                const descripcion = document.createElement("td");
-                descripcion.textContent = item.descripcion;
-                fila.appendChild(descripcion);
-
                 const fechaCreacion = document.createElement("td");
-                fechaCreacion.textContent = item.fecha_creacion;
+                fechaCreacion.textContent = data[i].fecha;
                 fila.appendChild(fechaCreacion);
 
-                const prioridad = document.createElement("td");
-                prioridad.textContent = item.prioridad;
-                fila.appendChild(prioridad);
+                const nombre = document.createElement("td");
+                print("NOMBRE: ", data[i].nombre)
+                nombre.textContent = data[i].nombre;
+                fila.appendChild(nombre);
 
-                const estado = document.createElement("td");
-                estado.textContent = item.estado;
-                fila.appendChild(estado);
+                const descripcion = document.createElement("td");
+                descripcion.textContent = data[i].descripcion;
+                fila.appendChild(descripcion);
 
                 tablaContenido.appendChild(fila);
-            });
+            }
+
+
+            // data.forEach((item) => {
+            //     const fila = document.createElement("tr");
+
+            //     const descripcion = document.createElement("td");
+            //     descripcion.textContent = item.descripcion;
+            //     fila.appendChild(descripcion);
+
+            //     const fechaCreacion = document.createElement("td");
+            //     fechaCreacion.textContent = item.fecha_creacion;
+            //     fila.appendChild(fechaCreacion);
+
+            //     const prioridad = document.createElement("td");
+            //     prioridad.textContent = item.prioridad;
+            //     fila.appendChild(prioridad);
+
+            //     const estado = document.createElement("td");
+            //     estado.textContent = item.estado;
+            //     fila.appendChild(estado);
+
+            //     tablaContenido.appendChild(fila);
+            // });
         }
 
         // Función para enviar una solicitud POST a la API para asignar una tarea
@@ -364,11 +384,20 @@
                     nombre: nombre
                 })
             })
-            .then(response => response.json()) // Supongamos que la API devuelve JSON
+            // .then(response => {
+            //     print("HOLA")
+            //     if (response.ok) {
+            //         // Verifica si la respuesta es exitosa (código 200)
+            //         return response.text(); // Lee el cuerpo de la respuesta como texto
+            //     } else {
+            //         throw new Error(`Respuesta de la API no exitosa: ${response.status}`);
+            //     }
+            // })
             .then(data => {
                 console.log("Tarea asignada con éxito");
+                console.log(data)
                 // Llama a la función actualizarTabla con los nuevos datos de tareas
-                actualizarTabla(data); // Actualiza la tabla con los nuevos datos
+                // actualizarTabla(data); // Actualiza la tabla con los nuevos datos
             })
             .catch(error => {
                 // Maneja cualquier error que ocurra durante la solicitud
@@ -397,7 +426,14 @@
                 },
                 body: JSON.stringify({})
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) {
+                    // Verifica si la respuesta es exitosa (código 200)
+                    return response.text(); // Lee el cuerpo de la respuesta como texto
+                } else {
+                    throw new Error(`Respuesta de la API no exitosa: ${response.status}`);
+                }
+            })
             .then(data => {
                 console.log("Tareas finalizadas con éxito");
                 window.location.href = "./index.html";

@@ -50,7 +50,7 @@
 
         accederBtn.addEventListener("click", async (event) => {
             // Realiza una solicitud a la ruta "/" en tu API para ejecutar Emulador
-            fetch(`${apiUrl}/procesar_datos`, {
+            fetch(`${apiUrl}/ini`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -61,7 +61,14 @@
                     opcion: "EMULADOR"
                 }), // Agrega los datos que deseas enviar en el cuerpo de la solicitud
             }) 
-            .then(response => response.json()) // Supongamos que la API devuelve JSON
+            .then(response => {
+                if (response.ok) {
+                    // Verifica si la respuesta es exitosa (código 200)
+                    return response.text(); // Lee el cuerpo de la respuesta como texto
+                } else {
+                    throw new Error(`Respuesta de la API no exitosa: ${response.status}`);
+                }
+            })
             .then(data => {
                 // Maneja la respuesta de la API aquí (en "data")
                 console.log("Respuesta de la API:", data);
