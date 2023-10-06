@@ -29,7 +29,6 @@ def emulador():
     e = Emulator(visible=True)
     e.connect(host + ':' + port)
     time.sleep(delayScreen)
-    minimize_window()
 
     # Patalla inicio
     time.sleep(delayScreen)
@@ -126,7 +125,7 @@ def get_tasks_general():
 def get_tasks_specific():
     resultado = []
     for num_line in range(1, 43 + 1):
-        line=read_line(num_line,"./sl-pr-2/pantalla.txt")
+        line=read_line(num_line,"pantalla.txt")
         print(line)
         if line!=0:
             if line.find("TOTAL TASK")!=-1:
@@ -135,6 +134,7 @@ def get_tasks_specific():
                 partes = line.split(" ")
                 temp = {"fecha":partes[4],"nombre":partes[5],"descripcion":partes[6]}
                 resultado.append(temp)
+    return resultado
 
 # Opción VIEW TASKS
 def view_tasks():
@@ -145,13 +145,18 @@ def view_tasks():
     e.send_string("1")
     e.send_enter()
     pantalla()
-    resultado = resultado.append(get_tasks_general())
+    print("AQUÍ 1")
+    general = get_tasks_general()
     e.send_clear()
     e.send_string("2")
     e.send_enter()
     pantalla()
-    resultado = resultado.append(get_tasks_specific())
-    resultado = " ".join(resultado)
+    print("AQUÍ 2")
+    e.send_string("3")
+    specific = get_tasks_specific()
+    print("AQUÍ 3")
+    resultado = general + specific
+    print("RESULTADO: ",resultado)
     return resultado
 
 # Opción EXIT TASKS

@@ -57,7 +57,9 @@
                     'Content-Type': 'application/json', // Ajusta el encabezado según sea necesario
                     "Access-Control-Allow-Origin": `${apiUrl}`
                 },
-                body: JSON.stringify({opcion: "EMULADOR"}), // Agrega los datos que deseas enviar en el cuerpo de la solicitud
+                body: JSON.stringify({
+                    opcion: "EMULADOR"
+                }), // Agrega los datos que deseas enviar en el cuerpo de la solicitud
             }) 
             .then(response => response.json()) // Supongamos que la API devuelve JSON
             .then(data => {

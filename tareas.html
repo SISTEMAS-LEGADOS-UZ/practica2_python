@@ -293,7 +293,7 @@
             // Ejemplo: guardarTareaGeneral(fecha, descripcion);
             assignTask(tipo, fecha, descripcion, "");
             // Luego, llama a actualizarTabla() para actualizar la tabla.
-            actualizarTabla();
+            // actualizarTabla();
             document.getElementById("tareaGeneralModal").style.display = "none";
             // Restablecer los valores de los campos
             document.getElementById("fechaGeneral").value = "";
@@ -311,7 +311,7 @@
             // Ejemplo: guardarTareaEspecifica(fecha, nombre, descripcion);
             assignTask(tipo, fecha, descripcion, nombre);
             // Luego, llama a actualizarTabla() para actualizar la tabla.
-            actualizarTabla();
+            // actualizarTabla();
             document.getElementById("tareaEspecificaModal").style.display = "none";
             // Restablecer los valores de los campos
             document.getElementById("fechaEspecifica").value = "";
@@ -350,7 +350,7 @@
 
         // Función para enviar una solicitud POST a la API para asignar una tarea
         async function assignTask(tipo, fecha, desc, nombre) {
-            fetch(`${apiUrl}/procesar_datos`, {
+            fetch(`${apiUrl}/assign`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -358,7 +358,6 @@
                     "Access-Control-Allow-Origin": `${apiUrl}`
                 },
                 body: JSON.stringify({
-                    opcion: "ASSIGN",
                     tipo: tipo,
                     fecha: fecha,
                     desc: desc,
@@ -375,28 +374,28 @@
                 // Maneja cualquier error que ocurra durante la solicitud
                 console.error("Error al realizar la solicitud a la API:", error);
             });
-            if (response.ok) {
-                console.log("Tarea asignada con éxito");
-                // Llama a la función actualizarTabla con los nuevos datos de tareas
-                const responseActualizarTabla = await fetch(apiUrl); // Obtén los nuevos datos de tareas
-                const dataActualizarTabla = await responseActualizarTabla.json();
-                actualizarTabla(dataActualizarTabla); // Actualiza la tabla con los nuevos datos
-            } else {
-                console.error("Error al asignar la tarea");
-                // Maneja el error de acuerdo a tus necesidades
-            }
+            // if (response.ok) {
+            //     console.log("Tarea asignada con éxito");
+            //     // Llama a la función actualizarTabla con los nuevos datos de tareas
+            //     const responseActualizarTabla = await fetch(apiUrl); // Obtén los nuevos datos de tareas
+            //     const dataActualizarTabla = await responseActualizarTabla.json();
+            //     actualizarTabla(dataActualizarTabla); // Actualiza la tabla con los nuevos datos
+            // } else {
+            //     console.error("Error al asignar la tarea");
+            //     // Maneja el error de acuerdo a tus necesidades
+            // }
         }
 
         // Función para enviar una solicitud POST a la API para salir
         async function exitTasks() {
-            fetch(`${apiUrl}/procesar_datos`, {
+            fetch(`${apiUrl}/exit`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',
                     "Access-Control-Allow-Origin": `${apiUrl}`
                 },
-                body: JSON.stringify({opcion: "EXIT"})
+                body: JSON.stringify({})
             })
             .then(response => response.json())
             .then(data => {
