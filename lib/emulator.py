@@ -1,6 +1,5 @@
 from lib.py3270 import Emulator
 import time
-import ctypes
 
 def emulador():
     global e
