@@ -2,21 +2,6 @@ from lib.py3270 import Emulator
 import time
 import ctypes
 
-
-def minimize_window():
-    ctypes.windll.user32.keybd_event(0x12, 0, 0, 0)  # Presiona la tecla Alt
-    ctypes.windll.user32.keybd_event(0x20, 0, 0, 0)  # Presiona la tecla Espacio
-    ctypes.windll.user32.keybd_event(0x20, 0, 2, 0)  # Suelta la tecla Espacio
-    ctypes.windll.user32.keybd_event(0x12, 0, 2, 0)  # Suelta la tecla Alt
-    ctypes.windll.user32.keybd_event(0x28, 0, 0, 0)  # Presiona la tecla flecha abajo
-    ctypes.windll.user32.keybd_event(0x28, 0, 2, 0)  # Suelta la tecla flecha abajo
-    ctypes.windll.user32.keybd_event(0x28, 0, 0, 0)  # Presiona la tecla flecha abajo
-    ctypes.windll.user32.keybd_event(0x28, 0, 2, 0)  # Suelta la tecla flecha abajo
-    ctypes.windll.user32.keybd_event(0x0D, 0, 0, 0)  # Presiona la tecla Enter
-    ctypes.windll.user32.keybd_event(0x0D, 0, 2, 0)  # Suelta la tecla Enter
-    
-
-
 def emulador():
     global e
     # Main

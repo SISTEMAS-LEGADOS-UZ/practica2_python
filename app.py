@@ -32,14 +32,12 @@ def assignGeneral():
 def assignEspecifica():
     tipo = "Especifica"
     fecha = request.form['fechaEspecifica']
-    # fecha = fecha.replace("-", "")
     desc = request.form['descripcionEspecifica']
     nombre = request.form['nombreEspecifica']
 
     print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()
-    # data = []
     print(data)
     return render_template('tareas.html', data=data)
 
@@ -51,5 +49,4 @@ def exit():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    # app.run(debug=True)
     webview.start()
