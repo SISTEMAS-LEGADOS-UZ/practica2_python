@@ -1,11 +1,13 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks
 import os
+import webview
 
 app = Flask(__name__)
+window = webview.create_window('Gestor de tareas (x3270)', app)
 
 @app.route('/')
-def formulario():
+def index():
     return render_template('index.html')
 
 @app.route('/ini', methods=['POST'])
@@ -46,25 +48,8 @@ def exit():
     exit_tasks()
     if os.path.exists("pantalla.txt"):
         os.remove("pantalla.txt")
-    return redirect("http://localhost:5000")
-
-
-# @app.route('/procesar', methods=['POST'])
-# def procesar():
-#     nombre = request.form['nombre']
-#     desc = request.form['desc']
-    
-#     # Puedes hacer lo que necesites con los datos, como almacenarlos en una base de datos
-#     # o realizar algún procesamiento adicional
-
-#     # Aquí, simplemente los imprimimos en la consola
-#     print(f'Nombre: {nombre}, Descripción: {desc}')
-
-#     data = [
-#         {"nombre": nombre, "desc": desc}
-#     ]
-    
-#     return render_template('index.html', data=data)
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    webview.start()
