@@ -1,14 +1,26 @@
 from lib.py3270 import Emulator
 import time
 
-def emulador():
+delayScreen=0.5
+
+def read_line(line, file="pantalla.txt"):
+    # Abre el archivo en modo lectura
+    with open(file, "r") as archivo:
+        lineas = archivo.readlines()  # Lee todas las líneas del archivo
+
+        if 0 <= line < len(lineas):
+            linea_deseada = lineas[line]
+            return linea_deseada.strip()  # strip() elimina los caracteres de nueva línea
+        else:
+            return 0
+
+def emulador(mylogin, mypass):
     global e
     # Main
     host = "155.210.152.51"
     port = "3270"
-    mylogin = 'GRUPO_03'
-    mypass = 'secreto6'
-    delayScreen=0.5
+    # mylogin = 'GRUPO_03'
+    # mypass = 'secreto6'
     
     e = Emulator(visible=True)
     e.connect(host + ':' + port)
@@ -29,20 +41,48 @@ def emulador():
     e.send_string(mypass)
     e.send_enter()
 
-    # Pantalla previa a comandos
+    # Chequear correcto inicio de sesion
     time.sleep(delayScreen)
-    e.wait_for_field()
-    e.send_enter()
-    time.sleep(delayScreen)
-    e.wait_for_field()
-    e.send_string('PA1')
-    e.send_enter()
+    inicio = inicio_correcto()
+    print(inicio)
+        
+    if inicio==0:
+        # Pantalla previa a comandos
+        time.sleep(delayScreen)
+        e.wait_for_field()
+        e.send_enter()
+        time.sleep(delayScreen)
+        e.wait_for_field()
+        e.send_string('PA1')
+        e.send_enter()
 
-    # Pantalla comandos
-    time.sleep(delayScreen)
-    e.wait_for_field()
-    e.send_string('tareas.c')
-    e.send_enter()
+        # Pantalla comandos
+        time.sleep(delayScreen)
+        e.wait_for_field()
+        e.send_string('tareas.c')
+        e.send_enter()
+        return 0
+    elif inicio==1:
+        e.terminate()
+        return 1
+    elif inicio==2:
+        e.terminate()
+        return 2
+
+def inicio_correcto():
+    line=e.string_get(7,2,24)
+    print("Linea 1: ",line)
+    if line=="Userid is not authorized":
+        return 1
+    line=e.string_get(7,2,18)
+    print("Linea 2: ",line)
+    if line=="Password incorrect":
+        return 1
+    line=e.string_get(1,1,16)
+    print("Linea 3: ",line)
+    if line.rstrip()=="Userid is in use":
+        return 2
+    return 0
 
 # Guardar lo que se lee por pantalla en un fichero 
 def pantalla(filename="pantalla.txt"):
@@ -57,8 +97,8 @@ def pantalla(filename="pantalla.txt"):
 
 # Opción ASSIGN TASKS
 def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
-    desc = desc.replace(" ", "_")
-    nombre = nombre.replace(" ", "_")
+    desc = '"' + desc.replace(" ", " ") + '"'
+    nombre = '"' + nombre.replace(" ", " ") + '"'
 
     e.send_string("1")
     e.send_enter()
@@ -93,21 +133,10 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     e.send_enter()
     e.delete_field()
 
-def read_line(line, file="pantalla.txt"):
-    # Abre el archivo en modo lectura
-    with open(file, "r") as archivo:
-        lineas = archivo.readlines()  # Lee todas las líneas del archivo
-
-        if 0 <= line < len(lineas):
-            linea_deseada = lineas[line]
-            return linea_deseada.strip()  # strip() elimina los caracteres de nueva línea
-        else:
-            return 0
-
-def get_tasks_general():
+def get_tasks_general(file="pantalla.txt"):
     resultado = []
     for num_line in range(0, 43 + 1):
-        line=read_line(num_line,"pantalla.txt")
+        line=read_line(num_line,file)
         if line!=0:
             if line.find("TOTAL TASK")!=-1:
                 return resultado
@@ -115,14 +144,15 @@ def get_tasks_general():
                 partes = line.split(" ")
                 print("PARTES: ",partes)
                 if partes[0]=="TASK":
-                    temp = {"fecha":partes[3],"descripcion":partes[5].replace("_", " ")}
+                    temp = {"fecha":partes[3],"descripcion":partes[5].strip('"')}
                     resultado.append(temp)
+    print("GENERAL: ", resultado)
     return resultado
 
-def get_tasks_specific():
+def get_tasks_specific(file="pantalla.txt"):
     resultado = []
     for num_line in range(0, 43 + 1):
-        line=read_line(num_line,"pantalla.txt")
+        line=read_line(num_line,file)
         print(line)
         if line!=0:
             if line.find("TOTAL TASK")!=-1:
@@ -131,8 +161,9 @@ def get_tasks_specific():
                 partes = line.split(" ")
                 print("PARTES: ",partes)
                 if partes[0]=="TASK":
-                    temp = {"fecha":partes[3],"nombre":partes[4].replace("_", " "),"descripcion":partes[5].replace("_", " ")}
+                    temp = {"fecha":partes[3],"nombre":partes[4].strip('"'),"descripcion":partes[5].strip('"')}
                     resultado.append(temp)
+    print("SPECIFIC: ", resultado)
     return resultado
 
 # Opción VIEW TASKS

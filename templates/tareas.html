@@ -193,7 +193,9 @@
                     <input type="date" id="fechaGeneral" name="fechaGeneral">
                 </div>
                 <div>
-                    <label for="descripcionGeneral">Descripción:</label>
+                    <label for="descripcionGeneral">Descripción (sin espacios):</label>
+                </div>
+                <div>
                     <input type="text" id="descripcionGeneral" name="descripcionGeneral">
                 </div>
                 <div class="btn-container">
@@ -215,11 +217,15 @@
                     <input type="date" id="fechaEspecifica" name="fechaEspecifica">
                 </div>
                 <div>
-                    <label for="nombreEspecifica">Nombre:</label>
+                    <label for="nombreEspecifica">Nombre (sin espacios):</label>
+                </div>
+                <div>
                     <input type="text" id="nombreEspecifica" name="nombreEspecifica">
                 </div>
                 <div>
-                    <label for="descripcionEspecifica">Descripción:</label>
+                    <label for="descripcionEspecifica">Descripción (sin espacios):</label>
+                </div>
+                <div>
                     <input type="text" id="descripcionEspecifica" name="descripcionEspecifica">
                 </div>
                 <div class="btn-container">
@@ -289,12 +295,19 @@
 
         function validarFormularioGeneral() {
             var fechaGeneral = document.getElementById("fechaGeneral").value;
-            var descripcionGeneral = document.getElementById("descripcionGeneral").value;
+            var descripcionGeneral = document.getElementById("descripcionGeneral").value.trim();
 
-            if (fechaGeneral.trim() === "" || descripcionGeneral.trim() === "") {
+
+            if (fechaGeneral.trim() == "" || descripcionGeneral.trim() == "") {
                 alert("Por favor, complete todos los campos.");
                 return false; // Impide que el formulario se envíe
             }
+            if (descripcionGeneral.indexOf(" ") != -1){
+                console.log("AQUI NO")
+                alert("Por favor, la descripción no puede contener espacios.");
+                return false; // Impide que el formulario se envíe
+            }
+            console.log("AQUI")
             return true; // Permite el envío del formulario si todos los campos están completos
         }
 
@@ -305,6 +318,10 @@
 
             if (fechaEspecifica.trim() === "" || nombreEspecifica.trim() === "" || descripcionEspecifica.trim() === "") {
                 alert("Por favor, complete todos los campos.");
+                return false; // Impide que el formulario se envíe
+            }
+            if (nombreEspecifica.indexOf(" ") != -1 || descripcionEspecifica.indexOf(" ") != -1){
+                alert("Por favor, la descripción y el nombre no puede contener espacios.");
                 return false; // Impide que el formulario se envíe
             }
             return true; // Permite el envío del formulario si todos los campos están completos

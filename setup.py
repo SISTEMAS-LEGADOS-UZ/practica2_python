@@ -6,7 +6,7 @@ main_script = 'app.py'
 
 # Opciones de configuración para cx_Freeze
 build_exe_options = {
-    'packages': ['flask'],
+    'packages': ['flask', 'pywebview'],
     'include_files': ['templates', 'lib'],  # Añade aquí cualquier directorio o archivo adicional que necesites
 }
 

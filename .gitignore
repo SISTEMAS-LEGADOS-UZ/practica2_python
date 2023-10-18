@@ -2,5 +2,4 @@
 pantalla.txt
 __pycache__
 build
-dist/GestorTareas
 dist/app/_internal
