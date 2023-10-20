@@ -15,13 +15,13 @@ def read_line(line, file="pantalla.txt"):
             return 0
 
 def emulador(mylogin, mypass):
-    global e
+    global e, active_window
     # Main
     host = "155.210.152.51"
     port = "3270"
     # mylogin = 'GRUPO_03'
     # mypass = 'secreto6'
-    
+
     e = Emulator(visible=True)
     e.connect(host + ':' + port)
     time.sleep(delayScreen)
@@ -44,7 +44,7 @@ def emulador(mylogin, mypass):
     # Chequear correcto inicio de sesion
     time.sleep(delayScreen)
     inicio = inicio_correcto()
-    print(inicio)
+    # print(inicio)
         
     if inicio==0:
         # Pantalla previa a comandos
@@ -71,15 +71,15 @@ def emulador(mylogin, mypass):
 
 def inicio_correcto():
     line=e.string_get(7,2,24)
-    print("Linea 1: ",line)
+    # print("Linea 1: ",line)
     if line=="Userid is not authorized":
         return 1
     line=e.string_get(7,2,18)
-    print("Linea 2: ",line)
+    # print("Linea 2: ",line)
     if line=="Password incorrect":
         return 1
     line=e.string_get(1,1,16)
-    print("Linea 3: ",line)
+    # print("Linea 3: ",line)
     if line.rstrip()=="Userid is in use":
         return 2
     return 0
@@ -142,28 +142,28 @@ def get_tasks_general(file="pantalla.txt"):
                 return resultado
             else:
                 partes = line.split(" ")
-                print("PARTES: ",partes)
+                # print("PARTES: ",partes)
                 if partes[0]=="TASK":
                     temp = {"fecha":partes[3],"descripcion":partes[5].strip('"')}
                     resultado.append(temp)
-    print("GENERAL: ", resultado)
+    # print("GENERAL: ", resultado)
     return resultado
 
 def get_tasks_specific(file="pantalla.txt"):
     resultado = []
     for num_line in range(0, 43 + 1):
         line=read_line(num_line,file)
-        print(line)
+        # print(line)
         if line!=0:
             if line.find("TOTAL TASK")!=-1:
                 return resultado
             else:
                 partes = line.split(" ")
-                print("PARTES: ",partes)
+                # print("PARTES: ",partes)
                 if partes[0]=="TASK":
                     temp = {"fecha":partes[3],"nombre":partes[4].strip('"'),"descripcion":partes[5].strip('"')}
                     resultado.append(temp)
-    print("SPECIFIC: ", resultado)
+    # print("SPECIFIC: ", resultado)
     return resultado
 
 # Opción VIEW TASKS
@@ -177,21 +177,21 @@ def view_tasks():
     e.send_enter()
     e.delete_field()
     pantalla()
-    print("AQUÍ 1")
+    # print("AQUÍ 1")
     general = get_tasks_general()
     e.send_clear()
     e.send_string("2")
     e.send_enter()
     e.delete_field()
     pantalla()
-    print("AQUÍ 2")
+    # print("AQUÍ 2")
     e.send_string("3")
     specific = get_tasks_specific()
-    print("AQUÍ 3")
+    # print("AQUÍ 3")
     e.send_enter()
     e.delete_field()
     resultado = general + specific
-    print("General: ", general, "\nEspecifica: ", specific, "\nRESULTADO: ",resultado)
+    # print("General: ", general, "\nEspecifica: ", specific, "\nRESULTADO: ",resultado)
     return resultado
 
 # Opción EXIT TASKS

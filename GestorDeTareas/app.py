@@ -2,9 +2,19 @@ from flask import Flask, render_template, request
 from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks
 import os
 import webview
+import atexit
 
-app = Flask(__name__)
-window = webview.create_window('Gestor de tareas (x3270)', app)
+app = Flask(__name__, template_folder='templates')
+window = webview.create_window('Gestor de tareas (wc3270)', app, width=1920, height=1080)
+
+# Función que se ejecutará al cerrar la aplicación
+def on_application_exit():
+    exit_tasks()  # Ejecuta tu función antes de cerrar la aplicación
+    if os.path.exists("pantalla.txt"):
+        os.remove("pantalla.txt")
+
+# Registra la función on_application_exit para que se ejecute al cerrar la aplicación
+atexit.register(on_application_exit)
 
 @app.route('/')
 def index():
@@ -29,10 +39,10 @@ def assignGeneral():
     desc = request.form['descripcionGeneral']
     nombre = ""
 
-    print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
+    # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()
-    print(data)
+    # print(data)
     return render_template('tareas.html', data=data)
 
 @app.route('/assignEspecifica', methods=['POST'])
@@ -42,10 +52,10 @@ def assignEspecifica():
     desc = request.form['descripcionEspecifica']
     nombre = request.form['nombreEspecifica']
 
-    print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
+    # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()
-    print(data)
+    # print(data)
     return render_template('tareas.html', data=data)
 
 @app.route('/exit', methods=['POST'])
