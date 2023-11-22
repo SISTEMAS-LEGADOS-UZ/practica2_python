@@ -289,7 +289,7 @@ atexit.register(on_application_exit)
 # 5. CREACIÓN DEL EJECUTABLE
 # 6. TAREAS Y DEDICACIÓN
 | **Tarea** | **Daniel Carrizo** | **Martina Gracia** | **Hector Toral** |
-|:------|:---------------|:---------------|:-------------|
+|:------|:---------------:|:---------------:|:-------------:|
 | Sesión de prácticas | 3h | 3h | 0h |
 | Pruebas con el emulador | 30min | 30min | 30min |
 | Implementación de funciones de *emulator.py* | 20h | 10h | 10h |
