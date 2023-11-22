@@ -1,3 +1,12 @@
+# INDICE
+1. [[#1. CREACIÓN DEL PROYECTO]]
+2. [[#2. CONEXIÓN CON EL EMULADOR]]
+	1. [[#2.1. EXPLICACIÓN DE EMULATOR.py]]
+	2. [[#2.2. EXPLICACIÓN DE APP.py]]
+3. [[#3. DIFICULTADES ENCONTRADAS]]
+4. [[#4. FUNCIONAMIENTO DEL PROGRAMA]]
+5. [[#5. CREACIÓN DEL EJECUTABLE]]
+6. [[#6. TAREAS Y DEDICACIÓN]]
 # 1. CREACIÓN DEL PROYECTO
 Para la realización del proyecto se ha hecho una aplicación Python usando Flax para el despliegue en la web, y con el objetivo de transformarlo en una ventana y separar la aplicación del navegador se ha usado WebView.
 
