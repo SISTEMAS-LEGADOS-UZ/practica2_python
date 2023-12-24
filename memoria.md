@@ -1,12 +1,12 @@
 # INDICE
-1. [[#1. CREACIÓN DEL PROYECTO]]
-2. [[#2. CONEXIÓN CON EL EMULADOR]]
-	1. [[#2.1. EXPLICACIÓN DE EMULATOR.py]]
-	2. [[#2.2. EXPLICACIÓN DE APP.py]]
-3. [[#3. DIFICULTADES ENCONTRADAS]]
-4. [[#4. FUNCIONAMIENTO DEL PROGRAMA]]
-5. [[#5. CREACIÓN DEL EJECUTABLE]]
-6. [[#6. TAREAS Y DEDICACIÓN]]
+```table-of-contents
+style: nestedList # TOC style (nestedList|inlineFirstLevel)
+maxLevel: 0 # Include headings up to the speficied level
+includeLinks: true # Make headings clickable
+debugInConsole: false # Print debug info in Obsidian console
+```
+> [!WARNING]
+> El indice no va en GitHub, solo en obsidian. Solo si se usa el complemento "Automatic Table of Contents". 
 # 1. CREACIÓN DEL PROYECTO
 Para la realización del proyecto se ha hecho una aplicación Python usando Flax para el despliegue en la web, y con el objetivo de transformarlo en una ventana y separar la aplicación del navegador se ha usado WebView.
 
@@ -294,8 +294,56 @@ def on_application_exit():
 atexit.register(on_application_exit)
 ```
 # 3. DIFICULTADES ENCONTRADAS
+La mayor dificultad encontrada fue la interacción entre nuestro programa y el emulador. Conseguimos encontrar una biblioteca de Python que realizaba la mayoría de interacciones con el emulador.
+
+Otra dificultad fue el hecho de gestionar cuando la pantalla se llenaba el programa fallaba porque hacía falta una interacción más para que volviese al principio. Lo solucionamos limpiando la pantalla cada vez que realizamos una acción.
+
+Por último, encontramos problemas a la hora de crear el ejecutable, pero explicaremos esta cuestión en el [5. CREACIÓN DEL EJECUTABLE](#^6cfbb1).
 # 4. FUNCIONAMIENTO DEL PROGRAMA
+## 4.1 EJECUCIÓN DEL PROGRAMA
+Para ejecutar el programa se requiere un sistema operativo Windows. Para ejecutarlo basta con clicar sobre el archivo .bat "Gestor de Tareas.bat" el se encargará de lanzar la aplicación.
+## 4.2 USO DEL PROGRAMA
+Una vez lanzada la aplicación lo primero que muestra es la ventana para iniciar sesión como se observa en la *Figura 1*. El programa no permite al usuario iniciar sesión si el nombre de usuario o la contraseña están vacíos. Una vez introducidos los datos, si son incorrectos mostrará un mensaje de error como se muestra en la *Figura 2*, en caso de que sean correctos pero ya haya otro usuario conectado con esas credenciales mostrará un mensaje como se muestra en la *Figura 3*.
+
+Una vez iniciada la sesión el programa realiza un iteración con el sistema legado para avanzar a la pantalla deseada.
+
+A continuación se muestra la ventana que permite al usuario seleccionar el tipo de tarea a crear (*Figura 3*).  Al seleccionar el botón "Nueva tarea" se abre una ventana emergente donde el usuario introduce los datos necesarios para crear dicha tarea (los datos no pueden ser vacíos). 
+
+Una vez rellenos los campos se presiona el botón "Guardar" y el programa empieza a interactuar con el sistema legado para guardar dicha tarea. Una vez que la tarea se haya guardado se volverá a la pantalla principal con la diferencia de que aparece la nueva tarea, tal y como se muestra en la *Figura 4*.
 # 5. CREACIÓN DEL EJECUTABLE
+^6cfbb1
+La creación del ejecutable no hemos podido realizarla de forma satisfactoria. Hemos probado diferentes módulos como por ejemplo pyinstaller, pyoxidizer, py2exe. Seguimos los pasos para la realización del ejecutable según la documentación de cada módulo, pero no pudimos conseguir que funcionará.
+
+Tenemos la teoría de que al usar Flask que es para servicios web no es posible realizar un ejecutable como tal. Como alternativa hemos realizado un .bat que se encarga de crear un entorno donde instala las dependencias y tras esto lanza el gestor de tareas. Al finalizar el programa el bat se encarga de la eliminación de dicho entorno. Hemos decidido realizar esto así porque es para un entorno de prácticas. En un caso real tendríamos un bat para instalar el entorno, otro para lanzar el programa y otro para eliminar el entorno simulando la instalación, la ejecución y la desinstalación del programa respectivamente.
+## 5.1 EXPLICACIÓN DE *GESTOR DE TAREAS.BAT*
+El archivo comienza creado un entorno virtual y activándolo:
+```Batch
+:: Crear el entorno virtual
+python -m venv "%VENV_PATH%"
+
+:: Activar el entorno virtual
+echo Creando entorno virtual en %VENV_PATH% ...
+call "%VENV_PATH%\Scripts\activate.bat"
+```
+Luego instala las dependencias:
+```Batch
+:: Instalar las dependencias de tu aplicación
+echo Instalando dependencias ...
+%PIP% install -r "%REQ_PATH%\requirements.txt" > nul 2>&1
+```
+Luego lanza la aplicación pero el .bat sigue ejecutándose:
+```Batch
+:: Ejecutar la aplicación Flask y esperar a que termine
+cd GestorDeTareas
+echo Lanzando Gestor de tareas (x3270) ...
+start /wait python ".\app.py"
+```
+Por último se elimina el entorno virtual:
+```Batch
+:: Eliminar el entorno virtual
+echo Eliminando entorno virtual
+rmdir /s /q "%VENV_PATH%"
+```
 # 6. TAREAS Y DEDICACIÓN
 | **Tarea** | **Daniel Carrizo** | **Martina Gracia** | **Hector Toral** |
 |:------|:---------------:|:---------------:|:-------------:|
