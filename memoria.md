@@ -1,3 +1,13 @@
+---
+tags:
+  - SL-2023_2024
+  - EINA
+Profesor:
+  - Carlos Bobed (cbobed@unizar.es) (D.0.11)
+  - Eduardo Mena (emena@unizar.es) (D.0.17)
+Asignatura:
+  - Sistemas Legados
+---
 # INDICE
 ```table-of-contents
 style: nestedList # TOC style (nestedList|inlineFirstLevel)
@@ -315,20 +325,32 @@ Una vez rellenos los campos se presiona el botón "Guardar" y el programa empiez
 La creación del ejecutable no hemos podido realizarla de forma satisfactoria. Hemos probado diferentes módulos como por ejemplo pyinstaller, pyoxidizer, py2exe. Seguimos los pasos para la realización del ejecutable según la documentación de cada módulo, pero no pudimos conseguir que funcionará.
 
 Tenemos la teoría de que al usar Flask que es para servicios web no es posible realizar un ejecutable como tal. Como alternativa hemos realizado un .bat que se encarga de crear un entorno donde instala las dependencias y tras esto lanza el gestor de tareas. Al finalizar el programa el bat se encarga de la eliminación de dicho entorno. Hemos decidido realizar esto así porque es para un entorno de prácticas. En un caso real tendríamos un bat para instalar el entorno, otro para lanzar el programa y otro para eliminar el entorno simulando la instalación, la ejecución y la desinstalación del programa respectivamente.
-## 5.1 EXPLICACIÓN DE *GESTOR DE TAREAS.BAT*
-El archivo comienza creado un entorno virtual y activándolo:
+## 5.1 EXPLICACIÓN DE *GESTORDETAREAS.BAT*
+*GestorDeTareas.bat* es un archivo que lanza otros dos archivos .bat. Este fichero se ha creado para cumplir con uno de los requisitos de la práctica que es que se tiene que poder lanzar haciendo click a un solo fichero. Este fichero lanza un primer fichero (*launcher.bat*) que es el encargado de lanzar el programa y luego lanza un segundo fichero (*uninstaller.bat*) que es el encargado de eliminar el entorno virtual. Esta eliminación se hace en un fichero a parte, porque en el caso de querer lanzar varias veces la aplicación el no eliminar el entorno virtual acelera mucho el relanzar la aplicación.
+
+El archivo *launcher.bat* comienza chequeando si Python está instalado:
+```Batch
+:: Verificar si Python está instalado
+python --version > nul 2>&1
+if %errorlevel% neq 0 (
+    echo Python no está instalado. Por favor, instale Python antes de continuar.
+    pause
+    exit /b 1
+)
+```
+Luego crea un entorno virtual y lo activa:
 ```Batch
 :: Crear el entorno virtual
 python -m venv "%VENV_PATH%"
-
+  
 :: Activar el entorno virtual
-echo Creando entorno virtual en %VENV_PATH% ...
+echo Creando entorno virtual en %VENV_PATH% si es necesario ...
 call "%VENV_PATH%\Scripts\activate.bat"
 ```
 Luego instala las dependencias:
 ```Batch
 :: Instalar las dependencias de tu aplicación
-echo Instalando dependencias ...
+echo Instalando dependencias si es necesario ...
 %PIP% install -r "%REQ_PATH%\requirements.txt" > nul 2>&1
 ```
 Luego lanza la aplicación pero el .bat sigue ejecutándose:
@@ -338,11 +360,13 @@ cd GestorDeTareas
 echo Lanzando Gestor de tareas (x3270) ...
 start /wait python ".\app.py"
 ```
-Por último se elimina el entorno virtual:
+
+El archivo *uninstaller.bat* elimina el entorno virtual creado en *launcher.bat*, si no existiera dicho entorno , no haría nada.
 ```Batch
 :: Eliminar el entorno virtual
-echo Eliminando entorno virtual
+echo Eliminando entorno virtual...
 rmdir /s /q "%VENV_PATH%"
+echo Eliminado
 ```
 # 6. TAREAS Y DEDICACIÓN
 | **Tarea** | **Daniel Carrizo** | **Martina Gracia** | **Hector Toral** |
