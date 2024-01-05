@@ -1,13 +1,3 @@
----
-tags:
-  - SL-2023_2024
-  - EINA
-Profesor:
-  - Carlos Bobed (cbobed@unizar.es) (D.0.11)
-  - Eduardo Mena (emena@unizar.es) (D.0.17)
-Asignatura:
-  - Sistemas Legados
----
 # INDICE
 ```table-of-contents
 style: nestedList # TOC style (nestedList|inlineFirstLevel)
@@ -18,7 +8,7 @@ debugInConsole: false # Print debug info in Obsidian console
 > [!WARNING]
 > El indice no va en GitHub, solo en obsidian. Solo si se usa el complemento "Automatic Table of Contents". 
 # 1. CREACIÓN DEL PROYECTO
-Para la realización del proyecto se ha hecho una aplicación Python usando Flax para el despliegue en la web, y con el objetivo de transformarlo en una ventana y separar la aplicación del navegador se ha usado WebView.
+Para la realización del proyecto se ha hecho una aplicación Python usando Flask para el despliegue en la web, y con el objetivo de transformarlo en una ventana y separar la aplicación del navegador se ha usado WebView.
 
 Es importante comentar que para poder realizar el proyecto tuvimos que descargarnos el emulador wc3270 y guardar el ejecutable en la carpeta de nuestro proyecto, para que el mismo proyecto pudiese lanzarlo.
 # 2. CONEXIÓN CON EL EMULADOR
@@ -42,7 +32,7 @@ Con todo esto la configuración de nuestro proyecto, por ahora, es la siguiente:
 ```
 
 Para que el código fuese legible las funciones que tenían que ver con interacción con el emulador se agruparon en un fichero a parte del de la aplicación principal (fichero *emulator.py*).
-## 2.1. EXPLICACIÓN DE *EMULATOR.py*
+## 2.1. EXPLICACIÓN DE *EMULATOR.PY*
 El fichero *emulador.py* cuenta con 5 funciones que sirven para gestionar la interacción entre nuestra aplicación y la aplicación legada. Este fichero también cuenta con 4 funciones auxiliares.
 
 La función *emulador(mylogin, mypass)* es la encargada de lanzar el emulador y de introducir en la aplicación legada las claves de inicio de sesión introducidas por el usuario. Esta aplicación devuelve un 0 en caso de que el inicio de sesión haya sido exitoso, devuelve 1 en caso de que el usuario o la contraseña sean incorrectos, y devuelve 2 en caso el usuario ya este en uso, es decir, ya haya un inicio de sesión con ese usuario.
@@ -234,7 +224,7 @@ def exit_tasks():
     time.sleep(0.5)
     e.terminate()
 ```
-## 2.2. EXPLICACIÓN DE APP.py
+## 2.2. EXPLICACIÓN DE *APP.PY*
 La aplicación cuenta con un código principal en el que se despliega la aplicación y se crea la ventana del Gestor de tareas (wc3270).  A parte, tiene también 5 funciones que son las encargadas de gestionar las diferentes peticiones que realicen a nuestra aplicación. Además hay 1 función que solo se ejecutará al cerrar la aplicación.
 
 La primera función se encarga de la gestión en la ruta "/".  Esta simplemente se encarga de renderizar "index_inicio.html" donde el usuario podrá iniciar sesión con sus credenciales. (*mylogin=GRUPO_03*, *mypass=SECRETO6*).
@@ -376,5 +366,5 @@ echo Eliminado
 | Implementación de funciones de *emulator.py* | 20h | 10h | 10h |
 | Implementación de funciones de *app.py* | 20h | 10h | 10h |
 | Creación de fichero "html" | 15min | 15min | 15min |
-| Creación del ejecutable | 10h | 2h | 2h |
-| Total | 53h y 45min | 25h y 45min | 22h y 45min |
+| Creación del ejecutable | 5h | 2h | 2h |
+| Total | 48h y 45min | 25h y 45min | 22h y 45min |
