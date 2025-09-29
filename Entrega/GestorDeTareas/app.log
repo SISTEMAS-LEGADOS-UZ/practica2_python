@@ -1,22 +1,222 @@
-2025-09-29 13:52:48,097 INFO root: Intento de login para usuario: grupo_15
-2025-09-29 13:55:25,030 ERROR root: Fallo inesperado en emulador
+2025-09-29 20:38:11,493 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 20:38:11,494 INFO root: [TN3270] Lanzando emulador visible y conectando a 155.210.152.51:3270
+2025-09-29 20:38:15,530 INFO root: [TN3270] Analizando pantalla inicial por 'More...'/ENTER prompt
+2025-09-29 21:55:42,291 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 21:55:42,291 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 21:55:42,292 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 21:55:45,827 INFO root: Pantalla de Music Mainframe
+2025-09-29 21:55:45,828 INFO root: Esperando campo inicial...
+2025-09-29 22:01:39,469 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:01:39,469 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:01:39,470 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:01:42,495 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:01:42,496 INFO root: Esperando campo inicial...
+2025-09-29 22:08:29,910 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:08:29,912 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:08:29,913 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:08:32,959 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:08:32,961 INFO root: Esperando campo inicial...
+2025-09-29 22:15:05,681 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:15:05,682 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:15:05,682 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:15:08,720 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:15:08,721 INFO root: Esperando campo inicial...
+2025-09-29 22:16:33,095 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:16:33,095 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:16:33,111 ERROR root: Error durante la ejecución de emulador(): [WinError 2] El sistema no puede encontrar el archivo especificado
 Traceback (most recent call last):
-  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\app.py", line 40, in ini
-    e = emulador(last_user, last_passwd)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 47, in emulador
-    e.send_enter()
-  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 416, in send_enter
-    self.exec_command(b"Enter")
-  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 49, in emulador
+    e = Emulator()
+        ^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 273, in __init__
+    self.app = app or self.create_app(visible, args)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 291, in create_app
+    return Ws3270App(args)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 140, in __init__
+    self.spawn_app()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 144, in spawn_app
+    self.sp = subprocess.Popen(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado
+2025-09-29 22:16:33,142 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-29 22:24:59,021 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:24:59,021 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:24:59,036 ERROR root: Error durante la ejecución de emulador(): [WinError 2] El sistema no puede encontrar el archivo especificado
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 49, in emulador
+    e = Emulator()
+        ^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 273, in __init__
+    self.app = app or self.create_app(visible, args)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 291, in create_app
+    return Ws3270App(args)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 140, in __init__
+    self.spawn_app()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 144, in spawn_app
+    self.sp = subprocess.Popen(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado
+2025-09-29 22:24:59,043 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-29 22:29:02,588 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:29:02,589 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:29:02,589 INFO root: [TN3270] wc3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-29 22:29:02,589 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:29:05,619 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:29:05,621 INFO root: Esperando campo inicial...
+2025-09-29 22:29:22,421 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:29:22,422 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:29:22,422 INFO root: [TN3270] wc3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-29 22:29:22,422 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:29:24,429 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:29:24,429 INFO root: Esperando campo inicial...
+2025-09-29 22:30:46,877 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:30:46,877 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:30:46,877 INFO root: [TN3270] wc3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-29 22:30:46,879 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:30:49,924 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:30:49,925 INFO root: Esperando campo inicial...
+2025-09-29 22:39:41,085 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:39:41,086 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:39:41,086 WARNING root: [TN3270] wc3270.exe no encontrado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Asegura que esté en PATH.
+2025-09-29 22:39:41,086 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:39:43,115 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:39:46,146 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:39:49,192 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:39:52,218 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:39:55,264 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:20,400 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:42:20,400 INFO root: [TN3270] Creando instancia de Emulator (visible)
+2025-09-29 22:42:20,401 WARNING root: [TN3270] wc3270.exe no encontrado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Asegura que esté en PATH.
+2025-09-29 22:42:20,402 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:42:22,453 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:25,481 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:28,518 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:31,567 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:34,599 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:37,641 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:40,697 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:43,740 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:46,761 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:49,789 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:52,829 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:55,860 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:42:58,901 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:43:01,948 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:43:04,998 WARNING lib.py3270: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-09-29 22:43:08,001 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:43:08,001 INFO root: Esperando campo inicial...
+2025-09-29 22:43:08,001 ERROR root: Error durante la ejecución de emulador(): [WinError 10057] No se permitió una solicitud para enviar o recibir datos ya que el socket no está conectado y no se ha proporcionado ninguna dirección, al realizar el envío en un socket de datagramas por medio de una llamada sendto
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
     c.execute()
-  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 75, in execute
-    line = self.app.readline()
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 244, in readline
-    return self.socket_fh.readline()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Python312\Lib\socket.py", line 720, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 68, in execute
+    self.app.write(self.cmdstr + b"\n")
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 239, in write
+    self.socket_fh.flush()
+  File "C:\Python312\Lib\socket.py", line 738, in write
+    return self._sock.send(b)
+           ^^^^^^^^^^^^^^^^^^
+OSError: [WinError 10057] No se permitió una solicitud para enviar o recibir datos ya que el socket no está conectado y no se ha proporcionado ninguna dirección, al realizar el envío en un socket de datagramas por medio de una llamada sendto
+2025-09-29 22:43:08,005 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-29 22:44:36,677 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:44:36,679 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-29 22:44:36,680 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-29 22:44:36,932 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:44:39,304 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:44:39,305 INFO root: Esperando campo inicial...
+2025-09-29 22:45:09,310 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-29 22:45:09,317 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-29 22:45:32,779 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 22:45:32,779 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-29 22:45:32,780 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-29 22:45:32,787 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 22:45:35,161 INFO root: Pantalla de Music Mainframe
+2025-09-29 22:45:35,162 INFO root: Esperando campo inicial...
+2025-09-29 22:45:35,198 INFO root: Pantalla de login
+2025-09-29 22:45:36,200 INFO root: Esperando campo de usuario...
+2025-09-29 22:45:36,237 INFO root: Esperando campo de contraseña...
+2025-09-29 22:45:37,274 INFO root: Comprobando resultado del login...
+2025-09-29 22:45:37,277 INFO root: Inicio de sesión exitoso
+2025-09-29 22:45:37,278 INFO root: Pantalla de espera -> ENTER
+2025-09-29 22:45:37,313 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-29 22:45:39,464 INFO root: Pantalla menú de tareas
+2025-09-29 22:45:40,496 INFO root: Pantalla menú listar tareas
+2025-09-29 22:45:42,533 INFO root: Listar todas las tareas
+2025-09-29 22:45:44,061 INFO root: procesar_tareas(): 0 elementos
+2025-09-29 22:45:46,062 INFO root: Conexión terminada correctamente
+2025-09-29 22:45:46,063 INFO root: Login correcto, mostrando tareas
+2025-09-29 22:50:56,520 ERROR app: Exception on /assignGeneral [POST]
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\app.py", line 66, in assignGeneral
+    assign_tasks(tipo, fecha, desc, nombre)
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 257, in assign_tasks
+    e.send_string("1")
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-29 23:07:20,496 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 23:07:20,497 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-29 23:07:20,498 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-29 23:07:20,784 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-29 23:07:23,183 INFO root: Pantalla de Music Mainframe
+2025-09-29 23:07:23,184 INFO root: Esperando campo inicial...
+2025-09-29 23:07:53,190 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2_anterior\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-29 23:07:53,194 ERROR root: Código de retorno inesperado de emulador: -1

@@ -1,0 +1,43 @@
+                                                                               
+                                                                               
+                                                                               
+                                  VIEW TASKS                                   
+                                  **********                                   
+                                                                               
+                                                                               
+                              1 - GENERAL TASKS                                
+                                                                               
+                                                                               
+                              2 - SPECIFIC TASKS                               
+                                                                               
+                                                                               
+                              3 - ALL TASKS                                    
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+2                                                                              
+   LIST OF SPECIFIC TASKS:                                                     
+                                                                               
+        TASK #1: SPECIFIC 1 1 1                                                
+                                                                               
+   TOTAL TASKS: 1                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  

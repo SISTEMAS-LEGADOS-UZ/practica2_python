@@ -1,6 +1,7 @@
 from lib.py3270 import Emulator
 import time
 import logging
+import os
 
 delayScreen=1.5
 
@@ -15,96 +16,170 @@ def read_line(line, file="pantalla.txt"):
         else:
             return 0
 
-def emulador(mylogin, mypass):
-    global e, active_window
-    # Main
-    host = "155.210.152.51" 
-    port = "3270"
-    # Usar las credenciales recibidas; no sobreescribir
-
-    # Conectar con manejo de errores y garantizando una espera mínima
-    e = None
-    conn_start = time.time()
-    try:
-        e = Emulator(visible=True, timeout=10)
-        e.connect(host + ':' + port)
-        time.sleep(delayScreen)
-    except Exception as ex:
-        logging.getLogger(__name__).exception("Error conectando a %s:%s", host, port)
-        # Asegurar al menos 1s entre intento de conexión y terminar
-        elapsed = time.time() - conn_start
-        if elapsed < 1.0:
-            time.sleep(1.0 - elapsed)
+def _get_screen_text():
+    """Lee el contenido de la pantalla actual como una cadena."""
+    lines = []
+    for row in range(1, 43 + 1):
         try:
-            if e is not None:
+            line = e.string_get(row, 1, 79)
+        except Exception:
+            line = ""
+        lines.append(line)
+    return "\n".join(lines)
+
+def emulador(mylogin, mypass):
+    """Implementa el flujo solicitado: conexión, login, navegación a tasks.c y listado de todas las tareas.
+
+    Retorna:
+      0 -> login correcto y flujo ejecutado
+      1 -> no autorizado / contraseña incorrecta / fallo conexión
+      2 -> usuario en uso
+     -1 -> error no controlado
+    """
+    global e
+    host = "155.210.152.51:3270"
+
+    # Parámetros de espera del snippet
+    retardo1 = 2
+    retardo2 = 1
+    login = -1
+
+    try:
+        # Preparar PATH para ws3270.exe (está en la carpeta padre de lib)
+        logging.info("[TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)")
+        try:
+            base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+            ws_exe = os.path.join(base_dir, "ws3270.exe")
+            if os.path.exists(ws_exe):
+                os.environ["PATH"] = base_dir + os.pathsep + os.environ.get("PATH", "")
+                logging.info("[TN3270] ws3270 detectado en %s. Añadido al PATH.", base_dir)
+            else:
+                logging.warning("[TN3270] ws3270.exe no encontrado en %s. Asegura que esté en PATH.", base_dir)
+        except Exception:
+            logging.exception("[TN3270] No se pudo preparar PATH para ws3270.exe")
+
+        # Crear e inicializar emulador NO visible (en Windows usa Ws3270App)
+        e = Emulator()
+
+        # Conectar al emulador
+        logging.info("[TN3270] Conectando a %s", host)
+        e.connect(host)
+        time.sleep(retardo1)
+        logging.info("Pantalla de Music Mainframe")
+
+        # Esperar campo inicial y avanzar
+        logging.info("Esperando campo inicial...")
+        e.wait_for_field()
+        e.send_enter()
+
+        logging.info("Pantalla de login")
+        time.sleep(retardo2)
+        logging.info("Esperando campo de usuario...")
+        e.wait_for_field()
+
+        # Usuario
+        e.send_string(str(mylogin))
+        e.send_enter()
+
+        # Contraseña
+        logging.info("Esperando campo de contraseña...")
+        e.wait_for_field()
+        e.send_string(str(mypass))
+        e.send_enter()
+
+        # Verificar inicio de sesión correcto
+        time.sleep(retardo2)
+        logging.info("Comprobando resultado del login...")
+        login = comprobar_salida_login(e)
+
+        if login == 0:
+            logging.info("Inicio de sesión exitoso")
+            logging.info("Pantalla de espera -> ENTER")
+            e.wait_for_field()
+            e.send_enter()
+
+            logging.info("Pantalla de comandos; ejecutando tasks.c")
+            time.sleep(retardo2)
+            e.wait_for_field()
+            e.send_string("tasks.c")
+            e.send_enter()
+
+            # Menú tareas
+            time.sleep(retardo2)
+            logging.info("Pantalla menú de tareas")
+
+            # Listar tareas -> opción 2
+            time.sleep(retardo2)
+            e.wait_for_field()
+            e.send_string("2")
+            e.send_enter()
+            logging.info("Pantalla menú listar tareas")
+            time.sleep(retardo2)
+
+            # Listar todas las tareas -> opción 2
+            time.sleep(retardo2)
+            e.wait_for_field()
+            e.send_string("2")
+            e.send_enter()
+            logging.info("Listar todas las tareas")
+
+            time.sleep(retardo2)
+            # Guardar pantalla en HTML si es posible; si no, fallback a txt envuelto en <pre>
+            filename_html = "pantalla_lista_todas_las_tareas.html"
+            try:
+                if hasattr(e, "save_screen"):
+                    e.save_screen(filename_html)
+                else:
+                    raise AttributeError("save_screen no disponible")
+            except Exception:
+                try:
+                    # Captura a txt y vuelca como HTML simple
+                    pantalla("pantalla_lista_todas_las_tareas.txt")
+                    with open("pantalla_lista_todas_las_tareas.txt", "r", encoding="utf-8", errors="ignore") as f_in, \
+                         open(filename_html, "w", encoding="utf-8") as f_out:
+                        f_out.write("<html><body><pre>\n")
+                        f_out.write(f_in.read())
+                        f_out.write("\n</pre></body></html>")
+                except Exception:
+                    logging.exception("No se pudo guardar la pantalla de listado de tareas")
+
+            # Obtención y procesamiento opcional (placeholders compatibles con el snippet)
+            lista_tareas = obtener_estructura_tareas(e)
+            procesar_tareas(lista_tareas)
+
+            return 0
+        elif login == 1:
+            logging.warning("Error: Usuario no autorizado o contraseña incorrecta")
+            try:
+                e.terminate()
+            except Exception:
+                pass
+            return 1
+        elif login == 2:
+            logging.warning("Error: Usuario ya en uso")
+            try:
+                e.terminate()
+            except Exception:
+                pass
+            return 2
+
+    except Exception as ex:
+        logging.exception("Error durante la ejecución de emulador(): %s", ex)
+        try:
+            if 'e' in globals() and e:
                 e.terminate()
         except Exception:
             pass
-        return 1
-
-    # Pantalla inicio
-    time.sleep(delayScreen)
-    e.send_enter()
-    time.sleep(1.0)
-    time.sleep(delayScreen)
-
-    # Pantalla Login
-    time.sleep(delayScreen)
-    try:
-        # Usuario
-        e.wait_for_field()
-        e.send_string(str(mylogin or "").upper())
-        e.send_enter()
-        time.sleep(1.0)
-        # Contraseña
-        e.wait_for_field()
-        e.send_string(str(mypass or ""))
-        e.send_enter()
-        time.sleep(1.0)
-        time.sleep(delayScreen)
-    except Exception as ex:
-        logging.getLogger(__name__).exception("Error durante la secuencia de login: %s", ex)
-        elapsed = time.time() - conn_start
-        if elapsed < 1.0:
-            time.sleep(1.0 - elapsed)
+        return -1
+    finally:
+        # Cerrar la conexión de forma correcta si el login fue OK
         try:
-            e.terminate()
+            if login == 0 and 'e' in globals() and e:
+                time.sleep(retardo1)
+                e.terminate()
+                logging.info("Conexión terminada correctamente")
         except Exception:
             pass
-        return 1
-
-    # Chequear correcto inicio de sesion
-    time.sleep(delayScreen)
-    inicio = inicio_correcto()
-    # print(inicio)
-        
-    if inicio==0:
-        # Pantalla previa a comandos
-        time.sleep(delayScreen)
-        e.wait_for_field()
-        e.send_enter()
-        time.sleep(1.0)
-        time.sleep(delayScreen)
-        e.wait_for_field()
-        # Enviar la tecla de atención previa si procede (mantener comportamiento original)
-        e.send_string('PA1')
-        e.send_enter()
-        time.sleep(1.0)
-
-        # Pantalla comandos
-        time.sleep(delayScreen)
-        e.wait_for_field()
-        e.send_string('tasks.c')
-        e.send_enter()
-        time.sleep(1.0)
-        time.sleep(delayScreen)
-        return 0
-    elif inicio==1:
-        e.terminate()
-        return 1
-    elif inicio==2:
-        e.terminate()
-        return 2
 
 def inicio_correcto():
     line=e.string_get(7,2,24)
@@ -121,6 +196,27 @@ def inicio_correcto():
         return 2
     return 0
 
+def comprobar_salida_login(em=None):
+    """Equivalente a inicio_correcto() pero con firma compatible con el snippet."""
+    try:
+        _e = em if em is not None else e
+        if _e is None:
+            return 1
+        # Reutilizamos la lógica existente
+        line=_e.string_get(7,2,24)
+        if line=="Userid is not authorized":
+            return 1
+        line=_e.string_get(7,2,18)
+        if line=="Password incorrect":
+            return 1
+        line=_e.string_get(1,1,16)
+        if line.rstrip()=="Userid is in use":
+            return 2
+        return 0
+    except Exception:
+        logging.exception("Error comprobando la salida del login")
+        return 1
+
 def pantalla(filename="pantalla.txt"):
     time.sleep(0.5)
     screen_content = ''
@@ -130,6 +226,28 @@ def pantalla(filename="pantalla.txt"):
     archivo = open(filename, "w")
     archivo.write(screen_content)
     archivo.close()
+
+def obtener_estructura_tareas(em=None):
+    """Placeholder compatible con el snippet: obtiene estructura de la pantalla actual.
+
+    Si quieres un parseo real, puedes combinar get_tasks_general/specific
+    navegando los submenús, pero aquí devolvemos una lista vacía o el
+    contenido crudo si se quiere enriquecer más adelante.
+    """
+    try:
+        pantalla("pantalla_lista_todas_las_tareas.txt")
+        # Retornar estructura vacía por defecto (no usada por la app Flask actual)
+        return []
+    except Exception:
+        logging.exception("No se pudo obtener la estructura de tareas")
+        return []
+
+def procesar_tareas(lista_tareas):
+    """Placeholder: registra el conteo de tareas; pensado para desarrollo local."""
+    try:
+        logging.info("procesar_tareas(): %d elementos", len(lista_tareas) if lista_tareas is not None else 0)
+    except Exception:
+        pass
 
 # Opción ASSIGN TASKS
 def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):

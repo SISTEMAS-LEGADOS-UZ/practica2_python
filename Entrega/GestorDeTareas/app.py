@@ -6,7 +6,7 @@ import atexit
 import logging
 
 app = Flask(__name__, template_folder='templates')
-window = webview.create_window('Gestor de tareas (wc3270)', app, width=1920, height=1080)
+window = webview.create_window('Gestor de tareas (ws3270)', app, width=1920, height=1080)
 
 # Logging básico a archivo para diagnosticar problemas en producción
 logging.basicConfig(
@@ -33,8 +33,8 @@ def index():
 
 @app.route('/ini', methods=['POST'])
 def ini():
-    last_user = request.form['grupo_15']
-    last_passwd = request.form['secreto6']
+    last_user = request.form['usuario']
+    last_passwd = request.form['contrasena']
     logging.info('Intento de login para usuario: %s', last_user)
     try:
         e = emulador(last_user, last_passwd)
