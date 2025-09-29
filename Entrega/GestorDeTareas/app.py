@@ -3,9 +3,20 @@ from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks
 import os
 import webview
 import atexit
+import logging
 
 app = Flask(__name__, template_folder='templates')
 window = webview.create_window('Gestor de tareas (wc3270)', app, width=1920, height=1080)
+
+# Logging básico a archivo para diagnosticar problemas en producción
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s %(name)s: %(message)s',
+    handlers=[
+        logging.FileHandler('app.log', encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
 
 # Función que se ejecutará al cerrar la aplicación
 def on_application_exit():
@@ -22,15 +33,27 @@ def index():
 
 @app.route('/ini', methods=['POST'])
 def ini():
-    last_user = request.form['usuario']
-    last_passwd = request.form['contrasena'] 
-    e = emulador(last_user,last_passwd)
-    if e==0:
-        return render_template('tareas.html')  
-    elif e==1:
+    last_user = request.form['grupo_15']
+    last_passwd = request.form['secreto6']
+    logging.info('Intento de login para usuario: %s', last_user)
+    try:
+        e = emulador(last_user, last_passwd)
+    except Exception:
+        logging.exception('Fallo inesperado en emulador')
         return render_template('index_inicio_error.html')
-    elif e==2:
+
+    if e == 0:
+        logging.info('Login correcto, mostrando tareas')
+        return render_template('tareas.html')
+    elif e == 1:
+        logging.warning('Login rechazado o fallo de conexión')
+        return render_template('index_inicio_error.html')
+    elif e == 2:
+        logging.warning('Usuario en uso; render ocupada')
         return render_template('index_inicio_ocupado.html')
+    else:
+        logging.error('Código de retorno inesperado de emulador: %r', e)
+        return render_template('index_inicio_error.html')
 
 @app.route('/assignGeneral', methods=['POST'])
 def assignGeneral():

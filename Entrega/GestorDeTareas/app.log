@@ -1,0 +1,22 @@
+2025-09-29 13:52:48,097 INFO root: Intento de login para usuario: grupo_15
+2025-09-29 13:55:25,030 ERROR root: Fallo inesperado en emulador
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\app.py", line 40, in ini
+    e = emulador(last_user, last_passwd)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 47, in emulador
+    e.send_enter()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 416, in send_enter
+    self.exec_command(b"Enter")
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 75, in execute
+    line = self.app.readline()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 244, in readline
+    return self.socket_fh.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto

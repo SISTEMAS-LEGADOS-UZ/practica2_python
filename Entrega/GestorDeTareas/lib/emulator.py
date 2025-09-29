@@ -1,7 +1,8 @@
 from lib.py3270 import Emulator
 import time
+import logging
 
-delayScreen=0.5
+delayScreen=1.5
 
 def read_line(line, file="pantalla.txt"):
     # Abre el archivo en modo lectura
@@ -17,29 +18,60 @@ def read_line(line, file="pantalla.txt"):
 def emulador(mylogin, mypass):
     global e, active_window
     # Main
-    host = "155.210.152.51"
+    host = "155.210.152.51" 
     port = "3270"
-    # mylogin = 'GRUPO_03'
-    # mypass = 'secreto6'
+    # Usar las credenciales recibidas; no sobreescribir
 
-    e = Emulator(visible=True)
-    e.connect(host + ':' + port)
-    time.sleep(delayScreen)
+    # Conectar con manejo de errores y garantizando una espera mínima
+    e = None
+    conn_start = time.time()
+    try:
+        e = Emulator(visible=True, timeout=10)
+        e.connect(host + ':' + port)
+        time.sleep(delayScreen)
+    except Exception as ex:
+        logging.getLogger(__name__).exception("Error conectando a %s:%s", host, port)
+        # Asegurar al menos 1s entre intento de conexión y terminar
+        elapsed = time.time() - conn_start
+        if elapsed < 1.0:
+            time.sleep(1.0 - elapsed)
+        try:
+            if e is not None:
+                e.terminate()
+        except Exception:
+            pass
+        return 1
 
-    # Patalla inicio
+    # Pantalla inicio
     time.sleep(delayScreen)
     e.send_enter()
+    time.sleep(1.0)
+    time.sleep(delayScreen)
 
     # Pantalla Login
     time.sleep(delayScreen)
-    ## Usuario
-    e.wait_for_field()
-    e.send_string(mylogin)
-    e.send_enter()
-    ## Contraseña
-    e.wait_for_field()
-    e.send_string(mypass)
-    e.send_enter()
+    try:
+        # Usuario
+        e.wait_for_field()
+        e.send_string(str(mylogin or "").upper())
+        e.send_enter()
+        time.sleep(1.0)
+        # Contraseña
+        e.wait_for_field()
+        e.send_string(str(mypass or ""))
+        e.send_enter()
+        time.sleep(1.0)
+        time.sleep(delayScreen)
+    except Exception as ex:
+        logging.getLogger(__name__).exception("Error durante la secuencia de login: %s", ex)
+        elapsed = time.time() - conn_start
+        if elapsed < 1.0:
+            time.sleep(1.0 - elapsed)
+        try:
+            e.terminate()
+        except Exception:
+            pass
+        return 1
 
     # Chequear correcto inicio de sesion
     time.sleep(delayScreen)
@@ -51,16 +83,21 @@ def emulador(mylogin, mypass):
         time.sleep(delayScreen)
         e.wait_for_field()
         e.send_enter()
+        time.sleep(1.0)
         time.sleep(delayScreen)
         e.wait_for_field()
+        # Enviar la tecla de atención previa si procede (mantener comportamiento original)
         e.send_string('PA1')
         e.send_enter()
+        time.sleep(1.0)
 
         # Pantalla comandos
         time.sleep(delayScreen)
         e.wait_for_field()
-        e.send_string('tareas.c')
+        e.send_string('tasks.c')
         e.send_enter()
+        time.sleep(1.0)
+        time.sleep(delayScreen)
         return 0
     elif inicio==1:
         e.terminate()
@@ -84,7 +121,6 @@ def inicio_correcto():
         return 2
     return 0
 
-# Guardar lo que se lee por pantalla en un fichero 
 def pantalla(filename="pantalla.txt"):
     time.sleep(0.5)
     screen_content = ''
