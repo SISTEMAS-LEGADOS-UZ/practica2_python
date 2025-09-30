@@ -61,7 +61,7 @@ def assignGeneral():
     fecha = request.form['fechaGeneral']
     desc = request.form['descripcionGeneral']
     nombre = ""
-
+    
     # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()
@@ -74,7 +74,7 @@ def assignEspecifica():
     fecha = request.form['fechaEspecifica']
     desc = request.form['descripcionEspecifica']
     nombre = request.form['nombreEspecifica']
-
+    logging.info(f'Asignando tarea especifica: FECHA={fecha}, NOMBRE={nombre}  DESCRIPCION={desc}')
     # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()

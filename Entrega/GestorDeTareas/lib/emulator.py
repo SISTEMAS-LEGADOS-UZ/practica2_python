@@ -253,39 +253,71 @@ def procesar_tareas(lista_tareas):
 def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     desc = '"' + desc.replace(" ", " ") + '"'
     nombre = '"' + nombre.replace(" ", " ") + '"'
-
+    
+    logging.info(f'Asignando tarea especifica: FECHA={fecha}, NOMBRE={nombre}  DESCRIPCION={desc} TIPO={tipo}')
+   
+    e.wait_for_field()
     e.send_string("1")
+    logging.info("send string 1 check")
     e.send_enter()
+    logging.info("send enter 1 check")
     e.delete_field()
 
     if tipo=="General":
         e.send_string("1")
         e.send_enter()
         e.delete_field()
+        
         e.send_string(fecha)
         e.send_enter()
         e.delete_field()
+        
         e.send_string(desc)
         e.send_enter()
         e.delete_field()
 
     elif tipo=="Especifica":
+        
+        e.wait_for_field()
+        logging.info("Asignando tarea específica")
         e.send_string("2")
+        logging.info("send string check")
         e.send_enter()
+        logging.info("send enter check")
         e.delete_field()
+        logging.info("delete field check")
+        
+        e.wait_for_field()
         e.send_string(fecha)
+        logging.info("send string fecha check") 
         e.send_enter()
+        logging.info("send enter fecha check")
         e.delete_field()
+        logging.info("delete field fecha check")
+        
+        e.wait_for_field()
         e.send_string(nombre)
+        logging.info("send string nombre check")
         e.send_enter()
+        logging.info("send enter nombre check")
         e.delete_field()
+        logging.info("delete field nombre check")
+        
+        e.wait_for_field()
         e.send_string(desc)
+        logging.info("send string desc check")
         e.send_enter()
+        logging.info("send enter desc check")
         e.delete_field()
+        logging.info("delete field desc check")
     
+    e.wait_for_field()
     e.send_string("3")
+    logging.info("send string 3 check")
     e.send_enter()
+    logging.info("send enter 3 check")
     e.delete_field()
+    logging.info("delete field 3 check")
 
 def get_tasks_general(file="pantalla.txt"):
     resultado = []

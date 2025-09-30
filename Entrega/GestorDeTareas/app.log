@@ -220,3 +220,1176 @@ Traceback (most recent call last):
     raise CommandError(msg.decode("ascii"))
 lib.py3270.CommandError: Wait(inputfield): Timed out
 2025-09-29 23:07:53,194 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:37:04,459 INFO root: Intento de login para usuario: grupo15
+2025-09-30 18:37:04,460 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:37:04,460 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:37:04,468 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:37:06,763 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:37:06,764 INFO root: Esperando campo inicial...
+2025-09-30 18:37:18,676 INFO root: Intento de login para usuario: grupo15
+2025-09-30 18:37:18,676 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:37:18,676 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:37:18,679 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:37:20,972 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:37:20,972 INFO root: Esperando campo inicial...
+2025-09-30 18:37:29,037 INFO root: Intento de login para usuario: grupo15
+2025-09-30 18:37:29,038 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:37:29,038 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:37:29,040 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:37:31,329 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:37:31,329 INFO root: Esperando campo inicial...
+2025-09-30 18:37:31,352 INFO root: Pantalla de login
+2025-09-30 18:37:32,353 INFO root: Esperando campo de usuario...
+2025-09-30 18:37:32,375 INFO root: Esperando campo de contraseña...
+2025-09-30 18:37:33,397 INFO root: Comprobando resultado del login...
+2025-09-30 18:37:33,398 WARNING root: Error: Usuario no autorizado o contraseña incorrecta
+2025-09-30 18:37:33,398 WARNING root: Login rechazado o fallo de conexión
+2025-09-30 18:37:36,770 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 18:37:36,772 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:37:50,973 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 18:37:50,974 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:38:24,218 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:38:24,218 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:38:24,218 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:38:24,221 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:38:26,556 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:38:26,556 INFO root: Esperando campo inicial...
+2025-09-30 18:38:45,279 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:38:45,279 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:38:45,280 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:38:45,282 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:38:46,061 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:38:46,061 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:38:46,062 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:38:46,064 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:38:47,584 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:38:47,584 INFO root: Esperando campo inicial...
+2025-09-30 18:38:48,372 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:38:48,372 INFO root: Esperando campo inicial...
+2025-09-30 18:38:56,559 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 18:39:04,503 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:39:04,503 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:39:04,503 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:39:04,506 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:39:06,791 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:39:06,791 INFO root: Esperando campo inicial...
+2025-09-30 18:39:06,812 INFO root: Pantalla de login
+2025-09-30 18:39:07,813 INFO root: Esperando campo de usuario...
+2025-09-30 18:39:07,836 INFO root: Esperando campo de contraseña...
+2025-09-30 18:39:08,861 INFO root: Comprobando resultado del login...
+2025-09-30 18:39:08,861 INFO root: Inicio de sesión exitoso
+2025-09-30 18:39:08,861 INFO root: Pantalla de espera -> ENTER
+2025-09-30 18:39:08,882 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 18:39:10,960 INFO root: Pantalla menú de tareas
+2025-09-30 18:39:11,982 INFO root: Pantalla menú listar tareas
+2025-09-30 18:39:14,005 INFO root: Listar todas las tareas
+2025-09-30 18:39:15,510 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 18:39:17,510 INFO root: Conexión terminada correctamente
+2025-09-30 18:39:17,510 INFO root: Login correcto, mostrando tareas
+2025-09-30 18:39:17,588 ERROR root: Error durante la ejecución de emulador(): [no error message]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: [no error message]
+2025-09-30 18:39:17,589 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:39:47,599 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 18:39:47,600 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:39:47,601 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:40:48,324 ERROR app: Exception on /exit [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 86, in exit
+    exit_tasks()
+    ~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 354, in exit_tasks
+    e.send_string("3")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 18:50:59,871 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:50:59,871 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:50:59,871 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:50:59,874 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:51:02,191 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:51:02,191 INFO root: Esperando campo inicial...
+2025-09-30 18:51:10,477 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:51:10,477 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:51:10,477 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:51:10,480 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:51:12,811 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:51:12,811 INFO root: Esperando campo inicial...
+2025-09-30 18:51:12,838 INFO root: Pantalla de login
+2025-09-30 18:51:13,838 INFO root: Esperando campo de usuario...
+2025-09-30 18:51:13,866 INFO root: Esperando campo de contraseña...
+2025-09-30 18:51:14,896 INFO root: Comprobando resultado del login...
+2025-09-30 18:51:14,896 INFO root: Inicio de sesión exitoso
+2025-09-30 18:51:14,896 INFO root: Pantalla de espera -> ENTER
+2025-09-30 18:51:14,923 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 18:51:17,057 INFO root: Pantalla menú de tareas
+2025-09-30 18:51:18,084 INFO root: Pantalla menú listar tareas
+2025-09-30 18:51:20,111 INFO root: Listar todas las tareas
+2025-09-30 18:51:21,615 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 18:51:23,616 INFO root: Conexión terminada correctamente
+2025-09-30 18:51:23,616 INFO root: Login correcto, mostrando tareas
+2025-09-30 18:51:32,207 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 18:51:32,209 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 18:52:20,880 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 79, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 257, in assign_tasks
+    e.send_string("1")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 18:59:52,258 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 18:59:52,258 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 18:59:52,259 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 18:59:52,262 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 18:59:54,573 INFO root: Pantalla de Music Mainframe
+2025-09-30 18:59:54,573 INFO root: Esperando campo inicial...
+2025-09-30 19:00:02,334 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:00:02,334 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:00:02,334 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:00:02,337 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:00:04,683 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:00:04,683 INFO root: Esperando campo inicial...
+2025-09-30 19:00:04,712 INFO root: Pantalla de login
+2025-09-30 19:00:05,713 INFO root: Esperando campo de usuario...
+2025-09-30 19:00:05,742 INFO root: Esperando campo de contraseña...
+2025-09-30 19:00:06,774 INFO root: Comprobando resultado del login...
+2025-09-30 19:00:06,775 INFO root: Inicio de sesión exitoso
+2025-09-30 19:00:06,775 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:00:06,803 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:00:08,933 INFO root: Pantalla menú de tareas
+2025-09-30 19:00:09,962 INFO root: Pantalla menú listar tareas
+2025-09-30 19:00:11,991 INFO root: Listar todas las tareas
+2025-09-30 19:00:13,496 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 19:00:15,497 INFO root: Conexión terminada correctamente
+2025-09-30 19:00:15,497 INFO root: Login correcto, mostrando tareas
+2025-09-30 19:00:24,575 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:00:24,576 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:03:46,344 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:03:46,344 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:03:46,344 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:03:46,348 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:03:48,620 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:03:48,621 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:03:48,621 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:03:48,623 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:03:48,665 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:03:48,665 INFO root: Esperando campo inicial...
+2025-09-30 19:03:50,907 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:03:50,908 INFO root: Esperando campo inicial...
+2025-09-30 19:03:57,268 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:03:57,268 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:03:57,268 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:03:57,271 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:03:59,567 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:03:59,567 INFO root: Esperando campo inicial...
+2025-09-30 19:03:59,591 INFO root: Pantalla de login
+2025-09-30 19:04:00,592 INFO root: Esperando campo de usuario...
+2025-09-30 19:04:00,617 INFO root: Esperando campo de contraseña...
+2025-09-30 19:04:01,644 INFO root: Comprobando resultado del login...
+2025-09-30 19:04:01,644 INFO root: Inicio de sesión exitoso
+2025-09-30 19:04:01,644 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:04:01,668 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:04:03,800 INFO root: Pantalla menú de tareas
+2025-09-30 19:04:04,827 INFO root: Pantalla menú listar tareas
+2025-09-30 19:04:06,852 INFO root: Listar todas las tareas
+2025-09-30 19:04:08,356 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 19:04:10,368 INFO root: Conexión terminada correctamente
+2025-09-30 19:04:10,369 INFO root: Login correcto, mostrando tareas
+2025-09-30 19:04:18,922 ERROR root: Error durante la ejecución de emulador(): [no error message]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: [no error message]
+2025-09-30 19:04:18,923 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:04:34,227 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 79, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 257, in assign_tasks
+    e.send_string("1")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:04:48,933 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed outWait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed outWait(inputfield): Timed out
+2025-09-30 19:04:48,935 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:07:38,334 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:07:38,335 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:07:38,335 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:07:38,338 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:07:40,641 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:07:40,641 INFO root: Esperando campo inicial...
+2025-09-30 19:07:47,328 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:07:47,328 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:07:47,329 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:07:47,331 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:07:49,629 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:07:49,629 INFO root: Esperando campo inicial...
+2025-09-30 19:08:02,242 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:08:02,243 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:08:02,243 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:08:02,245 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:08:04,543 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:08:04,543 INFO root: Esperando campo inicial...
+2025-09-30 19:08:04,565 INFO root: Pantalla de login
+2025-09-30 19:08:05,565 INFO root: Esperando campo de usuario...
+2025-09-30 19:08:05,588 INFO root: Esperando campo de contraseña...
+2025-09-30 19:08:06,612 INFO root: Comprobando resultado del login...
+2025-09-30 19:08:06,612 INFO root: Inicio de sesión exitoso
+2025-09-30 19:08:06,613 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:08:06,635 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:08:08,772 INFO root: Pantalla menú de tareas
+2025-09-30 19:08:09,796 INFO root: Pantalla menú listar tareas
+2025-09-30 19:08:10,643 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:08:10,645 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:08:11,797 ERROR root: Error durante la ejecución de emulador(): this TerminalClient instance has been terminated
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 121, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:08:13,802 INFO root: Conexión terminada correctamente
+2025-09-30 19:08:13,802 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:08:19,643 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:08:19,644 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:08:28,301 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:08:28,302 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:08:28,302 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:08:28,304 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:08:30,615 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:08:30,615 INFO root: Esperando campo inicial...
+2025-09-30 19:08:38,714 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:08:38,715 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:08:38,715 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:08:38,717 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:08:41,012 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:08:41,012 INFO root: Esperando campo inicial...
+2025-09-30 19:09:00,618 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:09:11,014 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:09:11,015 ERROR root: Error durante la ejecución de emulador(): expected "ok" or "error" result, but received: 
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 73, in emulador
+    e.send_enter()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 416, in send_enter
+    self.exec_command(b"Enter")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 95, in handle_result
+    raise ValueError(
+        'expected "ok" or "error" result, but received: {0}'.format(result)
+    )
+ValueError: expected "ok" or "error" result, but received: 
+2025-09-30 19:09:11,016 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:09:23,039 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:09:23,039 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:09:23,040 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:09:23,044 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:09:25,344 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:09:25,345 INFO root: Esperando campo inicial...
+2025-09-30 19:09:50,389 ERROR root: Error durante la ejecución de emulador(): expected "ok" or "error" result, but received: 
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 95, in handle_result
+    raise ValueError(
+        'expected "ok" or "error" result, but received: {0}'.format(result)
+    )
+ValueError: expected "ok" or "error" result, but received: 
+2025-09-30 19:09:50,390 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:10:08,937 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:10:08,937 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:10:08,937 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:10:08,941 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:10:11,250 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:10:11,250 INFO root: Esperando campo inicial...
+2025-09-30 19:10:41,259 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:10:41,261 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:11:41,772 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:11:41,772 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:11:41,773 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:11:41,775 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:11:44,077 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:11:44,077 INFO root: Esperando campo inicial...
+2025-09-30 19:11:44,101 INFO root: Pantalla de login
+2025-09-30 19:11:45,102 INFO root: Esperando campo de usuario...
+2025-09-30 19:11:45,127 INFO root: Esperando campo de contraseña...
+2025-09-30 19:11:46,153 INFO root: Comprobando resultado del login...
+2025-09-30 19:11:46,153 INFO root: Inicio de sesión exitoso
+2025-09-30 19:11:46,153 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:11:46,178 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:11:48,321 INFO root: Pantalla menú de tareas
+2025-09-30 19:11:49,346 INFO root: Pantalla menú listar tareas
+2025-09-30 19:11:51,372 INFO root: Listar todas las tareas
+2025-09-30 19:11:52,877 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 19:11:54,877 INFO root: Conexión terminada correctamente
+2025-09-30 19:11:54,878 INFO root: Login correcto, mostrando tareas
+2025-09-30 19:12:11,927 INFO root: Asignando tarea general: FECHA=2025-09-29, NOMBRE=prueba  DESCRIPCION=prueba
+2025-09-30 19:12:11,927 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 79, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 257, in assign_tasks
+    e.send_string("1")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:27:16,191 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:27:16,191 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:27:16,191 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:27:16,195 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:27:18,620 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:27:18,620 INFO root: Esperando campo inicial...
+2025-09-30 19:27:18,660 INFO root: Pantalla de login
+2025-09-30 19:27:19,670 INFO root: Esperando campo de usuario...
+2025-09-30 19:27:19,743 INFO root: Esperando campo de contraseña...
+2025-09-30 19:27:20,789 INFO root: Comprobando resultado del login...
+2025-09-30 19:27:20,789 INFO root: Inicio de sesión exitoso
+2025-09-30 19:27:20,789 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:27:20,861 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:27:23,026 INFO root: Pantalla menú de tareas
+2025-09-30 19:27:24,064 INFO root: Pantalla menú listar tareas
+2025-09-30 19:27:26,103 INFO root: Listar todas las tareas
+2025-09-30 19:27:27,607 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 19:27:29,608 INFO root: Conexión terminada correctamente
+2025-09-30 19:27:29,608 INFO root: Login correcto, mostrando tareas
+2025-09-30 19:27:42,766 INFO root: Asignando tarea general: FECHA=2025-09-08, NOMBRE=prueb  DESCRIPCION=prueba
+2025-09-30 19:27:42,767 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 79, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 257, in assign_tasks
+    e.send_string("1")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:32:07,105 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:32:07,105 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:32:07,105 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:32:07,109 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:32:09,527 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:32:09,527 INFO root: Esperando campo inicial...
+2025-09-30 19:32:29,067 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:32:29,067 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:32:29,068 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:32:29,070 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:32:31,487 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:32:31,487 INFO root: Esperando campo inicial...
+2025-09-30 19:32:39,533 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:32:41,662 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:32:41,662 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:32:41,662 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:32:41,665 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:32:44,093 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:32:44,093 INFO root: Esperando campo inicial...
+2025-09-30 19:32:44,130 INFO root: Pantalla de login
+2025-09-30 19:32:45,130 INFO root: Esperando campo de usuario...
+2025-09-30 19:32:45,170 INFO root: Esperando campo de contraseña...
+2025-09-30 19:32:46,218 INFO root: Comprobando resultado del login...
+2025-09-30 19:32:46,218 INFO root: Inicio de sesión exitoso
+2025-09-30 19:32:46,218 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:32:46,290 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:32:48,418 INFO root: Pantalla menú de tareas
+2025-09-30 19:32:49,491 INFO root: Pantalla menú listar tareas
+2025-09-30 19:32:51,531 INFO root: Listar todas las tareas
+2025-09-30 19:32:53,038 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 19:32:55,039 INFO root: Conexión terminada correctamente
+2025-09-30 19:32:55,039 INFO root: Login correcto, mostrando tareas
+2025-09-30 19:33:01,489 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:33:01,491 ERROR root: Error durante la ejecución de emulador(): this TerminalClient instance has been terminated
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 73, in emulador
+    e.send_enter()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 416, in send_enter
+    self.exec_command(b"Enter")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:33:01,492 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:33:09,125 INFO root: Asignando tarea especifica: FECHA=2025-09-29, NOMBRE=prueba  DESCRIPCION=prueba
+2025-09-30 19:33:09,125 INFO root: Asignando tarea especifica: FECHA=2025-09-29, NOMBRE="prueba"  DESCRIPCION="prueba" TIPO=Especifica
+2025-09-30 19:33:09,126 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 79, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 258, in assign_tasks
+    e.send_string("1")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:34:22,800 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:34:22,801 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:34:22,801 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:34:22,805 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:34:25,225 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:34:25,225 INFO root: Esperando campo inicial...
+2025-09-30 19:34:55,236 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:34:55,238 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:35:53,395 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:35:53,395 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:35:53,395 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:35:53,398 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:35:55,831 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:35:55,831 INFO root: Esperando campo inicial...
+2025-09-30 19:35:55,871 INFO root: Pantalla de login
+2025-09-30 19:35:56,871 INFO root: Esperando campo de usuario...
+2025-09-30 19:35:56,911 INFO root: Esperando campo de contraseña...
+2025-09-30 19:35:57,951 INFO root: Comprobando resultado del login...
+2025-09-30 19:35:57,952 INFO root: Inicio de sesión exitoso
+2025-09-30 19:35:57,952 INFO root: Pantalla de espera -> ENTER
+2025-09-30 19:35:57,992 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-09-30 19:36:00,123 INFO root: Pantalla menú de tareas
+2025-09-30 19:36:01,193 INFO root: Pantalla menú listar tareas
+2025-09-30 19:36:03,233 INFO root: Listar todas las tareas
+2025-09-30 19:36:04,737 INFO root: procesar_tareas(): 0 elementos
+2025-09-30 19:36:06,738 INFO root: Conexión terminada correctamente
+2025-09-30 19:36:06,738 INFO root: Login correcto, mostrando tareas
+2025-09-30 19:36:19,301 INFO root: Asignando tarea especifica: FECHA=2025-09-29, NOMBRE=prueba  DESCRIPCION=prueba
+2025-09-30 19:36:19,301 INFO root: Asignando tarea especifica: FECHA=2025-09-29, NOMBRE="prueba"  DESCRIPCION="prueba" TIPO=Especifica
+2025-09-30 19:36:19,302 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 79, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 258, in assign_tasks
+    e.send_string("1")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:37:52,957 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:37:52,957 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:37:52,957 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:37:52,961 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:37:55,406 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:37:55,406 INFO root: Esperando campo inicial...
+2025-09-30 19:37:59,205 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:37:59,205 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:37:59,205 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:37:59,208 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:38:01,643 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:38:01,643 INFO root: Esperando campo inicial...
+2025-09-30 19:38:21,113 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:38:21,113 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:38:21,113 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:38:21,116 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:38:23,523 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:38:23,523 INFO root: Esperando campo inicial...
+2025-09-30 19:38:23,563 INFO root: Pantalla de login
+2025-09-30 19:38:24,564 INFO root: Esperando campo de usuario...
+2025-09-30 19:38:24,604 INFO root: Esperando campo de contraseña...
+2025-09-30 19:38:25,428 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:38:25,430 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:38:25,648 INFO root: Comprobando resultado del login...
+2025-09-30 19:38:25,648 ERROR root: Error comprobando la salida del login
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 206, in comprobar_salida_login
+    line=_e.string_get(7,2,24)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 453, in string_get
+    cmd = self.exec_command(
+        "Ascii({0},{1},{2})".format(ypos, xpos, length).encode("utf-8")
+    )
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 19:38:25,649 WARNING root: Error: Usuario no autorizado o contraseña incorrecta
+2025-09-30 19:38:25,649 WARNING root: Login rechazado o fallo de conexión
+2025-09-30 19:38:31,646 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:38:31,647 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:38:37,895 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:38:37,895 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:38:37,895 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:38:37,897 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:38:40,329 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:38:40,330 INFO root: Esperando campo inicial...
+2025-09-30 19:38:54,007 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:38:54,008 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:38:54,008 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:38:54,010 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:38:56,458 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:38:56,458 INFO root: Esperando campo inicial...
+2025-09-30 19:38:56,493 INFO root: Pantalla de login
+2025-09-30 19:38:57,494 INFO root: Esperando campo de usuario...
+2025-09-30 19:38:57,534 INFO root: Esperando campo de contraseña...
+2025-09-30 19:38:58,574 INFO root: Comprobando resultado del login...
+2025-09-30 19:38:58,574 WARNING root: Error: Usuario ya en uso
+2025-09-30 19:38:58,574 WARNING root: Usuario en uso; render ocupada
+2025-09-30 19:39:05,718 ERROR root: Error durante la ejecución de emulador(): expected "ok" or "error" result, but received: 
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 95, in handle_result
+    raise ValueError(
+        'expected "ok" or "error" result, but received: {0}'.format(result)
+    )
+ValueError: expected "ok" or "error" result, but received: 
+2025-09-30 19:39:22,893 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:39:22,894 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:39:22,894 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:39:22,898 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:39:25,335 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:39:25,335 INFO root: Esperando campo inicial...
+2025-09-30 19:39:25,376 INFO root: Pantalla de login
+2025-09-30 19:39:26,376 INFO root: Esperando campo de usuario...
+2025-09-30 19:39:26,415 INFO root: Esperando campo de contraseña...
+2025-09-30 19:39:27,456 INFO root: Comprobando resultado del login...
+2025-09-30 19:39:27,456 WARNING root: Error: Usuario ya en uso
+2025-09-30 19:39:27,457 WARNING root: Usuario en uso; render ocupada
+2025-09-30 19:40:10,748 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:40:10,748 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:40:10,748 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:40:10,752 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:40:13,187 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:40:13,188 INFO root: Esperando campo inicial...
+2025-09-30 19:40:43,195 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:40:43,197 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 19:40:56,774 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:40:56,774 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:40:56,774 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:40:56,777 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:40:59,191 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:40:59,191 INFO root: Esperando campo inicial...
+2025-09-30 19:41:22,865 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:41:22,865 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:41:22,865 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:41:22,868 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:41:25,310 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:41:25,311 INFO root: Esperando campo inicial...
+2025-09-30 19:41:29,210 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 19:41:31,685 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 19:41:31,685 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 19:41:31,685 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 19:41:31,688 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 19:41:34,110 INFO root: Pantalla de Music Mainframe
+2025-09-30 19:41:34,110 INFO root: Esperando campo inicial...
+2025-09-30 19:41:34,148 INFO root: Pantalla de login
+2025-09-30 19:41:35,149 INFO root: Esperando campo de usuario...
+2025-09-30 19:41:35,188 INFO root: Esperando campo de contraseña...
+2025-09-30 19:41:36,238 INFO root: Comprobando resultado del login...
+2025-09-30 19:41:36,238 WARNING root: Error: Usuario ya en uso
+2025-09-30 19:41:36,238 WARNING root: Usuario en uso; render ocupada
+2025-09-30 19:41:40,890 ERROR root: Error durante la ejecución de emulador(): expected "ok" or "error" result, but received: 
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 95, in handle_result
+    raise ValueError(
+        'expected "ok" or "error" result, but received: {0}'.format(result)
+    )
+ValueError: expected "ok" or "error" result, but received: 
+2025-09-30 22:24:30,011 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:24:30,011 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:24:30,012 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:24:30,015 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:24:32,321 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:24:32,322 INFO root: Esperando campo inicial...
+2025-09-30 22:24:37,609 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:24:37,610 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:24:37,610 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:24:37,612 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:24:39,921 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:24:39,921 INFO root: Esperando campo inicial...
+2025-09-30 22:24:58,718 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:24:58,718 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:24:58,718 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:24:58,721 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:25:01,015 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:25:01,016 INFO root: Esperando campo inicial...
+2025-09-30 22:25:01,037 INFO root: Pantalla de login
+2025-09-30 22:25:02,037 INFO root: Esperando campo de usuario...
+2025-09-30 22:25:02,059 INFO root: Esperando campo de contraseña...
+2025-09-30 22:25:02,330 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 22:25:02,352 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 22:25:03,084 INFO root: Comprobando resultado del login...
+2025-09-30 22:25:03,084 ERROR root: Error comprobando la salida del login
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 206, in comprobar_salida_login
+    line=_e.string_get(7,2,24)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 453, in string_get
+    cmd = self.exec_command(
+        "Ascii({0},{1},{2})".format(ypos, xpos, length).encode("utf-8")
+    )
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-09-30 22:25:03,085 WARNING root: Error: Usuario no autorizado o contraseña incorrecta
+2025-09-30 22:25:03,085 WARNING root: Login rechazado o fallo de conexión
+2025-09-30 22:25:09,926 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 22:25:09,927 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 22:25:19,526 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:25:19,526 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:25:19,526 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:25:19,529 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:25:21,847 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:25:21,847 INFO root: Esperando campo inicial...
+2025-09-30 22:25:32,481 ERROR root: Error durante la ejecución de emulador(): expected "ok" or "error" result, but received: 
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 95, in handle_result
+    raise ValueError(
+        'expected "ok" or "error" result, but received: {0}'.format(result)
+    )
+ValueError: expected "ok" or "error" result, but received: 
+2025-09-30 22:25:32,482 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 22:26:12,047 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:26:12,047 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:26:12,047 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:26:12,051 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:26:14,354 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:26:14,354 INFO root: Esperando campo inicial...
+2025-09-30 22:26:21,791 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:26:21,792 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:26:21,792 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:26:21,794 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:26:24,099 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:26:24,099 INFO root: Esperando campo inicial...
+2025-09-30 22:26:44,358 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 22:27:46,327 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:27:46,327 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:27:46,327 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:27:46,331 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:27:48,630 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:27:48,630 INFO root: Esperando campo inicial...
+2025-09-30 22:28:18,633 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 22:28:18,635 ERROR root: Código de retorno inesperado de emulador: -1
+2025-09-30 22:31:01,267 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:31:01,267 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:31:01,267 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:31:01,271 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:31:03,548 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:31:03,548 INFO root: Esperando campo inicial...
+2025-09-30 22:38:18,148 INFO root: Intento de login para usuario: grupo_15
+2025-09-30 22:38:18,148 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-09-30 22:38:18,148 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-09-30 22:38:18,152 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-09-30 22:38:20,471 INFO root: Pantalla de Music Mainframe
+2025-09-30 22:38:20,471 INFO root: Esperando campo inicial...
+2025-09-30 22:38:50,476 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 72, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-09-30 22:38:50,478 ERROR root: Código de retorno inesperado de emulador: -1
