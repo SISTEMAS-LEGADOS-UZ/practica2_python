@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks, get_last_all_tasks, dump_screen_debug, refresh_all_tasks
+from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks, get_last_all_tasks, dump_screen_debug, refresh_all_tasks,pantalla
 import os
 import webview
 import atexit
@@ -38,6 +38,8 @@ def ini():
     logging.info('Intento de login para usuario: %s', last_user)
     try:
         e = emulador(last_user, last_passwd)
+       
+        
     except Exception:
         logging.exception('Fallo inesperado en emulador')
         return render_template('index_inicio_error.html')
@@ -45,6 +47,7 @@ def ini():
     if e == 0:
         logging.info('Login correcto, mostrando tareas')
         # Tras el login, emulador() ya ha navegado a ALL TASKS y parseado la lista
+        
         data = get_last_all_tasks()
         return render_template('tareas.html', data=data)
     elif e == 1:
@@ -81,7 +84,7 @@ def assignEspecifica():
     logging.info(f'Asignando tarea especifica: FECHA={fecha}, NOMBRE={nombre}  DESCRIPCION={desc}')
     # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
-    data = view_tasks()
+    data = refresh_all_tasks()
     if not data:
         dump_screen_debug("after_assign_specific_empty")
     # print(data)
@@ -97,6 +100,7 @@ def exit():
 @app.route('/refresh', methods=['POST'])
 def refresh():
     try:
+       
         data = refresh_all_tasks()
         if not data:
             dump_screen_debug("after_refresh_empty")
