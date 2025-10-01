@@ -151,6 +151,7 @@ def emulador(mylogin, mypass):
             lista_tareas = obtener_estructura_tareas(e)
             procesar_tareas(lista_tareas)
             
+            pantalla("pre-redirecion.txt")
             
             time.sleep(retardo2)
             e.wait_for_field()
@@ -158,7 +159,7 @@ def emulador(mylogin, mypass):
             e.send_enter()
             e.delete_field()
             logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
-            
+            pantalla("pre-redirecion1.txt")
             
             time.sleep(retardo2)
             e.wait_for_field()
@@ -166,13 +167,14 @@ def emulador(mylogin, mypass):
             e.send_enter()
             e.delete_field()
             logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
-         
-            time.sleep(retardo2)
-            e.wait_for_field()
-            e.send_string("0")
-            e.send_enter()
+            pantalla("pre-redirecion2.txt")
+            
+            # time.sleep(retardo2)
+            # e.wait_for_field()
+            # e.send_string("0")
+            # e.send_enter()
         
-            logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
+            # logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
         
             pantalla("login.txt")
             

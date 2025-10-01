@@ -1,28 +1,26 @@
                                                                                
- --------------------Full Screen Interface for MUSIC------------------ Page 1/1
- Command ===>                                                                  
-  Type "cal" to see the calendar of the month.                                 
-  Place the cursor on an item and press ENTER or RETURN.                       
                                                                                
-  MUSIC tools:                                                                 
-     Mail          Electronic mail facility                                    
-     Programming   (This item is not available on this system)                 
-     CI            (This item is not available on this system)                 
-     Internet      Internet access, news reader, gopher, etc                   
-     More          Other general MUSIC tools                                   
-  MUSIC files:                                                                 
-     FLIB *        Full Library Screen for current directory                   
-     FLIB          Filespec=> *                   < pattern                    
-     FUTIL         Other file related utilities                                
-  MUSIC environment:                                                           
-     Help          General help and online documentation                       
-     New Password  Change your password                                        
-     Defaults      FSI customization                                           
-     Profile       Profile utility and options                                 
-     \Off          Terminate your session and disconnect from MUSIC            
-     \Suggest      Make a suggestion or send a comment to support staff        
- F1=Help      F2=Suggest    F3=End       F9=Find       F12=Retrieve            
                                                                                
+                                  VIEW TASKS                                   
+                                  **********                                   
+                                                                               
+                                                                               
+                              1 - GENERAL TASKS                                
+                                                                               
+                                                                               
+                              2 - SPECIFIC TASKS                               
+                                                                               
+                                                                               
+                              3 - ALL TASKS                                    
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
                                                                                
                                                                                
                                                                                
@@ -40,4 +38,6 @@
                                                                                
                                                                                
                                                                                
+------T-----------------------------------------------------------------T      
                                                                                
+                                                                      Reading  

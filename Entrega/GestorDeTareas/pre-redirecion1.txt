@@ -1,28 +1,26 @@
                                                                                
- ---------------------- Help for the FSI Facility ------------------- Page 1/11
- Command ===>                                                                  
-  DATE: 01Oct25 22:18:44                                UPDATE: 01Oct25 12:42  
                                                                                
-  Welcome to the MUSIC/SP's Full Screen Interface (FSI). This facility         
-  allows access to various components of the MUSIC system through a series     
-  of selection menus.                                                          
                                                                                
-  Following items describe how to use this interface.                          
+                                  VIEW TASKS                                   
+                                  **********                                   
                                                                                
-  Screen Format:                                                               
                                                                                
-    The first line, the action bar, contains a list of commands.               
-    You can use the cursor movement keys or the tab key or the mouse           
-    to select one of these commands.                                           
+                              1 - GENERAL TASKS                                
                                                                                
-    The second line on the screen contains the screen title.                   
                                                                                
-    Press F8 to see the next screen.                                           
+                              2 - SPECIFIC TASKS                               
+                                                                               
+                                                                               
+                              3 - ALL TASKS                                    
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
                                                                                
                                                                                
                                                                                
- F1=Help  F2=Ask F3=End F7=Up F8=Dn  F9=Find  F10=Top  F11=Bot F12=Ret  F8=MORE
                                                                                
+              OPTION:                                                          
+?                                                                              
                                                                                
                                                                                
                                                                                
@@ -40,4 +38,6 @@
                                                                                
                                                                                
                                                                                
+------T-----------------------------------------------------------------T      
                                                                                
+                                                                      Reading  
