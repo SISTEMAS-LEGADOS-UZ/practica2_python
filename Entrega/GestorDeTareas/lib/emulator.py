@@ -250,7 +250,10 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
 
     Devuelve la ruta del archivo generado con el volcado completo.
     """
-    lines_all = []
+    # Acumularemos solo las líneas de tareas para evitar duplicados y ruido de menú
+    task_lines: list[str] = []
+    seen_ids: set[int] = set()
+    re_task = re.compile(r"^\s*TASK\s*#\s*(\d+)\s*:")
     try:
         for _ in range(max_pages):
             # Leer pantalla actual y acumular
@@ -260,16 +263,36 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
                 logging.exception("No se pudo leer la pantalla actual de ALL TASKS")
                 screen_text = ""
 
-            # Acumular líneas tal cual (el parser filtrará lo necesario)
+            # Si hemos vuelto al menú intermedio, re-seleccionar opción 3
+            if "VIEW TASKS" in screen_text and "LIST OF ALL TASKS" not in screen_text:
+                try:
+                    e.send_string("3")
+                    e.send_enter()
+                    e.wait_for_field()
+                    # Refrescar el contenido ya en la lista para esta iteración
+                    screen_text = _get_screen_text()
+                except Exception:
+                    logging.exception("No se pudo re-seleccionar 'ALL TASKS' desde el menú")
+
+            # Extraer y acumular únicamente las líneas de tareas, evitando duplicados por id
             if screen_text:
-                lines_all.extend(screen_text.splitlines())
+                for ln in screen_text.splitlines():
+                    m = re_task.match(ln)
+                    if m:
+                        try:
+                            tid = int(m.group(1))
+                        except Exception:
+                            tid = None
+                        if tid is not None and tid not in seen_ids:
+                            seen_ids.add(tid)
+                            task_lines.append(ln)
 
             # ¿Estamos en la última página? (aparece 'TOTAL TASKS')
             if "TOTAL TASKS" in screen_text:
                 # Guardar todo y salir; después hay que aceptar con ENTER para volver
                 try:
                     with open(save_file, "w", encoding="utf-8") as f:
-                        f.write("\n".join(lines_all))
+                        f.write("\n".join(task_lines))
                 except Exception:
                     logging.exception("No se pudo escribir el volcado de ALL TASKS en %s", save_file)
 
@@ -298,7 +321,7 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
         # Fallback: guardar lo que tengamos
         try:
             with open(save_file, "w", encoding="utf-8") as f:
-                f.write("\n".join(lines_all))
+                f.write("\n".join(task_lines))
         except Exception:
             logging.exception("No se pudo escribir el volcado parcial de ALL TASKS en %s", save_file)
         return save_file
@@ -307,7 +330,7 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
         # Intentar dejar algún artefacto para depuración
         try:
             with open(save_file, "w", encoding="utf-8") as f:
-                f.write("\n".join(lines_all))
+                f.write("\n".join(task_lines))
         except Exception:
             pass
         return save_file
