@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks
+from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks, get_last_all_tasks, dump_screen_debug, refresh_all_tasks
 import os
 import webview
 import atexit
@@ -44,7 +44,9 @@ def ini():
 
     if e == 0:
         logging.info('Login correcto, mostrando tareas')
-        return render_template('tareas.html')
+        # Tras el login, emulador() ya ha navegado a ALL TASKS y parseado la lista
+        data = get_last_all_tasks()
+        return render_template('tareas.html', data=data)
     elif e == 1:
         logging.warning('Login rechazado o fallo de conexión')
         return render_template('index_inicio_error.html')
@@ -65,6 +67,8 @@ def assignGeneral():
     # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()
+    if not data:
+        dump_screen_debug("after_assign_general_empty")
     # print(data)
     return render_template('tareas.html', data=data)
 
@@ -78,6 +82,8 @@ def assignEspecifica():
     # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
     data = view_tasks()
+    if not data:
+        dump_screen_debug("after_assign_specific_empty")
     # print(data)
     return render_template('tareas.html', data=data)
 
@@ -87,6 +93,17 @@ def exit():
     if os.path.exists("pantalla.txt"):
         os.remove("pantalla.txt")
     return render_template('index_inicio.html')
+
+@app.route('/refresh', methods=['POST'])
+def refresh():
+    try:
+        data = refresh_all_tasks()
+        if not data:
+            dump_screen_debug("after_refresh_empty")
+        return render_template('tareas.html', data=data)
+    except Exception:
+        logging.exception('Fallo inesperado en refresh')
+        return render_template('tareas.html', data=get_last_all_tasks())
 
 if __name__ == '__main__':
     webview.start()

@@ -1,66 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar Sesión</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            text-align: center;
-            max-width: 400px; /* Reduje el ancho para que se vea mejor en dispositivos móviles */
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 30px; /* Reduje el tamaño del título para que se vea mejor con el nuevo diseño */
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        p {
-            color: red;
-        }
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #3b82f6;
+        --accent-600: #2563eb;
+        --border: #1f2937;
+        --input: #0b1326;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(
+            1200px 600px at 80% -10%,
+            #1e293b 0%,
+            transparent 60%
+          ),
+          var(--bg);
+        color: var(--text);
+        font: 14px/1.4 system-ui, Segoe UI, Arial;
+        display: flex;
+        min-height: 100vh;
+      }
+      .wrap {
+        margin: auto;
+        width: 100%;
+        max-width: 420px;
+        padding: 24px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 24px 22px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      }
+      h1 {
+        margin: 6px 0 18px 0;
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        text-align: center;
+      }
+      .brand {
+        margin-bottom: 8px;
+        text-align: center;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+      }
+      label {
+        display: block;
+        margin: 10px 2px 6px 2px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--input);
+        color: var(--text);
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 2px;
+      }
+      .btn {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--accent-600);
+        background: var(--accent);
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        margin-top: 10px;
+      }
+      .btn:hover {
+        background: var(--accent-600);
+      }
+      .error {
+        margin-top: 10px;
+        color: #f87171;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
-    <form action="/ini" method="post">
-        <h1>GESTOR DE TAREAS</h1>
-        <div class="container">
-            <h1>Iniciar Sesión</h1>
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" name="contrasena" placeholder="Contraseña" required>
-            <p>Usuario o contraseña incorrecto</p>
-            <button type="submit" name="accederBtn" value="Acceder">Acceder</button>
-        </div>
-    </form>
-</body>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="brand">GESTOR DE TAREAS</div>
+      <div class="card">
+        <h1>Iniciar sesión</h1>
+        <form action="/ini" method="post">
+          <label for="usuario">Usuario</label>
+          <input
+            id="usuario"
+            type="text"
+            name="usuario"
+            placeholder="Tu usuario"
+            required
+          />
+          <label for="contrasena">Contraseña</label>
+          <input
+            id="contrasena"
+            type="password"
+            name="contrasena"
+            placeholder="Tu contraseña"
+            required
+          />
+          <div class="error">Usuario o contraseña incorrecto</div>
+          <button class="btn" type="submit" name="accederBtn" value="Acceder">
+            Acceder
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
