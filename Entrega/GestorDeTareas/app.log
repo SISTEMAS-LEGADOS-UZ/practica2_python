@@ -212,3 +212,68 @@
 2025-10-01 23:27:00,506 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
 2025-10-01 23:27:00,507 INFO root: Login correcto, mostrando tareas
 2025-10-01 23:28:01,808 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-01 23:39:36,083 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:39:36,084 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:39:36,084 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:39:36,093 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:39:38,440 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:39:38,442 INFO root: Esperando campo inicial...
+2025-10-01 23:39:38,476 INFO root: Pantalla de login
+2025-10-01 23:39:39,480 INFO root: Esperando campo de usuario...
+2025-10-01 23:39:39,515 INFO root: Esperando campo de contraseña...
+2025-10-01 23:39:40,549 INFO root: Comprobando resultado del login...
+2025-10-01 23:39:40,554 INFO root: Inicio de sesión exitoso
+2025-10-01 23:39:40,557 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:39:40,588 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:39:42,724 INFO root: Pantalla menú de tareas
+2025-10-01 23:39:43,757 INFO root: Pantalla menú listar tareas
+2025-10-01 23:39:45,791 INFO root: Listar todas las tareas
+2025-10-01 23:39:47,002 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:39:48,543 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:39:50,085 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:39:51,098 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:39:51,100 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:45:02,241 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:45:02,241 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:45:02,242 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:45:02,250 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:45:04,640 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:45:04,642 INFO root: Esperando campo inicial...
+2025-10-01 23:45:04,681 INFO root: Pantalla de login
+2025-10-01 23:45:05,682 INFO root: Esperando campo de usuario...
+2025-10-01 23:45:05,721 INFO root: Esperando campo de contraseña...
+2025-10-01 23:45:06,762 INFO root: Comprobando resultado del login...
+2025-10-01 23:45:06,763 WARNING root: Error: Usuario ya en uso
+2025-10-01 23:45:06,765 WARNING root: Usuario en uso; render ocupada
+2025-10-01 23:45:34,087 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-01 23:46:19,023 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:46:19,024 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:46:19,026 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:46:19,035 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:46:21,692 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:46:21,692 INFO root: Esperando campo inicial...
+2025-10-01 23:46:21,728 INFO root: Pantalla de login
+2025-10-01 23:46:22,730 INFO root: Esperando campo de usuario...
+2025-10-01 23:46:22,768 INFO root: Esperando campo de contraseña...
+2025-10-01 23:46:23,812 INFO root: Comprobando resultado del login...
+2025-10-01 23:46:23,816 INFO root: Inicio de sesión exitoso
+2025-10-01 23:46:23,817 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:46:23,857 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:46:26,002 INFO root: Pantalla menú de tareas
+2025-10-01 23:46:27,044 INFO root: Pantalla menú listar tareas
+2025-10-01 23:46:29,086 INFO root: Listar todas las tareas
+2025-10-01 23:46:30,369 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:46:31,951 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:46:33,844 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:46:34,893 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:46:34,897 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:46:40,458 INFO root: Pantalla menú de tareas (refresh)
+2025-10-01 23:46:41,998 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-01 23:46:45,039 INFO root: Listar todas las tareas (refresh)
+2025-10-01 23:47:07,810 INFO root: Pantalla menú de tareas (refresh)
+2025-10-01 23:47:09,363 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-01 23:47:12,400 INFO root: Listar todas las tareas (refresh)
+2025-10-01 23:47:16,898 INFO root: Pantalla menú de tareas (refresh)
+2025-10-01 23:47:18,441 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-01 23:47:21,482 INFO root: Listar todas las tareas (refresh)
+2025-10-01 23:47:45,997 INFO root: Sesión TN3270 finalizada en exit_tasks()

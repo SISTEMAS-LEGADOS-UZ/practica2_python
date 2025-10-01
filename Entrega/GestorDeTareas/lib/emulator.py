@@ -385,6 +385,48 @@ def obtener_estructura_tareas(em=None):
         logging.exception("No se pudo obtener la estructura de tareas")
         return []
 
+def _ensure_view_tasks_menu(max_steps: int = 20) -> bool:
+    """Asegura que estamos en el menú 'VIEW TASKS' antes de abrir 'ALL TASKS'.
+
+    - Si aparece 'ENTER ANY KEY TO CONTINUE' o 'Press enter to continue', pulsa ENTER.
+    - Si aparece 'LIST OF ALL TASKS', pulsa ENTER para avanzar hasta salir (hasta que desaparezca el listado) y volver al menú.
+    - Si aparece 'MAIN MENU', escribe '2' para entrar a 'VIEW TASKS'.
+    - Devuelve True cuando detecta 'VIEW TASKS' sin el listado.
+    """
+    try:
+        for _ in range(max_steps):
+            text = _get_screen_text()
+            if "VIEW TASKS" in text and "LIST OF ALL TASKS" not in text:
+                return True
+            if ("ENTER ANY KEY TO CONTINUE" in text) or ("Press enter to continue" in text):
+                try:
+                    e.send_enter(); e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            if "LIST OF ALL TASKS" in text:
+                try:
+                    e.send_enter(); e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            if "MAIN MENU" in text:
+                try:
+                    e.delete_field(); e.send_string("2"); e.send_enter(); e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            # Estado desconocido: avanzar
+            try:
+                e.send_enter(); e.wait_for_field()
+            except Exception:
+                time.sleep(0.2)
+        logging.warning("_ensure_view_tasks_menu: no se alcanzó el menú 'VIEW TASKS'")
+        return False
+    except Exception:
+        logging.exception("Error en _ensure_view_tasks_menu")
+        return False
+
 def procesar_tareas(lista_tareas):
     """Placeholder: registra el conteo de tareas; pensado para desarrollo local."""
     try:
@@ -585,22 +627,27 @@ def refresh_all_tasks():
     Asume que la sesión TN3270 está activa y en el menú de tasks.c o similar.
     """
     try:
-        e.delete_field()
-        pantalla("refresh_ini.txt")
-        # Ir a VIEW TASKS
-        
+        # Replicar exactamente la secuencia del emulador desde 'Pantalla menú de tareas'
+        time.sleep(delayScreen)
+        logging.info("Pantalla menú de tareas (refresh)")
+
+        # 1) Listar tareas -> opción 2
+        time.sleep(delayScreen)
         e.wait_for_field()
         e.send_string("2")
         e.send_enter()
-        e.delete_field()
-        pantalla("refresh_mid.txt")
-        # ALL TASKS
+        logging.info("Pantalla menú listar tareas (refresh)")
+        time.sleep(delayScreen)
+
+        # 2) Listar todas -> opción 3
+        time.sleep(delayScreen)
         e.wait_for_field()
         e.send_string("3")
         e.send_enter()
-        e.delete_field()
+        logging.info("Listar todas las tareas (refresh)")
+        time.sleep(delayScreen)
 
-        # Capturar todas las páginas y parsear como en obtener_estructura_tareas
+        # 3) Capturar todas las páginas y parsear
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
