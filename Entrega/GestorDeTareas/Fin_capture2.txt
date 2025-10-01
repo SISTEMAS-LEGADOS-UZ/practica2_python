@@ -1,26 +1,26 @@
                                                                                
                                                                                
                                                                                
-                                  MAIN MENU                                    
-                                  *********                                    
+                                  VIEW TASKS                                   
+                                  **********                                   
                                                                                
                                                                                
-                              1 - ASSIGN TASKS                                 
+                              1 - GENERAL TASKS                                
                                                                                
                                                                                
-                              2 - VIEW TASKS                                   
+                              2 - SPECIFIC TASKS                               
                                                                                
                                                                                
-                              0 - EXIT                                         
+                              3 - ALL TASKS                                    
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
                                                                                
                                                                                
                                                                                
                                                                                
               OPTION:                                                          
 ?                                                                              
-                                                                               
-                                                                               
-                                                                               
                                                                                
                                                                                
                                                                                

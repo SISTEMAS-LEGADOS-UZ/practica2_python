@@ -325,6 +325,8 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
 
                 # Salir de la pantalla de resumen
                 try:
+                    time.sleep(1)
+
                     e.send_enter()
                 except Exception:
                     pass
@@ -518,11 +520,6 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     e.send_enter()
     logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
     
-    time.sleep(1)
-    e.wait_for_field()
-    e.send_string("0")
-    e.send_enter()
-    logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
     
     pantalla("Task_fin.txt")
     
@@ -649,8 +646,21 @@ def refresh_all_tasks():
 
         # 3) Capturar todas las páginas y parsear
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
+        
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
+        pantalla("Fin_capture.txt")
+        
+        e.wait_for_field()
+        e.send_string("0")
+        e.send_enter()
+        pantalla("Fin_capture2.txt")
+        
+        e.wait_for_field()
+        e.send_string("0")
+        e.send_enter()
+        pantalla("Fin_capture3.txt")
+        
         if not _last_all_tasks:
             dump_screen_debug("after_refresh_empty")
         return _last_all_tasks

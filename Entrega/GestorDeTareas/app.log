@@ -277,3 +277,296 @@
 2025-10-01 23:47:18,441 INFO root: Pantalla menú listar tareas (refresh)
 2025-10-01 23:47:21,482 INFO root: Listar todas las tareas (refresh)
 2025-10-01 23:47:45,997 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-01 23:50:34,262 INFO root: Intento de login para usuario: grupo_14
+2025-10-01 23:50:34,262 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:50:34,263 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:50:34,266 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:50:36,577 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:50:36,577 INFO root: Esperando campo inicial...
+2025-10-01 23:50:36,598 INFO root: Pantalla de login
+2025-10-01 23:50:37,599 INFO root: Esperando campo de usuario...
+2025-10-01 23:50:37,622 INFO root: Esperando campo de contraseña...
+2025-10-01 23:50:38,648 INFO root: Comprobando resultado del login...
+2025-10-01 23:50:38,648 INFO root: Inicio de sesión exitoso
+2025-10-01 23:50:38,649 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:50:38,671 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:50:40,803 INFO root: Pantalla menú de tareas
+2025-10-01 23:50:41,824 INFO root: Pantalla menú listar tareas
+2025-10-01 23:50:43,847 INFO root: Listar todas las tareas
+2025-10-01 23:50:44,986 INFO root: procesar_tareas(): 36 elementos
+2025-10-01 23:50:46,512 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:50:48,038 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:50:49,045 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:50:49,046 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:51:11,469 INFO root: Pantalla menú de tareas (refresh)
+2025-10-01 23:51:12,996 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-01 23:51:16,020 INFO root: Listar todas las tareas (refresh)
+2025-10-01 23:52:40,764 INFO root: Asignando tarea especifica: FECHA=2025-10-31, NOMBRE=sorpresa  DESCRIPCION=sorpresa
+2025-10-01 23:52:40,765 INFO root: Asignando tarea especifica: FECHA=2025-10-31, NOMBRE="sorpresa"  DESCRIPCION="sorpresa" TIPO=Especifica
+2025-10-01 23:52:41,268 INFO root: send string 1 check
+2025-10-01 23:52:41,290 INFO root: send enter 1 check
+2025-10-01 23:52:41,290 INFO root: Asignando tarea específica
+2025-10-01 23:52:41,291 INFO root: send string check
+2025-10-01 23:52:41,375 INFO root: send enter check
+2025-10-01 23:52:41,375 INFO root: delete field check
+2025-10-01 23:52:41,375 INFO root: send string fecha check
+2025-10-01 23:52:41,397 INFO root: send enter fecha check
+2025-10-01 23:52:41,397 INFO root: delete field fecha check
+2025-10-01 23:52:41,397 INFO root: send string nombre check
+2025-10-01 23:52:41,485 INFO root: send enter nombre check
+2025-10-01 23:52:41,485 INFO root: delete field nombre check
+2025-10-01 23:52:41,485 INFO root: send string desc check
+2025-10-01 23:52:41,507 INFO root: send enter desc check
+2025-10-01 23:52:41,507 INFO root: delete field desc check
+2025-10-01 23:52:41,507 INFO root: send string 3 check
+2025-10-01 23:52:41,530 INFO root: send enter 3 check
+2025-10-01 23:52:41,531 INFO root: delete field 3 check
+2025-10-01 23:52:42,531 ERROR app: Exception on /assignEspecifica [POST]
+Traceback (most recent call last):
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\app.py", line 86, in assignEspecifica
+    assign_tasks(tipo, fecha, desc, nombre)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 510, in assign_tasks
+    e.send_string("0")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Keyboard lockedOperator error
+2025-10-01 23:55:16,269 INFO root: Intento de login para usuario: grupo_14
+2025-10-01 23:55:16,270 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:55:16,270 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:55:16,274 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:55:18,566 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:55:18,566 INFO root: Esperando campo inicial...
+2025-10-01 23:55:18,587 INFO root: Pantalla de login
+2025-10-01 23:55:19,588 INFO root: Esperando campo de usuario...
+2025-10-01 23:55:19,611 INFO root: Esperando campo de contraseña...
+2025-10-01 23:55:20,635 INFO root: Comprobando resultado del login...
+2025-10-01 23:55:20,635 INFO root: Inicio de sesión exitoso
+2025-10-01 23:55:20,635 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:55:20,656 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:55:22,782 INFO root: Pantalla menú de tareas
+2025-10-01 23:55:23,804 INFO root: Pantalla menú listar tareas
+2025-10-01 23:55:25,826 INFO root: Listar todas las tareas
+2025-10-01 23:55:26,979 INFO root: procesar_tareas(): 36 elementos
+2025-10-01 23:55:28,508 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:55:30,033 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:55:31,041 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:55:31,041 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:55:39,977 INFO root: Pantalla menú de tareas (refresh)
+2025-10-01 23:55:41,499 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-01 23:55:44,521 INFO root: Listar todas las tareas (refresh)
+2025-10-01 23:59:41,422 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 00:00:08,678 INFO root: Intento de login para usuario: grupo_14
+2025-10-02 00:00:08,678 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 00:00:08,679 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 00:00:08,683 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 00:00:10,979 INFO root: Pantalla de Music Mainframe
+2025-10-02 00:00:10,979 INFO root: Esperando campo inicial...
+2025-10-02 00:00:11,003 INFO root: Pantalla de login
+2025-10-02 00:00:12,003 INFO root: Esperando campo de usuario...
+2025-10-02 00:00:12,029 INFO root: Esperando campo de contraseña...
+2025-10-02 00:00:13,056 INFO root: Comprobando resultado del login...
+2025-10-02 00:00:13,057 INFO root: Inicio de sesión exitoso
+2025-10-02 00:00:13,057 INFO root: Pantalla de espera -> ENTER
+2025-10-02 00:00:13,080 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 00:00:15,209 INFO root: Pantalla menú de tareas
+2025-10-02 00:00:16,234 INFO root: Pantalla menú listar tareas
+2025-10-02 00:00:18,258 INFO root: Listar todas las tareas
+2025-10-02 00:00:20,422 INFO root: procesar_tareas(): 36 elementos
+2025-10-02 00:00:21,950 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:00:23,478 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:00:24,485 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 00:00:24,486 INFO root: Login correcto, mostrando tareas
+2025-10-02 00:00:27,742 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:00:29,267 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:00:32,296 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:00:42,052 INFO root: Pantalla guardada para debug: after_refresh_empty_20251002-000041.txt
+2025-10-02 00:00:42,555 INFO root: Pantalla guardada para debug: after_refresh_empty_20251002-000042.txt
+2025-10-02 00:02:19,865 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 00:02:41,155 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 00:02:41,155 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 00:02:41,155 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 00:02:41,159 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 00:02:43,457 INFO root: Pantalla de Music Mainframe
+2025-10-02 00:02:43,457 INFO root: Esperando campo inicial...
+2025-10-02 00:02:43,480 INFO root: Pantalla de login
+2025-10-02 00:02:44,480 INFO root: Esperando campo de usuario...
+2025-10-02 00:02:44,505 INFO root: Esperando campo de contraseña...
+2025-10-02 00:02:45,528 INFO root: Comprobando resultado del login...
+2025-10-02 00:02:45,529 WARNING root: Error: Usuario ya en uso
+2025-10-02 00:02:45,529 WARNING root: Usuario en uso; render ocupada
+2025-10-02 00:02:53,698 INFO root: Intento de login para usuario: grupo_14
+2025-10-02 00:02:53,698 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 00:02:53,699 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 00:02:53,701 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 00:02:56,009 INFO root: Pantalla de Music Mainframe
+2025-10-02 00:02:56,009 INFO root: Esperando campo inicial...
+2025-10-02 00:02:56,033 INFO root: Pantalla de login
+2025-10-02 00:02:57,034 INFO root: Esperando campo de usuario...
+2025-10-02 00:02:57,061 INFO root: Esperando campo de contraseña...
+2025-10-02 00:02:58,087 INFO root: Comprobando resultado del login...
+2025-10-02 00:02:58,088 INFO root: Inicio de sesión exitoso
+2025-10-02 00:02:58,088 INFO root: Pantalla de espera -> ENTER
+2025-10-02 00:02:58,112 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 00:03:00,244 INFO root: Pantalla menú de tareas
+2025-10-02 00:03:01,270 INFO root: Pantalla menú listar tareas
+2025-10-02 00:03:03,295 INFO root: Listar todas las tareas
+2025-10-02 00:03:05,447 INFO root: procesar_tareas(): 36 elementos
+2025-10-02 00:03:06,975 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:03:08,503 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:03:09,510 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 00:03:09,511 INFO root: Login correcto, mostrando tareas
+2025-10-02 00:03:17,835 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:03:19,361 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:03:22,386 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:03:40,756 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:03:42,281 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:03:45,307 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:04:11,938 INFO root: Asignando tarea especifica: FECHA=2025-10-21, NOMBRE=sopresa  DESCRIPCION=sorpresa
+2025-10-02 00:04:11,938 INFO root: Asignando tarea especifica: FECHA=2025-10-21, NOMBRE="sopresa"  DESCRIPCION="sorpresa" TIPO=Especifica
+2025-10-02 00:04:12,441 INFO root: send string 1 check
+2025-10-02 00:04:12,467 INFO root: send enter 1 check
+2025-10-02 00:04:12,467 INFO root: Asignando tarea específica
+2025-10-02 00:04:12,467 INFO root: send string check
+2025-10-02 00:04:12,563 INFO root: send enter check
+2025-10-02 00:04:12,563 INFO root: delete field check
+2025-10-02 00:04:12,563 INFO root: send string fecha check
+2025-10-02 00:04:12,587 INFO root: send enter fecha check
+2025-10-02 00:04:12,588 INFO root: delete field fecha check
+2025-10-02 00:04:12,588 INFO root: send string nombre check
+2025-10-02 00:04:12,687 INFO root: send enter nombre check
+2025-10-02 00:04:12,688 INFO root: delete field nombre check
+2025-10-02 00:04:12,688 INFO root: send string desc check
+2025-10-02 00:04:12,714 INFO root: send enter desc check
+2025-10-02 00:04:12,714 INFO root: delete field desc check
+2025-10-02 00:04:12,715 INFO root: send string 3 check
+2025-10-02 00:04:12,810 INFO root: send enter 3 check
+2025-10-02 00:04:12,810 INFO root: delete field 3 check
+2025-10-02 00:04:13,836 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:04:14,861 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:04:15,885 INFO root: Saliendo de pantalla menú listar tareas: numero 0 3
+2025-10-02 00:04:17,890 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:04:19,415 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:04:22,441 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:04:31,232 INFO root: Pantalla guardada para debug: after_refresh_empty_20251002-000430.txt
+2025-10-02 00:04:31,735 INFO root: Pantalla guardada para debug: after_assign_specific_empty_20251002-000431.txt
+2025-10-02 00:05:23,759 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 00:05:54,090 INFO root: Intento de login para usuario: grupo_14
+2025-10-02 00:05:54,091 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 00:05:54,091 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 00:05:54,094 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 00:05:56,372 INFO root: Pantalla de Music Mainframe
+2025-10-02 00:05:56,372 INFO root: Esperando campo inicial...
+2025-10-02 00:05:56,392 INFO root: Pantalla de login
+2025-10-02 00:05:57,392 INFO root: Esperando campo de usuario...
+2025-10-02 00:05:57,417 INFO root: Esperando campo de contraseña...
+2025-10-02 00:05:58,439 INFO root: Comprobando resultado del login...
+2025-10-02 00:05:58,440 INFO root: Inicio de sesión exitoso
+2025-10-02 00:05:58,440 INFO root: Pantalla de espera -> ENTER
+2025-10-02 00:05:58,460 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 00:06:00,591 INFO root: Pantalla menú de tareas
+2025-10-02 00:06:01,611 INFO root: Pantalla menú listar tareas
+2025-10-02 00:06:03,632 INFO root: Listar todas las tareas
+2025-10-02 00:06:05,784 INFO root: procesar_tareas(): 37 elementos
+2025-10-02 00:06:07,307 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:06:08,831 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:06:09,838 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 00:06:09,838 INFO root: Login correcto, mostrando tareas
+2025-10-02 00:06:20,030 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:06:21,551 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:06:24,574 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:06:49,380 INFO root: Asignando tarea especifica: FECHA=2025-10-31, NOMBRE=sorpresa  DESCRIPCION=sorpresa
+2025-10-02 00:06:49,380 INFO root: Asignando tarea especifica: FECHA=2025-10-31, NOMBRE="sorpresa"  DESCRIPCION="sorpresa" TIPO=Especifica
+2025-10-02 00:06:49,883 INFO root: send string 1 check
+2025-10-02 00:06:49,904 INFO root: send enter 1 check
+2025-10-02 00:06:49,904 INFO root: Asignando tarea específica
+2025-10-02 00:06:49,904 INFO root: send string check
+2025-10-02 00:06:49,994 INFO root: send enter check
+2025-10-02 00:06:49,995 INFO root: delete field check
+2025-10-02 00:06:49,995 INFO root: send string fecha check
+2025-10-02 00:06:50,015 INFO root: send enter fecha check
+2025-10-02 00:06:50,015 INFO root: delete field fecha check
+2025-10-02 00:06:50,015 INFO root: send string nombre check
+2025-10-02 00:06:50,104 INFO root: send enter nombre check
+2025-10-02 00:06:50,104 INFO root: delete field nombre check
+2025-10-02 00:06:50,104 INFO root: send string desc check
+2025-10-02 00:06:50,125 INFO root: send enter desc check
+2025-10-02 00:06:50,125 INFO root: delete field desc check
+2025-10-02 00:06:50,125 INFO root: send string 3 check
+2025-10-02 00:06:50,212 INFO root: send enter 3 check
+2025-10-02 00:06:50,212 INFO root: delete field 3 check
+2025-10-02 00:06:51,232 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:06:52,254 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:06:54,257 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:06:55,778 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:06:58,800 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:07:12,316 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:07:13,837 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:07:16,857 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:07:37,420 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 00:07:46,689 INFO root: Intento de login para usuario: grupo_14
+2025-10-02 00:07:46,689 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 00:07:46,689 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 00:07:46,692 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 00:07:48,993 INFO root: Pantalla de Music Mainframe
+2025-10-02 00:07:48,993 INFO root: Esperando campo inicial...
+2025-10-02 00:07:49,015 INFO root: Pantalla de login
+2025-10-02 00:07:50,015 INFO root: Esperando campo de usuario...
+2025-10-02 00:07:50,039 INFO root: Esperando campo de contraseña...
+2025-10-02 00:07:51,063 INFO root: Comprobando resultado del login...
+2025-10-02 00:07:51,064 INFO root: Inicio de sesión exitoso
+2025-10-02 00:07:51,064 INFO root: Pantalla de espera -> ENTER
+2025-10-02 00:07:51,087 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 00:07:53,221 INFO root: Pantalla menú de tareas
+2025-10-02 00:07:54,244 INFO root: Pantalla menú listar tareas
+2025-10-02 00:07:56,269 INFO root: Listar todas las tareas
+2025-10-02 00:07:58,414 INFO root: procesar_tareas(): 38 elementos
+2025-10-02 00:07:59,940 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:08:01,467 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:08:02,474 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 00:08:02,474 INFO root: Login correcto, mostrando tareas
+2025-10-02 00:08:21,479 INFO root: Asignando tarea especifica: FECHA=2025-10-25, NOMBRE=si  DESCRIPCION=si
+2025-10-02 00:08:21,479 INFO root: Asignando tarea especifica: FECHA=2025-10-25, NOMBRE="si"  DESCRIPCION="si" TIPO=Especifica
+2025-10-02 00:08:21,982 INFO root: send string 1 check
+2025-10-02 00:08:22,006 INFO root: send enter 1 check
+2025-10-02 00:08:22,007 INFO root: Asignando tarea específica
+2025-10-02 00:08:22,007 INFO root: send string check
+2025-10-02 00:08:22,094 INFO root: send enter check
+2025-10-02 00:08:22,094 INFO root: delete field check
+2025-10-02 00:08:22,095 INFO root: send string fecha check
+2025-10-02 00:08:22,117 INFO root: send enter fecha check
+2025-10-02 00:08:22,117 INFO root: delete field fecha check
+2025-10-02 00:08:22,117 INFO root: send string nombre check
+2025-10-02 00:08:22,204 INFO root: send enter nombre check
+2025-10-02 00:08:22,204 INFO root: delete field nombre check
+2025-10-02 00:08:22,205 INFO root: send string desc check
+2025-10-02 00:08:22,228 INFO root: send enter desc check
+2025-10-02 00:08:22,228 INFO root: delete field desc check
+2025-10-02 00:08:22,229 INFO root: send string 3 check
+2025-10-02 00:08:22,315 INFO root: send enter 3 check
+2025-10-02 00:08:22,316 INFO root: delete field 3 check
+2025-10-02 00:08:23,340 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:08:24,363 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:08:26,367 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:08:27,890 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:08:30,913 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:08:43,360 INFO root: Sesión TN3270 finalizada en exit_tasks()
