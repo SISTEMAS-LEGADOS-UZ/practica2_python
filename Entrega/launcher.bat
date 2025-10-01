@@ -25,11 +25,11 @@ set PIP="%VENV_PATH%\Scripts\pip.exe"
 python -m venv "%VENV_PATH%"
 
 :: Activar el entorno virtual
-echo Creando entorno virtual en %VENV_PATH% si es necesario ...
+echo Creando entorno virtual en %VENV_PATH% ...
 call "%VENV_PATH%\Scripts\activate.bat"
 
 :: Instalar las dependencias de tu aplicación
-echo Instalando dependencias si es necesario ...
+echo Instalando dependencias ...
 %PIP% install -r "%REQ_PATH%\requirements.txt" > nul 2>&1
 
 :: Ejecutar la aplicación Flask y esperar a que termine
