@@ -2,6 +2,10 @@ from lib.py3270 import Emulator
 import time
 import logging
 import os
+import re
+
+# Cache de la última lista de tareas (ALL TASKS) para usarla en la UI
+_last_all_tasks = []
 
 delayScreen=1.5
 
@@ -116,10 +120,10 @@ def emulador(mylogin, mypass):
             logging.info("Pantalla menú listar tareas")
             time.sleep(retardo2)
 
-            # Listar todas las tareas -> opción 2
+            # Listar todas las tareas -> opción 3
             time.sleep(retardo2)
             e.wait_for_field()
-            e.send_string("2")
+            e.send_string("3")
             e.send_enter()
             logging.info("Listar todas las tareas")
 
@@ -227,6 +231,16 @@ def pantalla(filename="pantalla.txt"):
     archivo.write(screen_content)
     archivo.close()
 
+def dump_screen_debug(prefix: str = "debug_screen"):
+    """Guarda la pantalla actual en un .txt con timestamp para depuración."""
+    try:
+        ts = time.strftime("%Y%m%d-%H%M%S")
+        fname = f"{prefix}_{ts}.txt"
+        pantalla(fname)
+        logging.info("Pantalla guardada para debug: %s", fname)
+    except Exception:
+        logging.exception("No se pudo guardar la pantalla de debug")
+
 def obtener_estructura_tareas(em=None):
     """Placeholder compatible con el snippet: obtiene estructura de la pantalla actual.
 
@@ -235,9 +249,16 @@ def obtener_estructura_tareas(em=None):
     contenido crudo si se quiere enriquecer más adelante.
     """
     try:
-        pantalla("pantalla_lista_todas_las_tareas.txt")
-        # Retornar estructura vacía por defecto (no usada por la app Flask actual)
-        return []
+        # Guardamos la pantalla actual que corresponde a "ALL TASKS"
+        file_all = "pantalla_lista_todas_las_tareas.txt"
+        pantalla(file_all)
+        # Parseamos esa pantalla para devolver una estructura útil y la cacheamos
+        global _last_all_tasks
+        _last_all_tasks = parse_all_tasks(file_all)
+        if not _last_all_tasks:
+            # Si no hay tareas, guardamos la pantalla actual para depurar
+            dump_screen_debug("all_tasks_empty")
+        return _last_all_tasks
     except Exception:
         logging.exception("No se pudo obtener la estructura de tareas")
         return []
@@ -351,6 +372,87 @@ def get_tasks_specific(file="pantalla.txt"):
                     resultado.append(temp)
     # print("SPECIFIC: ", resultado)
     return resultado
+
+# Parser para la pantalla "ALL TASKS" (opción 3)
+def parse_all_tasks(file: str = "pantalla_lista_todas_las_tareas.txt"):
+    """Parses the 'ALL TASKS' screen into a list of dicts.
+
+    Formatos esperados por línea (tolerantes a espacios):
+      - TASK #n: GENERAL <fecha> ----- <descripcion>
+      - TASK #n: SPECIFIC <fecha> <nombre> <descripcion>
+
+    Devuelve una lista de elementos tipo:
+      {"id": n, "tipo": "GENERAL"|"SPECIFIC", "fecha": str, "descripcion": str, "nombre": str|None}
+    """
+    tareas = []
+    try:
+        with open(file, "r", encoding="utf-8", errors="ignore") as f:
+            lineas = [l.rstrip("\n") for l in f.readlines()]
+
+        # Regex base para capturar id, tipo y el resto
+        re_base = re.compile(r"^\s*TASK\s*#\s*(\d+)\s*:\s*(GENERAL|SPECIFIC)\s+(.*)$", re.IGNORECASE)
+        re_general = re.compile(r"^(\d{2}-\d{2}-\d{4})\s*-+\s*(.*)$")
+
+        for raw in lineas:
+            m = re_base.match(raw)
+            if not m:
+                continue
+            task_id = int(m.group(1))
+            tipo = m.group(2).upper()
+            resto = m.group(3).strip()
+
+            item = {"id": task_id, "tipo": tipo, "fecha": None, "descripcion": "", "nombre": None}
+
+            if tipo == "GENERAL":
+                mg = re_general.match(resto)
+                if mg:
+                    item["fecha"] = mg.group(1)
+                    item["descripcion"] = mg.group(2).strip()
+                else:
+                    # Fallback: sin separador '-----'
+                    partes = resto.split()
+                    if partes:
+                        item["fecha"] = partes[0]
+                        item["descripcion"] = " ".join(partes[1:]).strip()
+            else:  # SPECIFIC
+                # Esperamos: <fecha> <nombre> <descripcion>
+                partes = resto.split()
+                if partes:
+                    item["fecha"] = partes[0]
+                    if len(partes) >= 2:
+                        item["nombre"] = partes[1].strip('"')
+                    if len(partes) >= 3:
+                        item["descripcion"] = " ".join(partes[2:]).strip('"').strip()
+
+            tareas.append(item)
+
+    except Exception:
+        logging.exception("No se pudo parsear la pantalla de ALL TASKS")
+    return tareas
+
+def get_last_all_tasks():
+    """Devuelve la última lista parseada de 'ALL TASKS' capturada durante emulador()."""
+    return list(_last_all_tasks)
+
+def refresh_all_tasks():
+    """Renavega al menú de VIEW TASKS -> ALL TASKS y devuelve la lista parseada.
+
+    Asume que la sesión TN3270 está activa y en el menú de tasks.c o similar.
+    """
+    try:
+        # Ir a VIEW TASKS
+        e.send_string("2")
+        e.send_enter()
+        e.delete_field()
+        # ALL TASKS
+        e.send_string("3")
+        e.send_enter()
+        e.delete_field()
+        # Capturar y parsear como en obtener_estructura_tareas
+        return obtener_estructura_tareas(e)
+    except Exception:
+        logging.exception("No se pudo refrescar la lista de ALL TASKS")
+        return []
 
 # Opción VIEW TASKS
 def view_tasks():
