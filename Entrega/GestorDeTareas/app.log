@@ -1,0 +1,125 @@
+2025-10-01 23:00:12,867 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:00:12,867 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:00:12,868 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:00:12,871 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:00:15,192 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:00:15,192 INFO root: Esperando campo inicial...
+2025-10-01 23:00:15,218 INFO root: Pantalla de login
+2025-10-01 23:00:16,219 INFO root: Esperando campo de usuario...
+2025-10-01 23:00:16,246 INFO root: Esperando campo de contraseña...
+2025-10-01 23:00:17,274 INFO root: Comprobando resultado del login...
+2025-10-01 23:00:17,274 INFO root: Inicio de sesión exitoso
+2025-10-01 23:00:17,274 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:00:17,300 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:00:19,435 INFO root: Pantalla menú de tareas
+2025-10-01 23:00:20,461 INFO root: Pantalla menú listar tareas
+2025-10-01 23:00:22,489 INFO root: Listar todas las tareas
+2025-10-01 23:00:23,663 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:00:24,690 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:00:25,716 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:00:26,742 INFO root: Saliendo de pantalla menú listar tareas: numero 0 3
+2025-10-01 23:00:27,246 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:00:27,246 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:00:46,730 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-230046.txt
+2025-10-01 23:00:47,233 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-230046.txt
+2025-10-01 23:01:01,420 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-230100.txt
+2025-10-01 23:01:01,923 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-230101.txt
+2025-10-01 23:03:34,204 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-01 23:04:07,030 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:04:07,031 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:04:07,031 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:04:07,035 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:04:09,282 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:04:09,283 INFO root: Esperando campo inicial...
+2025-10-01 23:04:09,301 INFO root: Pantalla de login
+2025-10-01 23:04:10,301 INFO root: Esperando campo de usuario...
+2025-10-01 23:04:10,320 INFO root: Esperando campo de contraseña...
+2025-10-01 23:04:11,341 INFO root: Comprobando resultado del login...
+2025-10-01 23:04:11,341 INFO root: Inicio de sesión exitoso
+2025-10-01 23:04:11,342 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:04:11,359 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:04:13,482 INFO root: Pantalla menú de tareas
+2025-10-01 23:04:14,500 INFO root: Pantalla menú listar tareas
+2025-10-01 23:04:16,521 INFO root: Listar todas las tareas
+2025-10-01 23:04:17,652 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:04:18,670 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:04:19,689 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:04:20,708 INFO root: Saliendo de pantalla menú listar tareas: numero 0 3
+2025-10-01 23:04:21,211 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:04:21,212 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:04:38,080 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-230437.txt
+2025-10-01 23:04:38,585 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-230438.txt
+2025-10-01 23:05:27,645 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-01 23:12:20,937 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:12:20,937 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:12:20,938 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:12:20,941 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:12:23,237 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:12:23,237 INFO root: Esperando campo inicial...
+2025-10-01 23:12:23,259 INFO root: Pantalla de login
+2025-10-01 23:12:24,260 INFO root: Esperando campo de usuario...
+2025-10-01 23:12:24,283 INFO root: Esperando campo de contraseña...
+2025-10-01 23:12:25,307 INFO root: Comprobando resultado del login...
+2025-10-01 23:12:25,307 INFO root: Inicio de sesión exitoso
+2025-10-01 23:12:25,308 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:12:25,330 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:12:27,457 INFO root: Pantalla menú de tareas
+2025-10-01 23:12:28,481 INFO root: Pantalla menú listar tareas
+2025-10-01 23:12:30,504 INFO root: Listar todas las tareas
+2025-10-01 23:12:31,624 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:12:32,646 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:12:33,669 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:12:34,691 INFO root: Saliendo de pantalla menú listar tareas: numero 0 3
+2025-10-01 23:12:35,195 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:12:35,195 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:12:51,470 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-231250.txt
+2025-10-01 23:12:51,974 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-231251.txt
+2025-10-01 23:16:02,379 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:16:02,380 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:16:02,380 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:16:02,384 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:16:04,667 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:16:04,668 INFO root: Esperando campo inicial...
+2025-10-01 23:16:04,689 INFO root: Pantalla de login
+2025-10-01 23:16:05,689 INFO root: Esperando campo de usuario...
+2025-10-01 23:16:05,711 INFO root: Esperando campo de contraseña...
+2025-10-01 23:16:06,735 INFO root: Comprobando resultado del login...
+2025-10-01 23:16:06,735 INFO root: Inicio de sesión exitoso
+2025-10-01 23:16:06,735 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:16:06,756 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:16:08,884 INFO root: Pantalla menú de tareas
+2025-10-01 23:16:09,905 INFO root: Pantalla menú listar tareas
+2025-10-01 23:16:11,928 INFO root: Listar todas las tareas
+2025-10-01 23:16:13,058 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:16:14,080 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:16:15,102 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:16:16,123 INFO root: Saliendo de pantalla menú listar tareas: numero 0 3
+2025-10-01 23:16:16,627 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:16:16,627 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:16:30,993 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-231630.txt
+2025-10-01 23:16:31,496 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-231630.txt
+2025-10-01 23:18:20,189 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 23:18:20,190 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 23:18:20,190 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 23:18:20,194 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 23:18:22,480 INFO root: Pantalla de Music Mainframe
+2025-10-01 23:18:22,481 INFO root: Esperando campo inicial...
+2025-10-01 23:18:22,503 INFO root: Pantalla de login
+2025-10-01 23:18:23,503 INFO root: Esperando campo de usuario...
+2025-10-01 23:18:23,526 INFO root: Esperando campo de contraseña...
+2025-10-01 23:18:24,551 INFO root: Comprobando resultado del login...
+2025-10-01 23:18:24,552 INFO root: Inicio de sesión exitoso
+2025-10-01 23:18:24,552 INFO root: Pantalla de espera -> ENTER
+2025-10-01 23:18:24,574 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 23:18:26,703 INFO root: Pantalla menú de tareas
+2025-10-01 23:18:27,726 INFO root: Pantalla menú listar tareas
+2025-10-01 23:18:29,749 INFO root: Listar todas las tareas
+2025-10-01 23:18:30,890 INFO root: procesar_tareas(): 20 elementos
+2025-10-01 23:18:31,912 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-01 23:18:32,935 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-01 23:18:33,957 INFO root: Saliendo de pantalla menú listar tareas: numero 0 3
+2025-10-01 23:18:34,461 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-01 23:18:34,461 INFO root: Login correcto, mostrando tareas
+2025-10-01 23:18:44,867 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-231844.txt
+2025-10-01 23:18:45,371 INFO root: Pantalla guardada para debug: after_refresh_empty_20251001-231844.txt
+2025-10-01 23:18:49,720 INFO root: Sesión TN3270 finalizada en exit_tasks()

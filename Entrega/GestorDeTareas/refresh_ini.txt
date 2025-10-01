@@ -1,24 +1,24 @@
-        TASK #15: SPECIFIC 2025-10-25 "ll" "ll"                                
-        TASK #16: SPECIFIC 2025-11-06 "ff" "ff"                                
-                                                                               
-   TOTAL TASKS: 16                                                             
                                                                                
                                                                                
                                                                                
+                                  MAIN MENU                                    
+                                  *********                                    
                                                                                
                                                                                
-                        ENTER ANY KEY TO CONTINUE                              
+                              1 - ASSIGN TASKS                                 
+                                                                               
+                                                                               
+                              2 - VIEW TASKS                                   
+                                                                               
+                                                                               
+                              0 - EXIT                                         
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
 ?                                                                              
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
+0                                                                              
                                                                                
                                                                                
                                                                                
@@ -40,4 +40,4 @@
                                                                                
 ------T-----------------------------------------------------------------T      
                                                                                
-                                                                      Reading  
+         *Press enter to continue ...                                 More...  

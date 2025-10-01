@@ -1,30 +1,27 @@
                                                                                
+ ---------------------- Help for the FSI Facility ------------------- Page 1/11
+ Command ===>                                                                  
+  DATE: 01Oct25 22:16:30                                UPDATE: 01Oct25 12:42  
                                                                                
+  Welcome to the MUSIC/SP's Full Screen Interface (FSI). This facility         
+  allows access to various components of the MUSIC system through a series     
+  of selection menus.                                                          
                                                                                
-                                  MAIN MENU                                    
-                                  *********                                    
+  Following items describe how to use this interface.                          
                                                                                
+  Screen Format:                                                               
                                                                                
-                              1 - ASSIGN TASKS                                 
+    The first line, the action bar, contains a list of commands.               
+    You can use the cursor movement keys or the tab key or the mouse           
+    to select one of these commands.                                           
                                                                                
+    The second line on the screen contains the screen title.                   
                                                                                
-                              2 - VIEW TASKS                                   
-                                                                               
-                                                                               
-                              0 - EXIT                                         
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-              OPTION:                                                          
-?                                                                              
-0                                                                              
-                                                                               
-                                                                               
+    Press F8 to see the next screen.                                           
                                                                                
                                                                                
                                                                                
-                                                                               
+ F1=Help  F2=Ask F3=End F7=Up F8=Dn  F9=Find  F10=Top  F11=Bot F12=Ret  F8=MORE
                                                                                
                                                                                
                                                                                
@@ -38,6 +35,9 @@
                                                                                
                                                                                
                                                                                
-------T-----------------------------------------------------------------T      
                                                                                
-         *Press enter to continue ...                                 More...  
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               

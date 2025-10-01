@@ -156,6 +156,7 @@ def emulador(mylogin, mypass):
             e.wait_for_field()
             e.send_string("0")
             e.send_enter()
+            e.delete_field()
             logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
             
             
@@ -163,12 +164,14 @@ def emulador(mylogin, mypass):
             e.wait_for_field()
             e.send_string("0")
             e.send_enter()
+            e.delete_field()
             logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
          
             time.sleep(retardo2)
             e.wait_for_field()
             e.send_string("0")
             e.send_enter()
+        
             logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
         
             pantalla("login.txt")
@@ -580,6 +583,7 @@ def refresh_all_tasks():
     Asume que la sesión TN3270 está activa y en el menú de tasks.c o similar.
     """
     try:
+        e.delete_field()
         pantalla("refresh_ini.txt")
         # Ir a VIEW TASKS
         
