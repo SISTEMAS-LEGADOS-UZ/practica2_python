@@ -176,12 +176,11 @@ def emulador(mylogin, mypass):
             pass
         return -1
     finally:
-        # Cerrar la conexión de forma correcta si el login fue OK
+        # No cerramos la conexión si el login fue OK, para que el resto de acciones (assign/view/refresh)
+        # puedan reutilizar la misma sesión TN3270. El cierre se realiza explícitamente en exit_tasks().
         try:
             if login == 0 and 'e' in globals() and e:
-                time.sleep(retardo1)
-                e.terminate()
-                logging.info("Conexión terminada correctamente")
+                logging.info("Sesión TN3270 permanece abierta para operaciones posteriores")
         except Exception:
             pass
 
@@ -241,6 +240,78 @@ def dump_screen_debug(prefix: str = "debug_screen"):
     except Exception:
         logging.exception("No se pudo guardar la pantalla de debug")
 
+def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.txt", max_pages: int = 200) -> str:
+    """Captura todas las páginas del listado 'ALL TASKS', pulsando ENTER hasta el final.
+
+    - Comienza desde la pantalla actual del listado (opción 3 ya seleccionada).
+    - Avanza con ENTER hasta encontrar la línea 'TOTAL TASKS'.
+    - Escribe todas las líneas concatenadas en save_file.
+    - Tras capturar la última página, pulsa ENTER para volver al menú.
+
+    Devuelve la ruta del archivo generado con el volcado completo.
+    """
+    lines_all = []
+    try:
+        for _ in range(max_pages):
+            # Leer pantalla actual y acumular
+            try:
+                screen_text = _get_screen_text()
+            except Exception:
+                logging.exception("No se pudo leer la pantalla actual de ALL TASKS")
+                screen_text = ""
+
+            # Acumular líneas tal cual (el parser filtrará lo necesario)
+            if screen_text:
+                lines_all.extend(screen_text.splitlines())
+
+            # ¿Estamos en la última página? (aparece 'TOTAL TASKS')
+            if "TOTAL TASKS" in screen_text:
+                # Guardar todo y salir; después hay que aceptar con ENTER para volver
+                try:
+                    with open(save_file, "w", encoding="utf-8") as f:
+                        f.write("\n".join(lines_all))
+                except Exception:
+                    logging.exception("No se pudo escribir el volcado de ALL TASKS en %s", save_file)
+
+                # Salir de la pantalla de resumen
+                try:
+                    e.send_enter()
+                except Exception:
+                    pass
+                try:
+                    e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                return save_file
+
+            # No es la última página: avanzar
+            try:
+                e.send_enter()
+            except Exception:
+                logging.exception("Fallo al enviar ENTER para avanzar en ALL TASKS")
+                break
+            try:
+                e.wait_for_field()
+            except Exception:
+                time.sleep(0.2)
+
+        # Fallback: guardar lo que tengamos
+        try:
+            with open(save_file, "w", encoding="utf-8") as f:
+                f.write("\n".join(lines_all))
+        except Exception:
+            logging.exception("No se pudo escribir el volcado parcial de ALL TASKS en %s", save_file)
+        return save_file
+    except Exception:
+        logging.exception("Error inesperado capturando las páginas de ALL TASKS")
+        # Intentar dejar algún artefacto para depuración
+        try:
+            with open(save_file, "w", encoding="utf-8") as f:
+                f.write("\n".join(lines_all))
+        except Exception:
+            pass
+        return save_file
+
 def obtener_estructura_tareas(em=None):
     """Placeholder compatible con el snippet: obtiene estructura de la pantalla actual.
 
@@ -249,9 +320,8 @@ def obtener_estructura_tareas(em=None):
     contenido crudo si se quiere enriquecer más adelante.
     """
     try:
-        # Guardamos la pantalla actual que corresponde a "ALL TASKS"
-        file_all = "pantalla_lista_todas_las_tareas.txt"
-        pantalla(file_all)
+        # Guardamos TODAS las páginas del listado "ALL TASKS"
+        file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
         # Parseamos esa pantalla para devolver una estructura útil y la cacheamos
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
@@ -448,8 +518,13 @@ def refresh_all_tasks():
         e.send_string("3")
         e.send_enter()
         e.delete_field()
-        # Capturar y parsear como en obtener_estructura_tareas
-        return obtener_estructura_tareas(e)
+        # Capturar todas las páginas y parsear como en obtener_estructura_tareas
+        file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
+        global _last_all_tasks
+        _last_all_tasks = parse_all_tasks(file_all)
+        if not _last_all_tasks:
+            dump_screen_debug("after_refresh_empty")
+        return _last_all_tasks
     except Exception:
         logging.exception("No se pudo refrescar la lista de ALL TASKS")
         return []
@@ -485,11 +560,26 @@ def view_tasks():
 # Opción EXIT TASKS
 def exit_tasks():
     global e
-    e.send_string("3")
-    e.send_enter()
-    e.delete_field()
-    e.send_string("off")
-    e.send_enter()
-    e.delete_field()
-    time.sleep(0.5)
-    e.terminate()
+    try:
+        if e:
+            try:
+                e.send_string("3")
+                e.send_enter()
+                e.delete_field()
+            except Exception:
+                # Puede no estar en ese menú; intentamos apagar igualmente
+                pass
+            try:
+                e.send_string("off")
+                e.send_enter()
+                e.delete_field()
+            except Exception:
+                pass
+            time.sleep(0.5)
+            try:
+                e.terminate()
+            except Exception:
+                pass
+            logging.info("Sesión TN3270 finalizada en exit_tasks()")
+    except Exception:
+        logging.exception("Error finalizando la sesión en exit_tasks()")

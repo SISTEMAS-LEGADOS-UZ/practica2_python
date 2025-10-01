@@ -1626,3 +1626,49 @@ lib.py3270.CommandError: Wait(inputfield): Timed out
 2025-10-01 13:19:41,069 INFO root: procesar_tareas(): 4 elementos
 2025-10-01 13:19:43,076 INFO root: Conexión terminada correctamente
 2025-10-01 13:19:43,079 INFO root: Login correcto, mostrando tareas
+2025-10-01 13:40:01,908 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 13:40:01,910 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 13:40:01,911 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 13:40:02,275 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 13:40:04,487 INFO root: Pantalla de Music Mainframe
+2025-10-01 13:40:04,494 INFO root: Esperando campo inicial...
+2025-10-01 13:40:34,502 ERROR root: Error durante la ejecución de emulador(): Wait(inputfield): Timed out
+Traceback (most recent call last):
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\emulator.py", line 76, in emulador
+    e.wait_for_field()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Wait(inputfield): Timed out
+2025-10-01 13:40:34,513 ERROR root: Código de retorno inesperado de emulador: -1
+2025-10-01 13:41:39,461 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 13:41:39,462 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 13:41:39,463 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 13:41:39,473 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 13:41:41,784 INFO root: Pantalla de Music Mainframe
+2025-10-01 13:41:41,784 INFO root: Esperando campo inicial...
+2025-10-01 13:42:49,082 INFO root: Intento de login para usuario: grupo_15
+2025-10-01 13:42:49,083 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-01 13:42:49,084 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\sl-pr-2\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-01 13:42:49,094 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-01 13:42:51,238 INFO root: Pantalla de Music Mainframe
+2025-10-01 13:42:51,240 INFO root: Esperando campo inicial...
+2025-10-01 13:42:51,247 INFO root: Pantalla de login
+2025-10-01 13:42:52,249 INFO root: Esperando campo de usuario...
+2025-10-01 13:42:52,258 INFO root: Esperando campo de contraseña...
+2025-10-01 13:42:53,267 INFO root: Comprobando resultado del login...
+2025-10-01 13:42:53,272 INFO root: Inicio de sesión exitoso
+2025-10-01 13:42:53,275 INFO root: Pantalla de espera -> ENTER
+2025-10-01 13:42:53,285 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-01 13:42:55,408 INFO root: Pantalla menú de tareas
+2025-10-01 13:42:56,418 INFO root: Pantalla menú listar tareas
+2025-10-01 13:42:58,431 INFO root: Listar todas las tareas
+2025-10-01 13:43:00,001 INFO root: procesar_tareas(): 4 elementos
+2025-10-01 13:43:02,006 INFO root: Conexión terminada correctamente
+2025-10-01 13:43:02,006 INFO root: Login correcto, mostrando tareas
