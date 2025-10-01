@@ -570,3 +570,28 @@ lib.py3270.CommandError: Keyboard lockedOperator error
 2025-10-02 00:08:27,890 INFO root: Pantalla menú listar tareas (refresh)
 2025-10-02 00:08:30,913 INFO root: Listar todas las tareas (refresh)
 2025-10-02 00:08:43,360 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 00:14:46,672 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 00:14:46,672 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 00:14:46,673 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 00:14:46,676 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 00:14:48,970 INFO root: Pantalla de Music Mainframe
+2025-10-02 00:14:48,971 INFO root: Esperando campo inicial...
+2025-10-02 00:14:48,993 INFO root: Pantalla de login
+2025-10-02 00:14:49,993 INFO root: Esperando campo de usuario...
+2025-10-02 00:14:50,016 INFO root: Esperando campo de contraseña...
+2025-10-02 00:14:51,039 INFO root: Comprobando resultado del login...
+2025-10-02 00:14:51,040 INFO root: Inicio de sesión exitoso
+2025-10-02 00:14:51,040 INFO root: Pantalla de espera -> ENTER
+2025-10-02 00:14:51,061 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 00:14:53,188 INFO root: Pantalla menú de tareas
+2025-10-02 00:14:54,212 INFO root: Pantalla menú listar tareas
+2025-10-02 00:14:56,234 INFO root: Listar todas las tareas
+2025-10-02 00:14:58,378 INFO root: procesar_tareas(): 23 elementos
+2025-10-02 00:14:59,904 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 00:15:01,429 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 00:15:02,436 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 00:15:02,436 INFO root: Login correcto, mostrando tareas
+2025-10-02 00:15:11,406 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 00:15:12,930 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 00:15:15,953 INFO root: Listar todas las tareas (refresh)
+2025-10-02 00:15:45,908 INFO root: Sesión TN3270 finalizada en exit_tasks()
