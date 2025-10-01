@@ -150,7 +150,29 @@ def emulador(mylogin, mypass):
             # Obtención y procesamiento opcional (placeholders compatibles con el snippet)
             lista_tareas = obtener_estructura_tareas(e)
             procesar_tareas(lista_tareas)
-
+            
+            
+            time.sleep(retardo2)
+            e.wait_for_field()
+            e.send_string("0")
+            e.send_enter()
+            logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
+            
+            
+            time.sleep(retardo2)
+            e.wait_for_field()
+            e.send_string("0")
+            e.send_enter()
+            logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
+         
+            time.sleep(retardo2)
+            e.wait_for_field()
+            e.send_string("0")
+            e.send_enter()
+            logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
+        
+            pantalla("login.txt")
+            
             return 0
         elif login == 1:
             logging.warning("Error: Usuario no autorizado o contraseña incorrecta")
@@ -320,8 +342,10 @@ def obtener_estructura_tareas(em=None):
     contenido crudo si se quiere enriquecer más adelante.
     """
     try:
+
         # Guardamos TODAS las páginas del listado "ALL TASKS"
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
+
         # Parseamos esa pantalla para devolver una estructura útil y la cacheamos
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
@@ -346,7 +370,7 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     nombre = '"' + nombre.replace(" ", " ") + '"'
     
     logging.info(f'Asignando tarea especifica: FECHA={fecha}, NOMBRE={nombre}  DESCRIPCION={desc} TIPO={tipo}')
-   
+    pantalla("task.txt")
     e.wait_for_field()
     e.send_string("1")
     logging.info("send string 1 check")
@@ -409,6 +433,29 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     logging.info("send enter 3 check")
     e.delete_field()
     logging.info("delete field 3 check")
+    
+    
+    time.sleep(1)
+    e.wait_for_field()
+    e.send_string("0")
+    e.send_enter()
+    logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
+    
+    
+    time.sleep(1)
+    e.wait_for_field()
+    e.send_string("0")
+    e.send_enter()
+    logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
+    
+    time.sleep(1)
+    e.wait_for_field()
+    e.send_string("0")
+    e.send_enter()
+    logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
+    
+    pantalla("Task_fin.txt")
+    
 
 def get_tasks_general(file="pantalla.txt"):
     resultado = []
@@ -510,14 +557,20 @@ def refresh_all_tasks():
     Asume que la sesión TN3270 está activa y en el menú de tasks.c o similar.
     """
     try:
+        pantalla("refresh_ini.txt")
         # Ir a VIEW TASKS
+        
+        e.wait_for_field()
         e.send_string("2")
         e.send_enter()
         e.delete_field()
+        pantalla("refresh_mid.txt")
         # ALL TASKS
+        e.wait_for_field()
         e.send_string("3")
         e.send_enter()
         e.delete_field()
+
         # Capturar todas las páginas y parsear como en obtener_estructura_tareas
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
         global _last_all_tasks
@@ -525,6 +578,7 @@ def refresh_all_tasks():
         if not _last_all_tasks:
             dump_screen_debug("after_refresh_empty")
         return _last_all_tasks
+
     except Exception:
         logging.exception("No se pudo refrescar la lista de ALL TASKS")
         return []
