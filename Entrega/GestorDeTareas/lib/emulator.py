@@ -151,6 +151,7 @@ def emulador(mylogin, mypass):
             lista_tareas = obtener_estructura_tareas(e)
             procesar_tareas(lista_tareas)
 
+
         
             logging.info("Volviendo a main menu...")
             return_main_menu()
@@ -257,7 +258,10 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
 
     Devuelve la ruta del archivo generado con el volcado completo.
     """
-    lines_all = []
+    # Acumularemos solo las líneas de tareas para evitar duplicados y ruido de menú
+    task_lines: list[str] = []
+    seen_ids: set[int] = set()
+    re_task = re.compile(r"^\s*TASK\s*#\s*(\d+)\s*:")
     try:
         for _ in range(max_pages):
             # Leer pantalla actual y acumular
@@ -267,21 +271,43 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
                 logging.exception("No se pudo leer la pantalla actual de ALL TASKS")
                 screen_text = ""
 
-            # Acumular líneas tal cual (el parser filtrará lo necesario)
+            # Si hemos vuelto al menú intermedio, re-seleccionar opción 3
+            if "VIEW TASKS" in screen_text and "LIST OF ALL TASKS" not in screen_text:
+                try:
+                    e.send_string("3")
+                    e.send_enter()
+                    e.wait_for_field()
+                    # Refrescar el contenido ya en la lista para esta iteración
+                    screen_text = _get_screen_text()
+                except Exception:
+                    logging.exception("No se pudo re-seleccionar 'ALL TASKS' desde el menú")
+
+            # Extraer y acumular únicamente las líneas de tareas, evitando duplicados por id
             if screen_text:
-                lines_all.extend(screen_text.splitlines())
+                for ln in screen_text.splitlines():
+                    m = re_task.match(ln)
+                    if m:
+                        try:
+                            tid = int(m.group(1))
+                        except Exception:
+                            tid = None
+                        if tid is not None and tid not in seen_ids:
+                            seen_ids.add(tid)
+                            task_lines.append(ln)
 
             # ¿Estamos en la última página? (aparece 'TOTAL TASKS')
             if "TOTAL TASKS" in screen_text:
                 # Guardar todo y salir; después hay que aceptar con ENTER para volver
                 try:
                     with open(save_file, "w", encoding="utf-8") as f:
-                        f.write("\n".join(lines_all))
+                        f.write("\n".join(task_lines))
                 except Exception:
                     logging.exception("No se pudo escribir el volcado de ALL TASKS en %s", save_file)
 
                 # Salir de la pantalla de resumen
                 try:
+                    time.sleep(1)
+
                     e.send_enter()
                 except Exception:
                     pass
@@ -305,7 +331,7 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
         # Fallback: guardar lo que tengamos
         try:
             with open(save_file, "w", encoding="utf-8") as f:
-                f.write("\n".join(lines_all))
+                f.write("\n".join(task_lines))
         except Exception:
             logging.exception("No se pudo escribir el volcado parcial de ALL TASKS en %s", save_file)
         return save_file
@@ -314,7 +340,7 @@ def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.tx
         # Intentar dejar algún artefacto para depuración
         try:
             with open(save_file, "w", encoding="utf-8") as f:
-                f.write("\n".join(lines_all))
+                f.write("\n".join(task_lines))
         except Exception:
             pass
         return save_file
@@ -341,6 +367,48 @@ def obtener_estructura_tareas(em=None):
     except Exception:
         logging.exception("No se pudo obtener la estructura de tareas")
         return []
+
+def _ensure_view_tasks_menu(max_steps: int = 20) -> bool:
+    """Asegura que estamos en el menú 'VIEW TASKS' antes de abrir 'ALL TASKS'.
+
+    - Si aparece 'ENTER ANY KEY TO CONTINUE' o 'Press enter to continue', pulsa ENTER.
+    - Si aparece 'LIST OF ALL TASKS', pulsa ENTER para avanzar hasta salir (hasta que desaparezca el listado) y volver al menú.
+    - Si aparece 'MAIN MENU', escribe '2' para entrar a 'VIEW TASKS'.
+    - Devuelve True cuando detecta 'VIEW TASKS' sin el listado.
+    """
+    try:
+        for _ in range(max_steps):
+            text = _get_screen_text()
+            if "VIEW TASKS" in text and "LIST OF ALL TASKS" not in text:
+                return True
+            if ("ENTER ANY KEY TO CONTINUE" in text) or ("Press enter to continue" in text):
+                try:
+                    e.send_enter(); e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            if "LIST OF ALL TASKS" in text:
+                try:
+                    e.send_enter(); e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            if "MAIN MENU" in text:
+                try:
+                    e.delete_field(); e.send_string("2"); e.send_enter(); e.wait_for_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            # Estado desconocido: avanzar
+            try:
+                e.send_enter(); e.wait_for_field()
+            except Exception:
+                time.sleep(0.2)
+        logging.warning("_ensure_view_tasks_menu: no se alcanzó el menú 'VIEW TASKS'")
+        return False
+    except Exception:
+        logging.exception("Error en _ensure_view_tasks_menu")
+        return False
 
 def procesar_tareas(lista_tareas):
     """Placeholder: registra el conteo de tareas; pensado para desarrollo local."""
@@ -411,7 +479,9 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     logging.info("Volviendo al menu inicial...")
     
     
+
     pantalla("Assign_task_fin.txt")
+
     
 
 def get_tasks_general(file="pantalla.txt"):
@@ -515,30 +585,39 @@ def refresh_all_tasks():
     Deja la sesión en MAIN MENU
     """
     try:
-        pantalla("refresh_ini.txt")
-        # Ir a VIEW TASKS
-        
+        # Replicar exactamente la secuencia del emulador desde 'Pantalla menú de tareas'
+        time.sleep(delayScreen)
+        logging.info("Pantalla menú de tareas (refresh)")
+
+        # 1) Listar tareas -> opción 2
+        time.sleep(delayScreen)
         e.wait_for_field()
         e.send_string("2")
         e.send_enter()
-        e.delete_field()
-        pantalla("refresh_mid.txt")
-        # ALL TASKS
+        logging.info("Pantalla menú listar tareas (refresh)")
+        time.sleep(delayScreen)
+
+        # 2) Listar todas -> opción 3
+        time.sleep(delayScreen)
         e.wait_for_field()
         e.send_string("3")
         e.send_enter()
-        e.delete_field()
+        logging.info("Listar todas las tareas (refresh)")
+        time.sleep(delayScreen)
 
-        # Capturar todas las páginas y parsear como en obtener_estructura_tareas
+        # 3) Capturar todas las páginas y parsear
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
+        
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
+
         
         # 4) Regresa al main menu
         return_main_menu()
         pantalla("Refresh_all_task_fin.txt")
         
     
+
         if not _last_all_tasks:
             dump_screen_debug("after_refresh_empty")
         return _last_all_tasks
