@@ -150,36 +150,13 @@ def emulador(mylogin, mypass):
             # Obtención y procesamiento opcional (placeholders compatibles con el snippet)
             lista_tareas = obtener_estructura_tareas(e)
             procesar_tareas(lista_tareas)
-<<<<<<< Updated upstream
-            
-            
-            time.sleep(retardo2)
-            e.wait_for_field()
-            e.send_string("0")
-            e.send_enter()
-            logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
-            
-            
-            time.sleep(retardo2)
-            e.wait_for_field()
-            e.send_string("0")
-            e.send_enter()
-            logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
-         
-            time.sleep(retardo2)
-            e.wait_for_field()
-            e.send_string("0")
-            e.send_enter()
-            logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
-        
-            pantalla("login.txt")
-=======
+
         
             logging.info("Volviendo a main menu...")
             return_main_menu()
             
             pantalla("Emulador_login_fin.txt")
->>>>>>> Stashed changes
+
             
             return 0
         elif login == 1:
@@ -434,30 +411,7 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     logging.info("Volviendo al menu inicial...")
     
     
-<<<<<<< Updated upstream
-    time.sleep(1)
-    e.wait_for_field()
-    e.send_string("0")
-    e.send_enter()
-    logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
-    
-    
-    time.sleep(1)
-    e.wait_for_field()
-    e.send_string("0")
-    e.send_enter()
-    logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
-    
-    time.sleep(1)
-    e.wait_for_field()
-    e.send_string("0")
-    e.send_enter()
-    logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
-    
-    pantalla("Task_fin.txt")
-=======
     pantalla("Assign_task_fin.txt")
->>>>>>> Stashed changes
     
 
 def get_tasks_general(file="pantalla.txt"):
@@ -579,14 +533,12 @@ def refresh_all_tasks():
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
-<<<<<<< Updated upstream
-=======
-
+        
         # 4) Regresa al main menu
         return_main_menu()
         pantalla("Refresh_all_task_fin.txt")
         
->>>>>>> Stashed changes
+    
         if not _last_all_tasks:
             dump_screen_debug("after_refresh_empty")
         return _last_all_tasks
