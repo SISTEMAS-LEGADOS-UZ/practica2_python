@@ -1,0 +1,43 @@
+                                                                               
+                                                                               
+                                                                               
+                                  ASSIGN TASKS                                 
+                                  ************                                 
+                                                                               
+                                                                               
+                              1 - GENERAL TASK                                 
+                                                                               
+                                                                               
+                              2 - SPECIFIC TASK                                
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+2                                                                              
+   ENTER DATE(DD-MM-YYYY):                                                     
+?                                                                              
+2025-10-23                                                                     
+   ENTER NAME (no spaces):                                                     
+?                                                                              
+"filtrado"                                                                     
+   ENTER DESCRIPTION (no spaces):                                              
+?                                                                              
+"filtrado"                                                                     
+tarea = 'SPECIFIC 2025-10-23 "filtrado" "filtrado"'                            
+                                                                               
+                                                                               
+   SPECIFIC TASK ASSIGNED                                                      
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  

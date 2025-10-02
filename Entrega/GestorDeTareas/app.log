@@ -1,0 +1,1797 @@
+2025-10-02 15:51:07,164 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 15:51:07,165 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 15:51:07,165 INFO root: [TN3270] ws3270 detectado en C:\Users\Xtremmedia\Documents\Informatica\Cuarto\Cuatri I\Legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 15:51:07,168 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 15:51:09,446 INFO root: Pantalla de Music Mainframe
+2025-10-02 15:51:09,446 INFO root: Esperando campo inicial...
+2025-10-02 15:51:09,466 INFO root: Pantalla de login
+2025-10-02 15:51:10,467 INFO root: Esperando campo de usuario...
+2025-10-02 15:51:10,490 INFO root: Esperando campo de contraseña...
+2025-10-02 15:51:11,518 INFO root: Comprobando resultado del login...
+2025-10-02 15:51:11,518 INFO root: Inicio de sesión exitoso
+2025-10-02 15:51:11,518 INFO root: Pantalla de espera -> ENTER
+2025-10-02 15:51:11,541 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 15:51:13,667 INFO root: Pantalla menú de tareas
+2025-10-02 15:51:14,687 INFO root: Pantalla menú listar tareas
+2025-10-02 15:51:16,709 INFO root: Listar todas las tareas
+2025-10-02 15:51:18,860 INFO root: procesar_tareas(): 26 elementos
+2025-10-02 15:51:18,861 INFO root: Volviendo a main menu...
+2025-10-02 15:51:18,863 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:18,949 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:18,975 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,063 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,087 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,185 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,211 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,292 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,315 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,405 INFO root: ?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,429 INFO root: ?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,513 INFO root:                                                                                
+                                                                               
+                                                                               
+                                  MAIN MENU                                    
+                                  *********                                    
+                                                                               
+                                                                               
+                              1 - ASSIGN TASKS                                 
+                                                                               
+                                                                               
+                              2 - VIEW TASKS                                   
+                                                                               
+                                                                               
+                              0 - EXIT                                         
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:51:19,514 INFO root: main menu alcanzado
+2025-10-02 15:51:20,521 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 15:51:20,521 INFO root: Login correcto, mostrando tareas
+2025-10-02 15:52:00,333 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 15:52:01,856 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 15:52:04,876 INFO root: Listar todas las tareas (refresh)
+2025-10-02 15:52:07,520 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,610 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,633 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,717 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,742 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,828 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,851 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,944 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:07,974 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+                                                                               
+   TOTAL TASKS: 26                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:08,067 INFO root: ?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:08,089 INFO root: ?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:08,176 INFO root:                                                                                
+                                                                               
+                                                                               
+                                  MAIN MENU                                    
+                                  *********                                    
+                                                                               
+                                                                               
+                              1 - ASSIGN TASKS                                 
+                                                                               
+                                                                               
+                              2 - VIEW TASKS                                   
+                                                                               
+                                                                               
+                              0 - EXIT                                         
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:08,176 INFO root: main menu alcanzado
+2025-10-02 15:52:40,245 INFO root: Asignando tarea especifica: FECHA=2025-10-23, NOMBRE=filtrado  DESCRIPCION=filtrado
+2025-10-02 15:52:40,246 INFO root: Asignando tarea especifica: FECHA=2025-10-23, NOMBRE="filtrado"  DESCRIPCION="filtrado" TIPO=Especifica
+2025-10-02 15:52:41,487 INFO root:                                                                                
+                                                                               
+                                                                               
+                                  ASSIGN TASKS                                 
+                                  ************                                 
+                                                                               
+                                                                               
+                              1 - GENERAL TASK                                 
+                                                                               
+                                                                               
+                              2 - SPECIFIC TASK                                
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+2                                                                              
+   ENTER DATE(DD-MM-YYYY):                                                     
+?                                                                              
+2025-10-23                                                                     
+   ENTER NAME (no spaces):                                                     
+?                                                                              
+"filtrado"                                                                     
+   ENTER DESCRIPTION (no spaces):                                              
+?                                                                              
+"filtrado"                                                                     
+tarea = 'SPECIFIC 2025-10-23 "filtrado" "filtrado"'                            
+                                                                               
+                                                                               
+   SPECIFIC TASK ASSIGNED                                                      
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:41,509 INFO root:                                                                                
+                                                                               
+                                                                               
+                                  ASSIGN TASKS                                 
+                                  ************                                 
+                                                                               
+                                                                               
+                              1 - GENERAL TASK                                 
+                                                                               
+                                                                               
+                              2 - SPECIFIC TASK                                
+                                                                               
+                                                                               
+                              0 - MAIN MENU                                    
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+2                                                                              
+   ENTER DATE(DD-MM-YYYY):                                                     
+?                                                                              
+2025-10-23                                                                     
+   ENTER NAME (no spaces):                                                     
+?                                                                              
+"filtrado"                                                                     
+   ENTER DESCRIPTION (no spaces):                                              
+?                                                                              
+"filtrado"                                                                     
+tarea = 'SPECIFIC 2025-10-23 "filtrado" "filtrado"'                            
+                                                                               
+                                                                               
+   SPECIFIC TASK ASSIGNED                                                      
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:41,607 INFO root:                                                                                
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:41,630 INFO root:                                                                                
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:41,716 INFO root:                                                                                
+                                                                               
+                                                                               
+                                  MAIN MENU                                    
+                                  *********                                    
+                                                                               
+                                                                               
+                              1 - ASSIGN TASKS                                 
+                                                                               
+                                                                               
+                              2 - VIEW TASKS                                   
+                                                                               
+                                                                               
+                              0 - EXIT                                         
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:41,716 INFO root: main menu alcanzado
+2025-10-02 15:52:42,220 INFO root: Volviendo al menu inicial...
+2025-10-02 15:52:44,224 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 15:52:45,747 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 15:52:48,770 INFO root: Listar todas las tareas (refresh)
+2025-10-02 15:52:51,411 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,505 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,533 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,624 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,648 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,734 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,762 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,855 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,880 INFO root:         TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+        TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+                                                                               
+   TOTAL TASKS: 27                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+                                                                               
+?                                                                              
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,974 INFO root:                                                                                
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:51,996 INFO root:                                                                                
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:52,092 INFO root:                                                                                
+                                                                               
+                                                                               
+                                  MAIN MENU                                    
+                                  *********                                    
+                                                                               
+                                                                               
+                              1 - ASSIGN TASKS                                 
+                                                                               
+                                                                               
+                              2 - VIEW TASKS                                   
+                                                                               
+                                                                               
+                              0 - EXIT                                         
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+              OPTION:                                                          
+?                                                                              
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  
+2025-10-02 15:52:52,092 INFO root: main menu alcanzado
+2025-10-02 15:56:27,611 INFO root: Sesión TN3270 finalizada en exit_tasks()

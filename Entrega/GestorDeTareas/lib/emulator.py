@@ -699,7 +699,6 @@ def return_main_menu(max_steps: int = 20):
             logging.info(text)
             if ("MAIN MENU" in text) and ("GENERAL TASKS" not in text) and ("ENTER ANY KEY TO CONTINUE" not in text):
                 logging.info("main menu alcanzado")
-                pantalla("menu.txt")
                 return True
             if "VIEW TASKS" in text and "LIST OF ALL TASKS" not in text:
                 try:
