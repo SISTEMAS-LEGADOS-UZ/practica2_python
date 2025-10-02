@@ -69,7 +69,7 @@ def assignGeneral():
     
     # print(f'TIPO: {tipo}, FECHA: {fecha}, DESCRIPCION: {desc}, NOMBRE: {nombre}')
     assign_tasks(tipo, fecha, desc, nombre)
-    data = view_tasks()
+    data = refresh_all_tasks()
     if not data:
         dump_screen_debug("after_assign_general_empty")
     # print(data)

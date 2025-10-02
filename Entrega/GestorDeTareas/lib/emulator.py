@@ -150,33 +150,14 @@ def emulador(mylogin, mypass):
             # Obtención y procesamiento opcional (placeholders compatibles con el snippet)
             lista_tareas = obtener_estructura_tareas(e)
             procesar_tareas(lista_tareas)
-            
-            pantalla("pre-redirecion.txt")
-            
-            time.sleep(retardo2)
-            e.wait_for_field()
-            e.send_string("0")
-            e.send_enter()
-            e.delete_field()
-            logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
-            pantalla("pre-redirecion1.txt")
-            
-            time.sleep(retardo2)
-            e.wait_for_field()
-            e.send_string("0")
-            e.send_enter()
-            e.delete_field()
-            logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
-            pantalla("pre-redirecion2.txt")
-            
-            # time.sleep(retardo2)
-            # e.wait_for_field()
-            # e.send_string("0")
-            # e.send_enter()
+
+
         
-            # logging.info("Saliendo de pantalla menú listar tareas: numero 0 3")
-        
-            pantalla("login.txt")
+            logging.info("Volviendo a main menu...")
+            return_main_menu()
+            
+            pantalla("Emulador_login_fin.txt")
+
             
             return 0
         elif login == 1:
@@ -442,86 +423,65 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     nombre = '"' + nombre.replace(" ", " ") + '"'
     
     logging.info(f'Asignando tarea especifica: FECHA={fecha}, NOMBRE={nombre}  DESCRIPCION={desc} TIPO={tipo}')
-    pantalla("task.txt")
+    pantalla("assign_tasks_ini.txt")
+ 
+   
     e.wait_for_field()
     e.send_string("1")
-    logging.info("send string 1 check")
     e.send_enter()
-    logging.info("send enter 1 check")
     e.delete_field()
 
     if tipo=="General":
+        
+        e.wait_for_field()
         e.send_string("1")
         e.send_enter()
         e.delete_field()
         
+        e.wait_for_field()
         e.send_string(fecha)
         e.send_enter()
         e.delete_field()
-        
+  
+        e.wait_for_field()
         e.send_string(desc)
         e.send_enter()
         e.delete_field()
-
+        pantalla("assign_tasks_general_fin.txt")
+        
     elif tipo=="Especifica":
         
         e.wait_for_field()
-        logging.info("Asignando tarea específica")
         e.send_string("2")
-        logging.info("send string check")
         e.send_enter()
-        logging.info("send enter check")
         e.delete_field()
-        logging.info("delete field check")
+       
         
         e.wait_for_field()
         e.send_string(fecha)
-        logging.info("send string fecha check") 
         e.send_enter()
-        logging.info("send enter fecha check")
         e.delete_field()
-        logging.info("delete field fecha check")
+       
         
         e.wait_for_field()
         e.send_string(nombre)
-        logging.info("send string nombre check")
         e.send_enter()
-        logging.info("send enter nombre check")
         e.delete_field()
-        logging.info("delete field nombre check")
         
         e.wait_for_field()
         e.send_string(desc)
-        logging.info("send string desc check")
         e.send_enter()
-        logging.info("send enter desc check")
         e.delete_field()
-        logging.info("delete field desc check")
+        pantalla("assign_tasks_especifica_fin.txt")
     
-    e.wait_for_field()
-    e.send_string("3")
-    logging.info("send string 3 check")
-    e.send_enter()
-    logging.info("send enter 3 check")
-    e.delete_field()
-    logging.info("delete field 3 check")
+ 
+    return_main_menu()
+    logging.info("Volviendo al menu inicial...")
     
     
-    time.sleep(1)
-    e.wait_for_field()
-    e.send_string("0")
-    e.send_enter()
-    logging.info("Saliendo de pantalla menú listar tareas: enter 0 1")
-    
-    
-    time.sleep(1)
-    e.wait_for_field()
-    e.send_string("0")
-    e.send_enter()
-    logging.info("Saliendo de pantalla menú listar tareas: numero 0 2")
-    
-    
-    pantalla("Task_fin.txt")
+
+    pantalla("Assign_task_fin.txt")
+
     
 
 def get_tasks_general(file="pantalla.txt"):
@@ -622,6 +582,7 @@ def refresh_all_tasks():
     """Renavega al menú de VIEW TASKS -> ALL TASKS y devuelve la lista parseada.
 
     Asume que la sesión TN3270 está activa y en el menú de tasks.c o similar.
+    Deja la sesión en MAIN MENU
     """
     try:
         # Replicar exactamente la secuencia del emulador desde 'Pantalla menú de tareas'
@@ -649,21 +610,19 @@ def refresh_all_tasks():
         
         global _last_all_tasks
         _last_all_tasks = parse_all_tasks(file_all)
-        pantalla("Fin_capture.txt")
+
         
-        e.wait_for_field()
-        e.send_string("0")
-        e.send_enter()
-        pantalla("Fin_capture2.txt")
+        # 4) Regresa al main menu
+        return_main_menu()
+        pantalla("Refresh_all_task_fin.txt")
         
-        e.wait_for_field()
-        e.send_string("0")
-        e.send_enter()
-        pantalla("Fin_capture3.txt")
-        
+    
+
         if not _last_all_tasks:
             dump_screen_debug("after_refresh_empty")
         return _last_all_tasks
+    
+    
 
     except Exception:
         logging.exception("No se pudo refrescar la lista de ALL TASKS")
@@ -723,3 +682,52 @@ def exit_tasks():
             logging.info("Sesión TN3270 finalizada en exit_tasks()")
     except Exception:
         logging.exception("Error finalizando la sesión en exit_tasks()")
+
+
+def return_main_menu(max_steps: int = 20):
+    global e
+    """Asegura que estamos en el menú 'MAIN'
+
+    - Si aparece 'ENTER ANY KEY TO CONTINUE' o 'Press enter to continue', pulsa ENTER.
+    - Si aparece 'LIST OF ALL TASKS', pulsa ENTER para avanzar hasta salir (hasta que desaparezca el listado) y volver al menú.
+    - Si aparece 'MAIN MENU', devuelve true
+    - Si aparece'VIEW TASKS' sin el listado manda 0 y enter.
+    """
+    try:
+        for _ in range(max_steps):
+            text = _get_screen_text()
+            logging.info(text)
+            if ("MAIN MENU" in text) and ("GENERAL TASKS" not in text) and ("ENTER ANY KEY TO CONTINUE" not in text):
+                logging.info("main menu alcanzado")
+                pantalla("menu.txt")
+                return True
+            if "VIEW TASKS" in text and "LIST OF ALL TASKS" not in text:
+                try:
+                   e.wait_for_field(); e.send_string("0");e.send_enter();e.delete_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            if ("ENTER ANY KEY TO CONTINUE" in text) or ("Press enter to continue" in text):
+                try:
+                    e.wait_for_field();e.send_enter()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            if "LIST OF ALL TASKS" in text or "LIST OF GENERAL TASKS" in text or "LIST OF SPECIFIC TASKS" in text:
+                try:
+                    e.wait_for_field();e.send_enter(); e.delete_field()
+                except Exception:
+                    time.sleep(0.2)
+                continue
+            
+            # Estado desconocido: avanzar
+            try:
+                 e.send_string("tasks.c");e.send_enter(); e.wait_for_field();e.delete_field()
+            except Exception:
+                time.sleep(0.2)
+        logging.warning("_ensure_view_main_menu: no se alcanzó el menú 'VIEW TASKS'")
+        return False
+    except Exception:
+        logging.exception("Error en _ensure_view_main_menu")
+        return False
+    
