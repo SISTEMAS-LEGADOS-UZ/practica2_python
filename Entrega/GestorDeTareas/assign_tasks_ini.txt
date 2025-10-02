@@ -1,27 +1,14 @@
+        TASK #15: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #16: SPECIFIC 2025-11-06 "ff" "ff"                                
                                                                                
-                                                                               
-MM      MM  UU     UU   SSSSSSS   IIIIII   CCCCCCC        /  SSSSSSS   PPPPPPP 
-MMM    MMM  UU     UU  SSSSSSSSS  IIIIII  CCCCCCCCC      /  SSSSSSSSS  PPPPPPPP
-MMMM  MMMM  UU     UU  SSS          II    CC            /   SSS        PP    PP
-MM MMMM MM  UU     UU   SSSSSSS     II    CC           /     SSSSSSS   PPPPPPPP
-MM  MM  MM  UU     UU        SSS    II    CC          /           SSS  PPPPPPP 
-MM      MM  UUUUUUUUU  SSSSSSSSS  IIIIII  CCCCCCCCC  /      SSSSSSSSS  PP      
-MM      MM   UUUUUUU    SSSSSSS   IIIIII   CCCCCCC  /        SSSSSSS   PP      
+   TOTAL TASKS: 16                                                             
                                                                                
                                                                                
                                                                                
                                                                                
                                                                                
-                                                                               
-         Multi-User System for Interactive Computing / System Product          
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-Press the ENTER key to view next page when you see this message --->  More...  
+                        ENTER ANY KEY TO CONTINUE                              
+?                                                                              
                                                                                
                                                                                
                                                                                
@@ -41,3 +28,16 @@ Press the ENTER key to view next page when you see this message --->  More...
                                                                                
                                                                                
                                                                                
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+------T-----------------------------------------------------------------T      
+                                                                               
+                                                                      Reading  

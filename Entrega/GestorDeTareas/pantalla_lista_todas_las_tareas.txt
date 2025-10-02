@@ -38,6 +38,21 @@
         TASK #12: SPECIFIC 2025-10-22 "nueva" "nueva"                          
         TASK #13: SPECIFIC 2025-10-29 "nueva2" "nueva2"                        
         TASK #14: SPECIFIC 2025-10-22 "pruebafuego" "pruebafuego"              
+<<<<<<< Updated upstream
 ------T-----------------------------------------------------------------T      
                                                                                
                                                                       More...  
+=======
+        TASK #15: SPECIFIC 2025-10-15 "pruebafuego2" "pruebafuego2"            
+        TASK #16: SPECIFIC 2025-10-17 "pruebafuego3" "pruebafuego3"            
+        TASK #17: SPECIFIC 2025-10-10 "pp" "pp"                                
+        TASK #18: SPECIFIC 2025-10-15 "pp" "pp"                                
+        TASK #19: SPECIFIC 2025-10-25 "ll" "ll"                                
+        TASK #20: SPECIFIC 2025-11-06 "ff" "ff"                                
+        TASK #21: SPECIFIC 2025-10-11 "siu" "siu"                              
+        TASK #22: SPECIFIC 2025-10-18 "algo" "algo"                            
+        TASK #23: SPECIFIC 2025-10-18 "sisisisi" "sisisisi"                    
+        TASK #24: GENERAL 2008-08-08 ----- "pruebaaa"                          
+        TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
+        TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
+>>>>>>> Stashed changes
