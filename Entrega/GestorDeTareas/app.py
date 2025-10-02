@@ -5,7 +5,7 @@ import webview
 import atexit
 import logging
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static')
 window = webview.create_window('Gestor de tareas (ws3270)', app, width=1920, height=1080)
 
 # Logging básico a archivo para diagnosticar problemas en producción

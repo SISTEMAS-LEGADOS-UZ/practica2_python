@@ -595,3 +595,348 @@ lib.py3270.CommandError: Keyboard lockedOperator error
 2025-10-02 00:15:12,930 INFO root: Pantalla menú listar tareas (refresh)
 2025-10-02 00:15:15,953 INFO root: Listar todas las tareas (refresh)
 2025-10-02 00:15:45,908 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 13:38:41,448 INFO root: Intento de login para usuario: GRUPO_15
+2025-10-02 13:38:41,448 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:38:41,449 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:38:42,112 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:38:43,118 INFO root: Intento de login para usuario: GRUPO_15
+2025-10-02 13:38:43,118 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:38:43,119 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:38:43,122 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:38:44,405 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:38:44,406 INFO root: Esperando campo inicial...
+2025-10-02 13:38:44,425 INFO root: Pantalla de login
+2025-10-02 13:38:45,402 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:38:45,402 INFO root: Esperando campo inicial...
+2025-10-02 13:38:45,422 INFO root: Pantalla de login
+2025-10-02 13:38:45,425 INFO root: Esperando campo de usuario...
+2025-10-02 13:38:45,445 INFO root: Esperando campo de contraseña...
+2025-10-02 13:38:46,423 INFO root: Esperando campo de usuario...
+2025-10-02 13:38:46,443 INFO root: Esperando campo de contraseña...
+2025-10-02 13:38:46,466 INFO root: Comprobando resultado del login...
+2025-10-02 13:38:46,467 INFO root: Inicio de sesión exitoso
+2025-10-02 13:38:46,467 INFO root: Pantalla de espera -> ENTER
+2025-10-02 13:38:46,470 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 13:38:47,452 INFO root: Comprobando resultado del login...
+2025-10-02 13:38:47,453 INFO root: Inicio de sesión exitoso
+2025-10-02 13:38:47,454 INFO root: Pantalla de espera -> ENTER
+2025-10-02 13:38:47,492 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 13:38:48,566 INFO root: Pantalla menú de tareas
+2025-10-02 13:38:48,685 INFO root: Intento de login para usuario: GRUPO_15
+2025-10-02 13:38:48,692 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:38:48,693 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:38:48,697 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:38:49,512 INFO root: Pantalla menú de tareas
+2025-10-02 13:38:49,567 ERROR root: Error durante la ejecución de emulador(): Keyboard lockedOperator error
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 118, in emulador
+    e.send_string("2")
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 413, in send_string
+    self.exec_command('String("{0}")'.format(tosend).encode("utf-8"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 308, in exec_command
+    c.execute()
+    ~~~~~~~~~^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 82, in execute
+    return self.handle_result(result.decode("ascii"))
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 102, in handle_result
+    raise CommandError(msg.decode("ascii"))
+lib.py3270.CommandError: Keyboard lockedOperator error
+2025-10-02 13:38:49,570 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 13:38:49,570 ERROR root: Código de retorno inesperado de emulador: -1
+2025-10-02 13:38:50,513 ERROR root: Error durante la ejecución de emulador(): this TerminalClient instance has been terminated
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 117, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-10-02 13:38:50,514 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 13:38:50,514 ERROR root: Código de retorno inesperado de emulador: -1
+2025-10-02 13:38:50,951 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:38:50,951 INFO root: Esperando campo inicial...
+2025-10-02 13:38:50,951 ERROR root: Error durante la ejecución de emulador(): this TerminalClient instance has been terminated
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 76, in emulador
+    e.wait_for_field()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 381, in wait_for_field
+    self.exec_command("Wait({0}, InputField)".format(self.timeout).encode("ascii"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-10-02 13:38:50,952 ERROR root: Código de retorno inesperado de emulador: -1
+2025-10-02 13:39:09,737 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 13:39:09,737 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:39:09,737 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:39:09,741 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:39:12,022 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:39:12,023 INFO root: Esperando campo inicial...
+2025-10-02 13:39:12,042 INFO root: Pantalla de login
+2025-10-02 13:39:13,043 INFO root: Esperando campo de usuario...
+2025-10-02 13:39:13,063 INFO root: Esperando campo de contraseña...
+2025-10-02 13:39:14,083 INFO root: Comprobando resultado del login...
+2025-10-02 13:39:14,083 WARNING root: Error: Usuario ya en uso
+2025-10-02 13:39:14,084 WARNING root: Usuario en uso; render ocupada
+2025-10-02 13:39:32,609 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 13:39:32,609 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:39:32,610 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:39:32,613 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:39:34,872 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:39:34,872 INFO root: Esperando campo inicial...
+2025-10-02 13:39:34,892 INFO root: Pantalla de login
+2025-10-02 13:39:35,892 INFO root: Esperando campo de usuario...
+2025-10-02 13:39:35,912 INFO root: Esperando campo de contraseña...
+2025-10-02 13:39:36,931 INFO root: Comprobando resultado del login...
+2025-10-02 13:39:36,932 WARNING root: Error: Usuario ya en uso
+2025-10-02 13:39:36,933 WARNING root: Usuario en uso; render ocupada
+2025-10-02 13:40:28,454 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 13:40:28,455 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:40:28,455 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:40:28,460 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:40:30,757 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:40:30,757 INFO root: Esperando campo inicial...
+2025-10-02 13:40:30,782 INFO root: Pantalla de login
+2025-10-02 13:40:31,782 INFO root: Esperando campo de usuario...
+2025-10-02 13:40:31,806 INFO root: Esperando campo de contraseña...
+2025-10-02 13:40:32,832 INFO root: Comprobando resultado del login...
+2025-10-02 13:40:32,833 INFO root: Inicio de sesión exitoso
+2025-10-02 13:40:32,833 INFO root: Pantalla de espera -> ENTER
+2025-10-02 13:40:32,856 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 13:40:34,986 INFO root: Pantalla menú de tareas
+2025-10-02 13:40:36,010 INFO root: Pantalla menú listar tareas
+2025-10-02 13:40:38,033 INFO root: Listar todas las tareas
+2025-10-02 13:40:40,180 INFO root: procesar_tareas(): 23 elementos
+2025-10-02 13:40:41,707 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 13:40:43,235 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 13:40:44,246 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 13:40:44,246 INFO root: Login correcto, mostrando tareas
+2025-10-02 13:41:44,078 INFO root: Pantalla menú de tareas (refresh)
+2025-10-02 13:41:45,603 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-02 13:41:48,626 INFO root: Listar todas las tareas (refresh)
+2025-10-02 13:56:31,044 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 13:56:44,864 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 13:56:44,864 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:56:44,864 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:56:44,868 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:56:47,152 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:56:47,152 INFO root: Esperando campo inicial...
+2025-10-02 13:56:47,173 INFO root: Pantalla de login
+2025-10-02 13:56:48,174 INFO root: Esperando campo de usuario...
+2025-10-02 13:56:48,197 INFO root: Esperando campo de contraseña...
+2025-10-02 13:56:49,221 INFO root: Comprobando resultado del login...
+2025-10-02 13:56:49,222 WARNING root: Error: Usuario ya en uso
+2025-10-02 13:56:49,223 WARNING root: Usuario en uso; render ocupada
+2025-10-02 13:56:59,224 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 13:56:59,224 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:56:59,224 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:56:59,228 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:57:01,511 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:57:01,512 INFO root: Esperando campo inicial...
+2025-10-02 13:57:01,534 INFO root: Pantalla de login
+2025-10-02 13:57:02,535 INFO root: Esperando campo de usuario...
+2025-10-02 13:57:02,559 INFO root: Esperando campo de contraseña...
+2025-10-02 13:57:03,582 INFO root: Comprobando resultado del login...
+2025-10-02 13:57:03,583 WARNING root: Error: Usuario ya en uso
+2025-10-02 13:57:03,584 WARNING root: Usuario en uso; render ocupada
+2025-10-02 13:57:13,756 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 13:57:53,971 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 13:57:53,971 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 13:57:53,971 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 13:57:53,976 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 13:57:56,233 INFO root: Pantalla de Music Mainframe
+2025-10-02 13:57:56,233 INFO root: Esperando campo inicial...
+2025-10-02 13:57:56,253 INFO root: Pantalla de login
+2025-10-02 13:57:57,254 INFO root: Esperando campo de usuario...
+2025-10-02 13:57:57,274 INFO root: Esperando campo de contraseña...
+2025-10-02 13:57:58,297 INFO root: Comprobando resultado del login...
+2025-10-02 13:57:58,298 INFO root: Inicio de sesión exitoso
+2025-10-02 13:57:58,298 INFO root: Pantalla de espera -> ENTER
+2025-10-02 13:57:58,318 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 13:58:00,447 INFO root: Pantalla menú de tareas
+2025-10-02 13:58:01,467 INFO root: Pantalla menú listar tareas
+2025-10-02 13:58:03,488 INFO root: Listar todas las tareas
+2025-10-02 13:58:05,629 INFO root: procesar_tareas(): 23 elementos
+2025-10-02 13:58:07,154 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 13:58:08,678 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 13:58:09,688 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 13:58:09,688 INFO root: Login correcto, mostrando tareas
+2025-10-02 13:58:48,512 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 14:17:03,131 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 14:17:03,132 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:17:03,132 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:17:03,137 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:17:05,424 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:17:05,424 INFO root: Esperando campo inicial...
+2025-10-02 14:17:05,446 INFO root: Pantalla de login
+2025-10-02 14:17:06,447 INFO root: Esperando campo de usuario...
+2025-10-02 14:17:06,470 INFO root: Esperando campo de contraseña...
+2025-10-02 14:17:07,494 INFO root: Comprobando resultado del login...
+2025-10-02 14:17:07,495 WARNING root: Error: Usuario ya en uso
+2025-10-02 14:17:07,495 WARNING root: Usuario en uso; render ocupada
+2025-10-02 14:17:20,800 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 14:20:24,272 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 14:20:24,273 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:20:24,273 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:20:24,278 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:20:26,553 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:20:26,553 INFO root: Esperando campo inicial...
+2025-10-02 14:20:26,574 INFO root: Pantalla de login
+2025-10-02 14:20:27,574 INFO root: Esperando campo de usuario...
+2025-10-02 14:20:27,596 INFO root: Esperando campo de contraseña...
+2025-10-02 14:20:28,617 INFO root: Comprobando resultado del login...
+2025-10-02 14:20:28,618 WARNING root: Error: Usuario ya en uso
+2025-10-02 14:20:28,619 WARNING root: Usuario en uso; render ocupada
+2025-10-02 14:23:31,816 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-02 14:27:41,049 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 14:27:41,050 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:27:41,050 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:27:41,056 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:27:43,345 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:27:43,345 INFO root: Esperando campo inicial...
+2025-10-02 14:27:43,368 INFO root: Pantalla de login
+2025-10-02 14:27:44,369 INFO root: Esperando campo de usuario...
+2025-10-02 14:27:44,392 INFO root: Esperando campo de contraseña...
+2025-10-02 14:27:45,100 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 14:27:45,100 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:27:45,100 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:27:45,104 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:27:45,415 INFO root: Comprobando resultado del login...
+2025-10-02 14:27:45,416 INFO root: Inicio de sesión exitoso
+2025-10-02 14:27:45,416 INFO root: Pantalla de espera -> ENTER
+2025-10-02 14:27:45,560 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 14:27:47,378 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:27:47,379 INFO root: Esperando campo inicial...
+2025-10-02 14:27:47,398 INFO root: Pantalla de login
+2025-10-02 14:27:47,581 INFO root: Pantalla menú de tareas
+2025-10-02 14:27:48,399 INFO root: Esperando campo de usuario...
+2025-10-02 14:27:48,419 INFO root: Esperando campo de contraseña...
+2025-10-02 14:27:48,601 INFO root: Pantalla menú listar tareas
+2025-10-02 14:27:49,439 INFO root: Comprobando resultado del login...
+2025-10-02 14:27:49,440 INFO root: Inicio de sesión exitoso
+2025-10-02 14:27:49,440 INFO root: Pantalla de espera -> ENTER
+2025-10-02 14:27:49,459 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 14:27:50,622 INFO root: Listar todas las tareas
+2025-10-02 14:27:51,479 INFO root: Pantalla menú de tareas
+2025-10-02 14:27:52,486 INFO root: Pantalla menú listar tareas
+2025-10-02 14:27:54,489 INFO root: Listar todas las tareas
+2025-10-02 14:27:57,065 ERROR root: No se pudo guardar la pantalla de debug
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 265, in dump_screen_debug
+    pantalla(fname)
+    ~~~~~~~~^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 254, in pantalla
+    line = e.string_get(row, 1, 79)
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 457, in string_get
+    assert len(cmd.data) == 1, cmd.data
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: []
+2025-10-02 14:27:57,067 INFO root: procesar_tareas(): 0 elementos
+2025-10-02 14:27:57,568 ERROR root: Error durante la ejecución de emulador(): [b'                                                                               ', b'                                                                               ']
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 154, in emulador
+    pantalla("pre-redirecion.txt")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 254, in pantalla
+    line = e.string_get(row, 1, 79)
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 457, in string_get
+    assert len(cmd.data) == 1, cmd.data
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: [b'                                                                               ', b'                                                                               ']
+2025-10-02 14:27:57,572 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 14:27:57,572 ERROR root: Fallo al enviar ENTER para avanzar en ALL TASKS
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 341, in capture_all_tasks_pages
+    e.send_enter()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 416, in send_enter
+    self.exec_command(b"Enter")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-10-02 14:27:57,572 ERROR root: Código de retorno inesperado de emulador: -1
+2025-10-02 14:27:58,075 ERROR root: No se pudo guardar la pantalla de debug
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 265, in dump_screen_debug
+    pantalla(fname)
+    ~~~~~~~~^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 254, in pantalla
+    line = e.string_get(row, 1, 79)
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 453, in string_get
+    cmd = self.exec_command(
+        "Ascii({0},{1},{2})".format(ypos, xpos, length).encode("utf-8")
+    )
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-10-02 14:27:58,076 INFO root: procesar_tareas(): 0 elementos
+2025-10-02 14:27:58,576 ERROR root: Error durante la ejecución de emulador(): this TerminalClient instance has been terminated
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 154, in emulador
+    pantalla("pre-redirecion.txt")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\emulator.py", line 254, in pantalla
+    line = e.string_get(row, 1, 79)
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 453, in string_get
+    cmd = self.exec_command(
+        "Ascii({0},{1},{2})".format(ypos, xpos, length).encode("utf-8")
+    )
+  File "C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas\lib\py3270.py", line 303, in exec_command
+    raise TerminatedError("this TerminalClient instance has been terminated")
+lib.py3270.TerminatedError: this TerminalClient instance has been terminated
+2025-10-02 14:27:58,578 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 14:27:58,578 ERROR root: Código de retorno inesperado de emulador: -1
+2025-10-02 14:28:10,849 INFO root: Intento de login para usuario: grupo_15
+2025-10-02 14:28:10,850 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:28:10,850 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:28:10,862 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:28:13,142 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:28:13,142 INFO root: Esperando campo inicial...
+2025-10-02 14:28:13,165 INFO root: Pantalla de login
+2025-10-02 14:28:14,166 INFO root: Esperando campo de usuario...
+2025-10-02 14:28:14,189 INFO root: Esperando campo de contraseña...
+2025-10-02 14:28:15,213 INFO root: Comprobando resultado del login...
+2025-10-02 14:28:15,214 WARNING root: Error: Usuario ya en uso
+2025-10-02 14:28:15,215 WARNING root: Usuario en uso; render ocupada
+2025-10-02 14:35:47,140 INFO root: Intento de login para usuario: grupo_14
+2025-10-02 14:35:47,140 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:35:47,140 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:35:47,144 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:35:49,401 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:35:49,401 INFO root: Esperando campo inicial...
+2025-10-02 14:35:49,421 INFO root: Pantalla de login
+2025-10-02 14:35:50,422 INFO root: Esperando campo de usuario...
+2025-10-02 14:35:50,443 INFO root: Esperando campo de contraseña...
+2025-10-02 14:35:51,463 INFO root: Comprobando resultado del login...
+2025-10-02 14:35:51,464 WARNING root: Error: Usuario ya en uso
+2025-10-02 14:35:51,464 WARNING root: Usuario en uso; render ocupada
+2025-10-02 14:39:12,440 INFO root: Intento de login para usuario: grupo_09
+2025-10-02 14:39:12,440 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-02 14:39:12,441 INFO root: [TN3270] ws3270 detectado en C:\Users\adria\Desktop\uni\legados\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-02 14:39:12,445 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-02 14:39:14,751 INFO root: Pantalla de Music Mainframe
+2025-10-02 14:39:14,751 INFO root: Esperando campo inicial...
+2025-10-02 14:39:14,774 INFO root: Pantalla de login
+2025-10-02 14:39:15,775 INFO root: Esperando campo de usuario...
+2025-10-02 14:39:15,799 INFO root: Esperando campo de contraseña...
+2025-10-02 14:39:16,825 INFO root: Comprobando resultado del login...
+2025-10-02 14:39:16,826 INFO root: Inicio de sesión exitoso
+2025-10-02 14:39:16,826 INFO root: Pantalla de espera -> ENTER
+2025-10-02 14:39:16,849 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-02 14:39:18,929 INFO root: Pantalla menú de tareas
+2025-10-02 14:39:19,953 INFO root: Pantalla menú listar tareas
+2025-10-02 14:39:21,977 INFO root: Listar todas las tareas
+2025-10-02 14:39:24,142 INFO root: procesar_tareas(): 18 elementos
+2025-10-02 14:39:25,671 INFO root: Saliendo de pantalla menú listar tareas: enter 0 1
+2025-10-02 14:39:27,199 INFO root: Saliendo de pantalla menú listar tareas: numero 0 2
+2025-10-02 14:39:28,210 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-02 14:39:28,210 INFO root: Login correcto, mostrando tareas
+2025-10-02 14:39:49,565 INFO root: Sesión TN3270 finalizada en exit_tasks()

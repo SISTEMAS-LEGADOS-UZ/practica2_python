@@ -176,6 +176,32 @@
         margin: 10px 2px 14px 2px;
         color: var(--muted);
       }
+
+      .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      #tipoFiltro {
+        background: #0b1326;
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        min-width: 150px;
+      }
+
+      #tipoFiltro:hover {
+        background: #0f1830;
+        border-color: #243248;
+      }
+
+      #tipoFiltro option {
+        background: var(--panel);
+        color: var(--text);
+      }
     </style>
   </head>
   <body>
@@ -186,6 +212,14 @@
     <!-- Lista de tareas -->
     <div class="container">
       <div class="toolbar">
+        <div class="filter-group">
+          <label for="tipoFiltro" style="color: var(--muted); font-size: 12px; margin-right: 8px;">Filtrar por:</label>
+          <select id="tipoFiltro" class="btn" style="padding: 8px 12px;">
+            <option value="todas">Todas</option>
+            <option value="general">Tareas Generales</option>
+            <option value="specific">Tareas Específicas</option>
+          </select>
+        </div>
         <button id="nuevaTareaBtn" class="btn btn-primary">Nueva tarea</button>
         <form action="/refresh" method="post">
           <button class="btn" type="submit">Refrescar</button>
@@ -202,7 +236,11 @@
       </div>
       <div class="summary">
         <div class="muted">Listado de tareas</div>
-        <div>Total: {{ (data|length) if data else 0 }}</div>
+        <div>
+          <span id="contadorMostradas">{{ (data|length) if data else 0 }}</span> 
+          de 
+          <span id="contadorTotal">{{ (data|length) if data else 0 }}</span>
+        </div>
       </div>
       <table>
         <thead>
@@ -435,5 +473,8 @@
         return true; // Permite el envío del formulario si todos los campos están completos
       }
     </script>
+    
+    <!-- Funcionalidad de filtrado de tareas -->
+    <script src="{{ url_for('static', filename='filtro.js') }}"></script>
   </body>
 </html>
