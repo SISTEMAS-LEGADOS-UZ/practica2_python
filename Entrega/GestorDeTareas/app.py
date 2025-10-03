@@ -1,12 +1,19 @@
 from flask import Flask, render_template, request
 from lib.emulator import emulador, assign_tasks, view_tasks, exit_tasks, get_last_all_tasks, dump_screen_debug, refresh_all_tasks,pantalla
 import os
-import webview
 import atexit
 import logging
+import webbrowser
+
+# Intentar cargar pywebview opcionalmente
+try:
+    import webview  # type: ignore
+    _WEBVIEW_AVAILABLE = True
+except Exception:
+    webview = None  # type: ignore
+    _WEBVIEW_AVAILABLE = False
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
-window = webview.create_window('Gestor de tareas (ws3270)', app, width=1920, height=1080)
 
 # Logging básico a archivo para diagnosticar problemas en producción
 logging.basicConfig(
@@ -110,4 +117,24 @@ def refresh():
         return render_template('tareas.html', data=get_last_all_tasks())
 
 if __name__ == '__main__':
-    webview.start()
+    # Si pywebview está disponible, usar ventana embebida
+    if _WEBVIEW_AVAILABLE:
+        try:
+            window = webview.create_window('Gestor de tareas (ws3270)', app, width=1920, height=1080)  # type: ignore
+            webview.start()  # type: ignore
+        except Exception:
+            # Fallback a servidor Flask + navegador
+            logging.exception('Fallo al iniciar pywebview; usando navegador por defecto')
+            app.run(host='127.0.0.1', port=5000, debug=False, threaded=True)
+            try:
+                webbrowser.open('http://127.0.0.1:5000')
+            except Exception:
+                pass
+    else:
+        # Fallback directo si pywebview no está disponible
+        logging.info('pywebview no disponible; iniciando servidor Flask y abriendo navegador')
+        try:
+            webbrowser.open('http://127.0.0.1:5000')
+        except Exception:
+            pass
+        app.run(host='127.0.0.1', port=5000, debug=False, threaded=True)
