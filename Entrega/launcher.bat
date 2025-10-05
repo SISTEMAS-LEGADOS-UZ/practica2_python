@@ -39,24 +39,28 @@ if not exist "%PY_EXE%" (
     if exist "%PY_DIR%\python312._pth" (
         powershell -NoProfile -ExecutionPolicy Bypass -Command "(Get-Content -Raw '%PY_DIR%\python312._pth') -replace '#import site','import site' | Set-Content -NoNewline '%PY_DIR%\python312._pth'" || goto :error
         powershell -NoProfile -ExecutionPolicy Bypass -Command "$c=Get-Content -Raw '%PY_DIR%\python312._pth'; if($c -notmatch '(?m)^\.$'){ Add-Content -Path '%PY_DIR%\python312._pth' -Value '.' }" || goto :error
+        powershell -NoProfile -ExecutionPolicy Bypass -Command "$c=Get-Content -Raw '%PY_DIR%\python312._pth'; if($c -notmatch '(?m)^Lib$'){ Add-Content -Path '%PY_DIR%\python312._pth' -Value 'Lib' }" || goto :error
+        powershell -NoProfile -ExecutionPolicy Bypass -Command "$c=Get-Content -Raw '%PY_DIR%\python312._pth'; if($c -notmatch '(?m)^Lib\\site-packages$'){ Add-Content -Path '%PY_DIR%\python312._pth' -Value 'Lib\\site-packages' }" || goto :error
         powershell -NoProfile -ExecutionPolicy Bypass -Command "$c=Get-Content -Raw '%PY_DIR%\python312._pth'; if($c -notmatch [regex]::Escape('%REQ_PATH%')){ Add-Content -Path '%PY_DIR%\python312._pth' -Value '%REQ_PATH%' }" || goto :error
     )
 
-:: Instalar pip si no existe
-if not exist "%PIP_EXE%" (
-    echo Instalando pip...
-        if not exist "%GETPIP%" (
-            powershell -NoProfile -ExecutionPolicy Bypass -Command "try { Invoke-WebRequest -UseBasicParsing -Uri 'https://bootstrap.pypa.io/get-pip.py' -OutFile '%GETPIP%' } catch { Write-Error $_; exit 1 }" || goto :error
+:: Instalar/Actualizar pip (forzar reinstalación para evitar inconsistencias)
+echo Instalando/actualizando pip...
+    if not exist "%GETPIP%" (
+        powershell -NoProfile -ExecutionPolicy Bypass -Command "try { Invoke-WebRequest -UseBasicParsing -Uri 'https://bootstrap.pypa.io/get-pip.py' -OutFile '%GETPIP%' } catch { Write-Error $_; exit 1 }" || goto :error
     )
-        "%PY_EXE%" "%GETPIP%" --no-warn-script-location --upgrade || goto :error
-)
+    "%PY_EXE%" "%GETPIP%" --no-warn-script-location --upgrade || goto :error
 
 :: Asegurar que Scripts existe y pip está disponible
 if not exist "%PY_DIR%\Scripts" mkdir "%PY_DIR%\Scripts" >nul 2>&1
 
 :: Instalar herramientas de build y dependencias
 echo Preparando pip/setuptools/wheel...
-"%PY_EXE%" -m pip install --no-warn-script-location --upgrade pip setuptools wheel || goto :error
+"%PY_EXE%" -m pip install --no-warn-script-location --upgrade pip setuptools wheel || (
+    echo Fallback: reinstalando pip con get-pip.py...
+    "%PY_EXE%" "%GETPIP%" --no-warn-script-location --upgrade || goto :error
+    "%PY_EXE%" -m pip install --no-warn-script-location --upgrade pip setuptools wheel || goto :error
+)
 echo Instalando dependencias de requirements.txt...
 "%PY_EXE%" -m pip install --no-warn-script-location -r "%REQ_PATH%\requirements.txt" || goto :error
 
