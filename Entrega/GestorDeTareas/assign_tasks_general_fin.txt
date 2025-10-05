@@ -18,26 +18,26 @@
                                                                                
               OPTION:                                                          
 ?                                                                              
-2                                                                              
+1                                                                              
    ENTER DATE(DD-MM-YYYY):                                                     
 ?                                                                              
-2025-11-08                                                                     
-   ENTER NAME (no spaces):                                                     
-?                                                                              
-"Camb2"                                                                        
+2025-11-07                                                                     
    ENTER DESCRIPTION (no spaces):                                              
 ?                                                                              
-"camb2"                                                                        
-tarea = 'SPECIFIC 2025-11-08 "Camb2" "camb2"'                                  
+"nomej"                                                                        
+tarea = 'GENERAL 2025-11-07 ----- "nomej"'                                     
                                                                                
                                                                                
-   SPECIFIC TASK ASSIGNED                                                      
+   GENERAL TASK ASSIGNED                                                       
                                                                                
                                                                                
                                                                                
                                                                                
                         ENTER ANY KEY TO CONTINUE                              
 ?                                                                              
+"funciona?"                                                                    
+Protection exception                                                           
+PSW = 0xff250004 206f7f00                                                      
 ------T-----------------------------------------------------------------T      
                                                                                
-                                                                      Reading  
+                                                                      More...  

@@ -25,3 +25,7 @@
         TASK #25: SPECIFIC 2025-10-16 "lllll" "llllll"                         
         TASK #26: GENERAL 2025-10-16 ----- "funciona?"                         
         TASK #27: SPECIFIC 2025-10-23 "filtrado" "filtrado"                    
+        TASK #28: GENERAL 2025-11-09 ----- "Camb1"                             
+        TASK #29: SPECIFIC 2025-11-08 "Camb2" "camb2"                          
+        TASK #30: GENERAL 2025-11-08 ----- "anade_nom"                         
+        TASK #31: GENERAL 2025-11-07 ----- "nomej"                             
