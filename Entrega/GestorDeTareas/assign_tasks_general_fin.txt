@@ -21,11 +21,11 @@
 1                                                                              
    ENTER DATE(DD-MM-YYYY):                                                     
 ?                                                                              
-2025-11-07                                                                     
+2025-10-16                                                                     
    ENTER DESCRIPTION (no spaces):                                              
 ?                                                                              
-"nomej"                                                                        
-tarea = 'GENERAL 2025-11-07 ----- "nomej"'                                     
+"funciona"                                                                     
+tarea = 'GENERAL 2025-10-16 ----- "funciona"'                                  
                                                                                
                                                                                
    GENERAL TASK ASSIGNED                                                       
@@ -35,9 +35,9 @@ tarea = 'GENERAL 2025-11-07 ----- "nomej"'
                                                                                
                         ENTER ANY KEY TO CONTINUE                              
 ?                                                                              
-"funciona?"                                                                    
-Protection exception                                                           
-PSW = 0xff250004 206f7f00                                                      
+                                                                               
+                                                                               
+                                                                               
 ------T-----------------------------------------------------------------T      
                                                                                
-                                                                      More...  
+                                                                      Reading  

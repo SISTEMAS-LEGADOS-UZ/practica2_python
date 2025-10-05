@@ -109,7 +109,6 @@ def emulador(mylogin, mypass):
             e.send_enter()
 
             # Menú tareas
-            time.sleep(retardo2)
             logging.info("Pantalla menú de tareas")
 
             # Listar tareas -> opción 2
@@ -478,8 +477,6 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     return_main_menu()
     logging.info("Volviendo al menu inicial...")
     
-    
-
     pantalla("Assign_task_fin.txt")
 
     
@@ -551,13 +548,18 @@ def parse_all_tasks(file: str = "pantalla_lista_todas_las_tareas.txt"):
                 mg = re_general.match(resto)
                 if mg:
                     item["fecha"] = mg.group(1)
-                    item["descripcion"] = mg.group(2).strip()
+                    item["descripcion"] = mg.group(2).strip().strip('"').strip("'")
                 else:
                     # Fallback: sin separador '-----'
                     partes = resto.split()
                     if partes:
                         item["fecha"] = partes[0]
-                        item["descripcion"] = " ".join(partes[1:]).strip()
+                        desc = " ".join(partes[1:]).strip()
+                        # Eliminar guiones iniciales que puedan formar parte del separador
+                        desc = re.sub(r"^\s*-+\s*", "", desc)
+                        # Quitar comillas envolventes
+                        desc = desc.strip().strip('"').strip("'")
+                        item["descripcion"] = desc
             else:  # SPECIFIC
                 # Esperamos: <fecha> <nombre> <descripcion>
                 partes = resto.split()
@@ -586,24 +588,24 @@ def refresh_all_tasks():
     """
     try:
         # Replicar exactamente la secuencia del emulador desde 'Pantalla menú de tareas'
-        time.sleep(delayScreen)
+        # time.sleep(delayScreen)
         logging.info("Pantalla menú de tareas (refresh)")
 
         # 1) Listar tareas -> opción 2
-        time.sleep(delayScreen)
+        # time.sleep(delayScreen)
         e.wait_for_field()
         e.send_string("2")
         e.send_enter()
         logging.info("Pantalla menú listar tareas (refresh)")
-        time.sleep(delayScreen)
+        # time.sleep(delayScreen)
 
         # 2) Listar todas -> opción 3
-        time.sleep(delayScreen)
+        # time.sleep(delayScreen)
         e.wait_for_field()
         e.send_string("3")
         e.send_enter()
         logging.info("Listar todas las tareas (refresh)")
-        time.sleep(delayScreen)
+        # time.sleep(delayScreen)
 
         # 3) Capturar todas las páginas y parsear
         file_all = capture_all_tasks_pages("pantalla_lista_todas_las_tareas.txt")
@@ -696,7 +698,7 @@ def return_main_menu(max_steps: int = 20):
     try:
         for _ in range(max_steps):
             text = _get_screen_text()
-            logging.info(text)
+            # logging.info(text)
             if ("MAIN MENU" in text) and ("GENERAL TASKS" not in text) and ("ENTER ANY KEY TO CONTINUE" not in text):
                 logging.info("main menu alcanzado")
                 return True
