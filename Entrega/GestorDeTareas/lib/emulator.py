@@ -103,7 +103,7 @@ def emulador(mylogin, mypass):
             e.send_enter()
 
             logging.info("Pantalla de comandos; ejecutando tasks.c")
-            # time.sleep(retardo2)
+            time.sleep(retardo2)
             e.wait_for_field()
             e.send_string("tasks.c")
             e.send_enter()
@@ -112,14 +112,14 @@ def emulador(mylogin, mypass):
             logging.info("Pantalla menú de tareas")
 
             # Listar tareas -> opción 2
-            # time.sleep(retardo2)
+            time.sleep(retardo2)
             e.wait_for_field()
             e.send_string("2")
             e.send_enter()
             logging.info("Pantalla menú listar tareas")
 
             # Listar todas las tareas -> opción 3
-            # time.sleep(retardo2)
+            time.sleep(retardo2)
             e.wait_for_field()
             e.send_string("3")
             e.send_enter()
