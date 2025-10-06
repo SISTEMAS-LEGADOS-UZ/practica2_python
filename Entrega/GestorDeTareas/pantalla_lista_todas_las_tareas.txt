@@ -32,3 +32,11 @@
         TASK #32: GENERAL 12-07-2020 ----- aaaa                                
         TASK #33: GENERAL 2025-10-15 ----- "sisisis"                           
         TASK #34: GENERAL 2025-10-16 ----- "funciona"                          
+        TASK #35: GENERAL 2025-10-05 ----- "yolo"                              
+        TASK #36: SPECIFIC 2026-12-12 "especificacion" "zzzz"                  
+        TASK #37: SPECIFIC 2025-10-06 "limpieza" "limpieza"                    
+        TASK #38: SPECIFIC 2025-11-23 "ref_bn" "rebn"                          
+        TASK #39: SPECIFIC 2025-11-02 "ult" "ult"                              
+        TASK #40: GENERAL 2025-10-06 ----- "genf"                              
+        TASK #41: SPECIFIC 2025-10-06 "esp" "esp"                              
+        TASK #42: SPECIFIC 2025-11-09 "ef" "ef"                                

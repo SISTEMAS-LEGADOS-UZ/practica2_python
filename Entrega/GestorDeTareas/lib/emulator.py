@@ -9,6 +9,21 @@ _last_all_tasks = []
 
 delayScreen=1.5
 
+def _settle(delay: float = 0.5):
+    """Pequeña espera para que el host 'pinte' la siguiente pantalla.
+
+    Sustituye a antiguas capturas TXT de depuración que incluían un sleep implícito.
+    """
+    try:
+        try:
+            e.wait_for_field()
+        except Exception:
+            pass
+        time.sleep(delay)
+    except Exception:
+        # No queremos que un fallo aquí rompa el flujo
+        pass
+
 def read_line(line, file="pantalla.txt"):
     # Abre el archivo en modo lectura
     with open(file, "r") as archivo:
@@ -154,7 +169,9 @@ def emulador(mylogin, mypass):
             logging.info("Volviendo a main menu...")
             return_main_menu()
             
-            pantalla("Emulador_login_fin.txt")
+            # [DEBUG desactivado] Antes se guardaba una captura en TXT solo para depuración.
+            # pantalla("Emulador_login_fin.txt")
+            _settle(0.5)
 
             
             return 0
@@ -237,14 +254,18 @@ def pantalla(filename="pantalla.txt"):
     archivo.close()
 
 def dump_screen_debug(prefix: str = "debug_screen"):
-    """Guarda la pantalla actual en un .txt con timestamp para depuración."""
+    """Depuración sin artefactos .txt.
+
+    Anteriormente generaba un fichero TXT con timestamp mediante `pantalla(...)`.
+    Se ha desactivado la creación de archivos de texto para evitar residuos de depuración.
+    Se mantiene un log informativo en su lugar.
+    """
     try:
         ts = time.strftime("%Y%m%d-%H%M%S")
-        fname = f"{prefix}_{ts}.txt"
-        pantalla(fname)
-        logging.info("Pantalla guardada para debug: %s", fname)
+        # fname = f"{prefix}_{ts}.txt"  # [DEBUG desactivado] No se crea fichero
+        logging.info("[DEBUG] Captura omitida (sin .txt) para prefix=%s ts=%s", prefix, ts)
     except Exception:
-        logging.exception("No se pudo guardar la pantalla de debug")
+        logging.exception("No se pudo registrar el evento de depuración")
 
 def capture_all_tasks_pages(save_file: str = "pantalla_lista_todas_las_tareas.txt", max_pages: int = 200) -> str:
     """Captura todas las páginas del listado 'ALL TASKS', pulsando ENTER hasta el final.
@@ -421,7 +442,9 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
     nombre = '"' + nombre.replace(" ", " ") + '"'
     
     logging.info(f'Asignando tarea especifica: FECHA={fecha}, NOMBRE={nombre}  DESCRIPCION={desc} TIPO={tipo}')
-    pantalla("assign_tasks_ini.txt")
+    # [DEBUG desactivado] captura sólo para depuración
+    # pantalla("assign_tasks_ini.txt")
+    _settle(0.5)
  
    
     e.wait_for_field()
@@ -445,7 +468,9 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
         e.send_string(desc)
         e.send_enter()
         e.delete_field()
-        pantalla("assign_tasks_general_fin.txt")
+        # [DEBUG desactivado] captura sólo para depuración
+        # pantalla("assign_tasks_general_fin.txt")
+        _settle(0.5)
         
     elif tipo=="Especifica":
         
@@ -470,13 +495,17 @@ def assign_tasks(tipo:str, fecha:str, desc:str, nombre:str):
         e.send_string(desc)
         e.send_enter()
         e.delete_field()
-        pantalla("assign_tasks_especifica_fin.txt")
+        # [DEBUG desactivado] captura sólo para depuración
+        # pantalla("assign_tasks_especifica_fin.txt")
+        _settle(0.5)
     
  
     return_main_menu()
     logging.info("Volviendo al menu inicial...")
     
-    pantalla("Assign_task_fin.txt")
+    # [DEBUG desactivado] captura sólo para depuración
+    # pantalla("Assign_task_fin.txt")
+    _settle(0.5)
 
     
 
@@ -615,9 +644,9 @@ def refresh_all_tasks():
         
         # 4) Regresa al main menu
         return_main_menu()
-        pantalla("Refresh_all_task_fin.txt")
-        
-    
+        # [DEBUG desactivado] captura sólo para depuración
+        # pantalla("Refresh_all_task_fin.txt")
+        _settle(0.3)
 
         if not _last_all_tasks:
             dump_screen_debug("after_refresh_empty")

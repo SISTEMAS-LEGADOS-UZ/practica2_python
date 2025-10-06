@@ -1,15 +1,16 @@
 <div align="center">
 
 # Práctica 2 — Sistemas Legados
+
 ## Encapsulado de aplicación legada vía TN3270
 
 <img src="./Imagenes/IBM-3279.jpg" alt="Terminal 3270" width="420" />
 
-**Grado:** Ingeniería Informática  \\
-**Asignatura:** Sistemas Legados  \\
-**Curso:** 2025/2026  \\
-**Grupo:** XX  \\
-**Autores:** Adrián Nasarre, Enrique Baldovín, Jorge Lucas  \\
+**Grado:** Ingeniería Informática \\
+**Asignatura:** Sistemas Legados \\
+**Curso:** 2025/2026 \\
+**Grupo:** XX \\
+**Autores:** Adrián Nasarre, Enrique Baldovín, Jorge Lucas \\
 **Fecha:** 06/10/2025
 
 </div>
@@ -59,10 +60,10 @@ Implementar una aplicación con interfaz gráfica (GUI) que permita acceder a un
 
 Para abrir una sesión TN3270 se instaló wc3270 (SourceForge). Pasos seguidos con Session Wizard (por defecto):
 
-1) Create New Session y asignar un nombre (p. ej. `practica2`).
-2) IP del mainframe: `155.210.152.51`.
-3) Cambiar puerto TCP: escribir `3` + Enter, luego `3270` + Enter.
-4) Finalizar para crear `practica2.ws` y crear acceso directo.
+1. Create New Session y asignar un nombre (p. ej. `practica2`).
+2. IP del mainframe: `155.210.152.51`.
+3. Cambiar puerto TCP: escribir `3` + Enter, luego `3270` + Enter.
+4. Finalizar para crear `practica2.ws` y crear acceso directo.
 
 Imágenes de apoyo:
 
@@ -93,24 +94,24 @@ La solución encapsula la interacción 3270 y expone una GUI web moderna.
 
 Diagrama simple de flujo:
 
-1) Login desde la GUI → `emulator.emulador(usuario, contraseña)`.
-2) Navegación automática: bienvenida → login → `tasks.c` → View Tasks (2) → All Tasks (3).
-3) Screen scraping: captura todas las páginas de "ALL TASKS", parseo y cache en memoria.
-4) GUI muestra la tabla. Acciones: crear tarea general/específica, refrescar, salir.
+1. Login desde la GUI → `emulator.emulador(usuario, contraseña)`.
+2. Navegación automática: bienvenida → login → `tasks.c` → View Tasks (2) → All Tasks (3).
+3. Screen scraping: captura todas las páginas de "ALL TASKS", parseo y cache en memoria.
+4. GUI muestra la tabla. Acciones: crear tarea general/específica, refrescar, salir.
 
 ## Interacción con el mainframe (flujo)
 
 Secuencia probada primero manualmente en el emulador y posteriormente automatizada:
 
-1) Pantalla de bienvenida MUSIC/SP → Enter.
-2) Introducir `Userid` y `Password` → Enter.
-3) Pantalla de espera → Enter.
-4) Línea de comandos → escribir `tasks.c` → Enter.
-5) Menú de la app:
+1. Pantalla de bienvenida MUSIC/SP → Enter.
+2. Introducir `Userid` y `Password` → Enter.
+3. Pantalla de espera → Enter.
+4. Línea de comandos → escribir `tasks.c` → Enter.
+5. Menú de la app:
    - `1` ASSIGN TASKS
    - `2` VIEW TASKS
    - `0` EXIT
-6) Para listar todas: `2` (VIEW TASKS) → `3` (ALL TASKS); para volver, Enter.
+6. Para listar todas: `2` (VIEW TASKS) → `3` (ALL TASKS); para volver, Enter.
 
 En la automatización se usan:
 
@@ -189,18 +190,28 @@ A continuación se detallan los problemas más relevantes, su análisis y la sol
 - En caso de vacíos inesperados, se vuelcan pantallas timestamp (`dump_screen_debug`) y se registran eventos en `app.log`.
 - Esto facilitó reproducir condiciones de carrera y ajustar tiempos/esperas.
 
+### 9) Limpieza de artefactos de depuración (.txt)
+
+Con el objetivo de evitar residuos en el directorio de trabajo, se ha desactivado la creación de ficheros `.txt` que se usaban exclusivamente para depuración:
+
+- `dump_screen_debug(...)` ya no crea archivos en disco; en su lugar emite un log informativo con el prefijo y el timestamp.
+- En `lib/emulator.py` se han comentado las llamadas a `pantalla("Emulador_login_fin.txt")`, `pantalla("assign_tasks_ini.txt")`, `pantalla("assign_tasks_general_fin.txt")`, `pantalla("assign_tasks_especifica_fin.txt")`, `pantalla("Assign_task_fin.txt")` y `pantalla("Refresh_all_task_fin.txt")`.
+- La funcionalidad de la aplicación no se ve afectada; se mantiene el registro en `app.log` y el flujo normal de navegación.
+
+Si fuera necesario reactivar temporalmente estos artefactos para diagnosticar un problema, basta con descomentar las líneas indicadas y, opcionalmente, restaurar la escritura en `dump_screen_debug`.
+
 ## Guía de ejecución en Windows (doble clic)
 
 Esta sección describe todo lo necesario para ejecutar la práctica desde Windows sin instalaciones previas.
 
-1) Descargar/obtener la carpeta `Entrega/` completa.
-2) Doble clic en `Entrega/GestorDeTareas.bat`.
+1. Descargar/obtener la carpeta `Entrega/` completa.
+2. Doble clic en `Entrega/GestorDeTareas.bat`.
    - Primera vez: `launcher.bat` descargará Python embebido (requiere Internet) y preparará `pip` + dependencias. Esta preparación queda cacheada en `Entrega/python-embed/`.
    - Siguientes veces: ya no hace falta Internet; arranca directamente.
-3) Se abrirá una consola con logs y la ventana de la app.
-4) Introducir credenciales (usuario `grupo_XX`, clave inicial `secreto6` si aplica) y pulsar Acceder.
-5) Tras el login (puede tardar varios segundos), aparecerá el listado de tareas.
-6) Para cerrar correctamente, usar el botón “Salir” para liberar la sesión TN3270.
+3. Se abrirá una consola con logs y la ventana de la app.
+4. Introducir credenciales (usuario `grupo_XX`, clave inicial `secreto6` si aplica) y pulsar Acceder.
+5. Tras el login (puede tardar varios segundos), aparecerá el listado de tareas.
+6. Para cerrar correctamente, usar el botón “Salir” para liberar la sesión TN3270.
 
 Notas útiles:
 
@@ -254,11 +265,11 @@ Evidencias:
 
 ## Reparto de tareas y esfuerzo
 
-| Autor            | Tareas principales                                              | Horas |
-|------------------|-----------------------------------------------------------------|-------|
-| Adrián Nasarre   | Automatización TN3270, GUI, empaquetado y soporte ejecución     | 19    |
-| Enrique Baldovín | Flujo de login, parseo robusto, resiliencia y estados intermedios| 19    |
-| Jorge Lucas      | Interfaz, JS filtrado, pruebas integrales y documentación       | 19    |
+| Autor            | Tareas principales                                                | Horas |
+| ---------------- | ----------------------------------------------------------------- | ----- |
+| Adrián Nasarre   | Automatización TN3270, GUI, empaquetado y soporte ejecución       | 19    |
+| Enrique Baldovín | Flujo de login, parseo robusto, resiliencia y estados intermedios | 19    |
+| Jorge Lucas      | Interfaz, JS filtrado, pruebas integrales y documentación         | 19    |
 
 ## Proceso del proyecto y organización de ficheros
 
@@ -266,31 +277,38 @@ Esta sección documenta el flujo de trabajo seguido, las decisiones de diseño y
 
 ### Fases del desarrollo
 
-1) Análisis y pruebas manuales
+1. Análisis y pruebas manuales
+
 - Objetivo: entender el flujo exacto en MUSIC/SP y `tasks.c` desde un terminal 3270 real.
 - Resultado: diagrama de navegación y tiempos mínimos entre pantallas, con validación de estados y mensajes.
 
-2) Prototipo de emulación (POC)
+2. Prototipo de emulación (POC)
+
 - Implementamos una prueba mínima con `py3270` + `ws3270` para: conectar, logar, navegar a `tasks.c` y leer pantallas.
 - Verificamos que el binario `ws3270.exe` podía co-existir junto a la app y resolverse por PATH.
 
-3) Diseño de API interna
+3. Diseño de API interna
+
 - Decidimos encapsular la interacción de bajo nivel en `lib/emulator.py` exponiendo funciones de alto nivel: `emulador`, `assign_tasks`, `refresh_all_tasks`, `exit_tasks`, etc.
 - Acordamos un formato de datos estable para la GUI: lista de dicts con `{id, tipo, fecha, descripcion, nombre}` para desacoplar el parseo de la presentación.
 
-4) GUI y validaciones cliente
+4. GUI y validaciones cliente
+
 - Construimos plantillas Jinja (`templates/`) y un script JS (`static/filtro.js`) para filtrar en cliente y mantener UX fluida.
 - Validaciones básicas en formularios (sin espacios en General/Specific donde aplica) y modales para altas.
 
-5) Robustez y estados
+5. Robustez y estados
+
 - Añadimos funciones como `return_main_menu()` y `capture_all_tasks_pages()` con reintentos y detección de pantallas especiales.
 - Introdujimos `dump_screen_debug()` y caché `_last_all_tasks` para resiliencia ante fallos puntuales.
 
-6) Empaquetado portable
+6. Empaquetado portable
+
 - `launcher.bat` automatiza descarga de Python embebido, pip y dependencias, corrige `python312._pth` y lanza la app con el `PATH` adecuado.
 - `GestorDeTareas.bat` ofrece un único punto de entrada por doble clic.
 
-7) Validación y documentación
+7. Validación y documentación
+
 - Pruebas E2E (felices y de error), ajuste de tiempos y errores comunes.
 - redacción de la memoria técnica con imágenes.
 

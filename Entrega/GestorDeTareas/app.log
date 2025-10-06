@@ -10590,3 +10590,170 @@ Traceback (most recent call last):
     if e:
        ^
 NameError: name 'e' is not defined
+2025-10-06 20:14:40,057 INFO root: Intento de login para usuario: grupo_15
+2025-10-06 20:14:40,057 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-06 20:14:40,057 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-06 20:14:40,291 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-06 20:14:42,658 INFO root: Pantalla de Music Mainframe
+2025-10-06 20:14:42,658 INFO root: Esperando campo inicial...
+2025-10-06 20:14:42,690 INFO root: Pantalla de login
+2025-10-06 20:14:43,690 INFO root: Esperando campo de usuario...
+2025-10-06 20:14:43,722 INFO root: Esperando campo de contraseña...
+2025-10-06 20:14:44,756 INFO root: Comprobando resultado del login...
+2025-10-06 20:14:44,756 INFO root: Inicio de sesión exitoso
+2025-10-06 20:14:44,756 INFO root: Pantalla de espera -> ENTER
+2025-10-06 20:14:44,787 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-06 20:14:45,922 INFO root: Pantalla menú de tareas
+2025-10-06 20:14:46,954 INFO root: Pantalla menú listar tareas
+2025-10-06 20:14:47,985 INFO root: Listar todas las tareas
+2025-10-06 20:14:50,452 INFO root: procesar_tareas(): 38 elementos
+2025-10-06 20:14:50,452 INFO root: Volviendo a main menu...
+2025-10-06 20:14:50,864 INFO root: main menu alcanzado
+2025-10-06 20:14:51,367 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-06 20:14:51,368 INFO root: Login correcto, mostrando tareas
+2025-10-06 20:15:03,316 INFO root: Asignando tarea especifica: FECHA=2025-11-02, NOMBRE=ult  DESCRIPCION=ult
+2025-10-06 20:15:03,316 INFO root: Asignando tarea especifica: FECHA=2025-11-02, NOMBRE="ult"  DESCRIPCION="ult" TIPO=Especifica
+2025-10-06 20:15:04,921 INFO root: main menu alcanzado
+2025-10-06 20:15:04,921 INFO root: Volviendo al menu inicial...
+2025-10-06 20:15:05,423 INFO root: Pantalla menú de tareas (refresh)
+2025-10-06 20:15:05,454 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-06 20:15:05,562 INFO root: Listar todas las tareas (refresh)
+2025-10-06 20:15:07,175 INFO root: main menu alcanzado
+2025-10-06 20:35:03,617 INFO root: Intento de login para usuario: grupo_15
+2025-10-06 20:35:03,617 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-06 20:35:03,618 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-06 20:35:03,621 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-06 20:35:05,965 INFO root: Pantalla de Music Mainframe
+2025-10-06 20:35:05,965 INFO root: Esperando campo inicial...
+2025-10-06 20:35:05,996 INFO root: Pantalla de login
+2025-10-06 20:35:06,997 INFO root: Esperando campo de usuario...
+2025-10-06 20:35:07,029 INFO root: Esperando campo de contraseña...
+2025-10-06 20:35:08,063 INFO root: Comprobando resultado del login...
+2025-10-06 20:35:08,063 INFO root: Inicio de sesión exitoso
+2025-10-06 20:35:08,063 INFO root: Pantalla de espera -> ENTER
+2025-10-06 20:35:08,094 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-06 20:35:09,233 INFO root: Pantalla menú de tareas
+2025-10-06 20:35:10,264 INFO root: Pantalla menú listar tareas
+2025-10-06 20:35:11,297 INFO root: Listar todas las tareas
+2025-10-06 20:35:14,883 INFO root: procesar_tareas(): 39 elementos
+2025-10-06 20:35:14,884 INFO root: Volviendo a main menu...
+2025-10-06 20:35:15,280 INFO root: main menu alcanzado
+2025-10-06 20:35:15,280 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-06 20:35:15,281 INFO root: Login correcto, mostrando tareas
+2025-10-06 20:36:20,917 INFO root: Asignando tarea especifica: FECHA=2025-10-06, NOMBRE=""  DESCRIPCION="genf" TIPO=General
+2025-10-06 20:36:21,620 INFO root: main menu alcanzado
+2025-10-06 20:36:21,621 INFO root: Volviendo al menu inicial...
+2025-10-06 20:36:21,621 INFO root: Pantalla menú de tareas (refresh)
+2025-10-06 20:36:21,652 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-06 20:36:21,760 INFO root: Listar todas las tareas (refresh)
+2025-10-06 20:36:23,470 INFO root: main menu alcanzado
+2025-10-06 20:42:00,113 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-06 20:42:28,669 INFO root: Intento de login para usuario: grupo_12
+2025-10-06 20:42:28,670 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-06 20:42:28,670 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-06 20:42:28,674 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-06 20:42:31,025 INFO root: Pantalla de Music Mainframe
+2025-10-06 20:42:31,025 INFO root: Esperando campo inicial...
+2025-10-06 20:42:31,055 INFO root: Pantalla de login
+2025-10-06 20:42:32,056 INFO root: Esperando campo de usuario...
+2025-10-06 20:42:32,087 INFO root: Esperando campo de contraseña...
+2025-10-06 20:42:33,118 INFO root: Comprobando resultado del login...
+2025-10-06 20:42:33,118 INFO root: Inicio de sesión exitoso
+2025-10-06 20:42:33,118 INFO root: Pantalla de espera -> ENTER
+2025-10-06 20:42:33,148 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-06 20:42:34,232 INFO root: Pantalla menú de tareas
+2025-10-06 20:42:35,262 INFO root: Pantalla menú listar tareas
+2025-10-06 20:42:36,291 INFO root: Listar todas las tareas
+2025-10-06 20:42:38,334 INFO root: procesar_tareas(): 3 elementos
+2025-10-06 20:42:38,334 INFO root: Volviendo a main menu...
+2025-10-06 20:42:38,726 INFO root: main menu alcanzado
+2025-10-06 20:42:38,726 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-06 20:42:38,726 INFO root: Login correcto, mostrando tareas
+2025-10-06 20:42:50,012 INFO root: Asignando tarea especifica: FECHA=2025-10-06, NOMBRE=a  DESCRIPCION=a
+2025-10-06 20:42:50,012 INFO root: Asignando tarea especifica: FECHA=2025-10-06, NOMBRE="a"  DESCRIPCION="a" TIPO=Especifica
+2025-10-06 20:42:50,319 INFO root: main menu alcanzado
+2025-10-06 20:42:50,321 INFO root: Volviendo al menu inicial...
+2025-10-06 20:42:50,321 INFO root: Pantalla menú de tareas (refresh)
+2025-10-06 20:42:50,427 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-06 20:42:50,456 INFO root: Listar todas las tareas (refresh)
+2025-10-06 20:43:04,810 INFO root: main menu alcanzado
+2025-10-06 20:43:04,810 INFO root: [DEBUG] Captura omitida (sin .txt) para prefix=after_refresh_empty ts=20251006-204304
+2025-10-06 20:43:04,810 INFO root: [DEBUG] Captura omitida (sin .txt) para prefix=after_assign_specific_empty ts=20251006-204304
+2025-10-06 20:44:32,149 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-06 20:44:39,801 INFO root: Intento de login para usuario: grupo_15
+2025-10-06 20:44:39,801 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-06 20:44:39,802 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-06 20:44:39,804 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-06 20:44:42,161 INFO root: Pantalla de Music Mainframe
+2025-10-06 20:44:42,161 INFO root: Esperando campo inicial...
+2025-10-06 20:44:42,192 INFO root: Pantalla de login
+2025-10-06 20:44:43,193 INFO root: Esperando campo de usuario...
+2025-10-06 20:44:43,226 INFO root: Esperando campo de contraseña...
+2025-10-06 20:44:44,259 INFO root: Comprobando resultado del login...
+2025-10-06 20:44:44,259 INFO root: Inicio de sesión exitoso
+2025-10-06 20:44:44,259 INFO root: Pantalla de espera -> ENTER
+2025-10-06 20:44:44,290 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-06 20:44:45,429 INFO root: Pantalla menú de tareas
+2025-10-06 20:44:46,461 INFO root: Pantalla menú listar tareas
+2025-10-06 20:44:47,492 INFO root: Listar todas las tareas
+2025-10-06 20:44:50,231 INFO root: procesar_tareas(): 40 elementos
+2025-10-06 20:44:50,231 INFO root: Volviendo a main menu...
+2025-10-06 20:44:50,482 INFO root: main menu alcanzado
+2025-10-06 20:44:50,482 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-06 20:44:50,482 INFO root: Login correcto, mostrando tareas
+2025-10-06 20:45:04,181 INFO root: Pantalla menú de tareas (refresh)
+2025-10-06 20:45:04,211 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-06 20:45:04,325 INFO root: Listar todas las tareas (refresh)
+2025-10-06 20:45:13,891 INFO root: main menu alcanzado
+2025-10-06 20:45:47,805 INFO root: Asignando tarea especifica: FECHA=2025-10-06, NOMBRE=esp  DESCRIPCION=esp
+2025-10-06 20:45:47,805 INFO root: Asignando tarea especifica: FECHA=2025-10-06, NOMBRE="esp"  DESCRIPCION="esp" TIPO=Especifica
+2025-10-06 20:45:48,124 INFO root: main menu alcanzado
+2025-10-06 20:45:48,124 INFO root: Volviendo al menu inicial...
+2025-10-06 20:45:48,124 INFO root: Pantalla menú de tareas (refresh)
+2025-10-06 20:45:48,231 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-06 20:45:48,264 INFO root: Listar todas las tareas (refresh)
+2025-10-06 20:46:02,670 INFO root: main menu alcanzado
+2025-10-06 20:46:02,670 INFO root: [DEBUG] Captura omitida (sin .txt) para prefix=after_refresh_empty ts=20251006-204602
+2025-10-06 20:46:02,670 INFO root: [DEBUG] Captura omitida (sin .txt) para prefix=after_assign_specific_empty ts=20251006-204602
+2025-10-06 20:53:47,109 INFO root: Sesión TN3270 finalizada en exit_tasks()
+2025-10-06 20:55:12,750 INFO root: Intento de login para usuario: grupoç_15
+2025-10-06 20:55:12,750 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-06 20:55:12,750 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-06 20:55:12,754 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-06 20:55:15,111 INFO root: Pantalla de Music Mainframe
+2025-10-06 20:55:15,111 INFO root: Esperando campo inicial...
+2025-10-06 20:55:15,142 INFO root: Pantalla de login
+2025-10-06 20:55:16,143 INFO root: Esperando campo de usuario...
+2025-10-06 20:55:16,175 INFO root: Esperando campo de contraseña...
+2025-10-06 20:55:17,209 INFO root: Comprobando resultado del login...
+2025-10-06 20:55:17,209 WARNING root: Error: Usuario no autorizado o contraseña incorrecta
+2025-10-06 20:55:17,209 WARNING root: Login rechazado o fallo de conexión
+2025-10-06 21:00:08,516 INFO root: Intento de login para usuario: grupo_15
+2025-10-06 21:00:08,516 INFO root: [TN3270] Preparando ws3270 en PATH y creando Emulator (no visible)
+2025-10-06 21:00:08,516 INFO root: [TN3270] ws3270 detectado en C:\Users\ebald\OneDrive\Escritorio\practica2_python\Entrega\GestorDeTareas. Añadido al PATH.
+2025-10-06 21:00:08,519 INFO root: [TN3270] Conectando a 155.210.152.51:3270
+2025-10-06 21:00:10,884 INFO root: Pantalla de Music Mainframe
+2025-10-06 21:00:10,884 INFO root: Esperando campo inicial...
+2025-10-06 21:00:10,915 INFO root: Pantalla de login
+2025-10-06 21:00:11,916 INFO root: Esperando campo de usuario...
+2025-10-06 21:00:11,948 INFO root: Esperando campo de contraseña...
+2025-10-06 21:00:12,981 INFO root: Comprobando resultado del login...
+2025-10-06 21:00:12,981 INFO root: Inicio de sesión exitoso
+2025-10-06 21:00:12,981 INFO root: Pantalla de espera -> ENTER
+2025-10-06 21:00:13,012 INFO root: Pantalla de comandos; ejecutando tasks.c
+2025-10-06 21:00:14,153 INFO root: Pantalla menú de tareas
+2025-10-06 21:00:15,186 INFO root: Pantalla menú listar tareas
+2025-10-06 21:00:16,217 INFO root: Listar todas las tareas
+2025-10-06 21:00:20,684 INFO root: procesar_tareas(): 41 elementos
+2025-10-06 21:00:20,684 INFO root: Volviendo a main menu...
+2025-10-06 21:00:20,937 INFO root: main menu alcanzado
+2025-10-06 21:00:21,438 INFO root: Sesión TN3270 permanece abierta para operaciones posteriores
+2025-10-06 21:00:21,438 INFO root: Login correcto, mostrando tareas
+2025-10-06 21:00:44,365 INFO root: Asignando tarea especifica: FECHA=2025-11-09, NOMBRE=ef  DESCRIPCION=ef
+2025-10-06 21:00:44,365 INFO root: Asignando tarea especifica: FECHA=2025-11-09, NOMBRE="ef"  DESCRIPCION="ef" TIPO=Especifica
+2025-10-06 21:00:45,973 INFO root: main menu alcanzado
+2025-10-06 21:00:45,973 INFO root: Volviendo al menu inicial...
+2025-10-06 21:00:46,474 INFO root: Pantalla menú de tareas (refresh)
+2025-10-06 21:00:46,505 INFO root: Pantalla menú listar tareas (refresh)
+2025-10-06 21:00:46,613 INFO root: Listar todas las tareas (refresh)
+2025-10-06 21:00:49,174 INFO root: main menu alcanzado
