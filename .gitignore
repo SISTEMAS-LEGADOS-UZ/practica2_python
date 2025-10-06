@@ -1,3 +1,5 @@
-Entrega/python-embed/Lib/site-packages/pip/_vendor/rich/__pycache__/table.cpython-312.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+Emulador_python/python-embed/Lib/site-packages/pip/_vendor/rich/__pycache__/table.cpython-312.pyc
 *.pyc
 *.log
