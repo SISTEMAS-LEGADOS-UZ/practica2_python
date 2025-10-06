@@ -7,7 +7,7 @@ pushd "%ROOT_DIR%"
 
 set PY_DIR=%ROOT_DIR%python-embed
 set PY_EXE=%PY_DIR%\python.exe
-:: Ruta de la app (carpeta actual 'GestorDeTareas'; tras renombrado será 'App_Gestor')
+:: Ruta de la app
 set REQ_PATH=%ROOT_DIR%GestorDeTareas
 if exist "%ROOT_DIR%App_Gestor" set REQ_PATH=%ROOT_DIR%App_Gestor
 set PIP_EXE=%PY_DIR%\Scripts\pip.exe
